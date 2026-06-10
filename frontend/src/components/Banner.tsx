@@ -1,0 +1,114 @@
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@headlessui/react";
+import { gameList } from "../dummyData";
+import type { Game } from "../types/authTypes";
+
+const Banner = () => {
+  const [selectedNav, setSelectedNav] = useState(gameList[0].id);
+  const SLIDE_DURATION = 5000;
+  const currentItem: Game =
+    gameList.find((item) => item.id === selectedNav) || gameList[0];
+
+  const timerRef = useRef<number | null>(null);
+
+  const startAutoSlide = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+
+    timerRef.current = window.setInterval(() => {
+      setSelectedNav((prevId) => {
+        const currentIndex = gameList.findIndex((game) => game.id === prevId);
+
+        const nextIndex =
+          currentIndex === gameList.length - 1 ? 0 : currentIndex + 1;
+
+        return gameList[nextIndex].id;
+      });
+    }, SLIDE_DURATION);
+  };
+
+  useEffect(() => {
+    startAutoSlide();
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, []);
+
+  const handleGameSelect = (id: string) => {
+    setSelectedNav(id);
+
+    // restart countdown from selected item
+    startAutoSlide();
+  };
+
+  return (
+    <div className="flex h-150 py-2">
+      <div className="w-1/4 p-6 mx-2 flex flex-col justify-center">
+        <ul className="space-y-4">
+          {gameList.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => handleGameSelect(item.id)}
+                className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${
+                  selectedNav === item.id
+                    ? "bg-blue-600 text-white shadow-lg scale-105"
+                    : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                }`}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="w-3/4 relative overflow-hidden rounded-xl shadow-2xl">
+        <img
+          src={currentItem.image}
+          alt={currentItem.label}
+          className="w-full h-full object-cover transition-all duration-500"
+        />
+
+        <div className="absolute inset-0 flex flex-col items-center justify-end">
+          <div className="text-start text-white bg-transparent/10 backdrop-blur-xl p-4 shadow-2xl w-full">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-4xl font-bold mb-8 drop-shadow-lg px-2">
+                  {currentItem.text}
+                </h2>
+
+                <div>
+                  {currentItem.platforms.map((platform) => (
+                    <span
+                      key={platform}
+                      className="inline-flex items-center rounded-md bg-black/50 mx-1 px-2 py-1 text-sm font-medium"
+                    >
+                      {platform}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <div className="my-1">
+                  <span className="font-bold">Price:</span>
+                  {` ₹ ${currentItem.price_inr}`}
+                </div>
+
+                <Button className="inline-flex items-center gap-2 rounded-md cursor-pointer bg-green-700 px-4 mx-1 py-1.5 text-sm font-semibold text-white">
+                  Buy Now
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Banner;
