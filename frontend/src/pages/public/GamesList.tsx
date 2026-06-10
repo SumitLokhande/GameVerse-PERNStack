@@ -1,6 +1,5 @@
 import { useState, useMemo } from "react";
 import GameCard from "../../generic/GameCard";
-import GameDetailsCard from "../../generic/GameDetailsCard";
 import { allGames } from "../../dummyData";
 
 const GamesList = () => {

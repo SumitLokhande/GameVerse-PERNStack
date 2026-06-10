@@ -9,8 +9,6 @@ interface Game {
   rating: number;
   image: string;
   description: string;
-  releaseDate: string;
-  developer: string;
   price: number;
 }
 

@@ -1,10 +1,3 @@
-import { useState } from "react";
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
 import { useNavigate } from "react-router";
 // import { XMarkIcon } from '@heroicons/react/24/outline'
 

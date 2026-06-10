@@ -1,5 +1,10 @@
 import axios from "axios";
-import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from "axios";
+import type {
+  AxiosRequestConfig,
+  AxiosInstance,
+  AxiosResponse,
+  InternalAxiosRequestConfig,
+} from "axios";
 import { makeUseAxios } from "axios-hooks";
 // import { apiConfig } from "./config";
 
@@ -27,19 +32,15 @@ export const useAxios = makeUseAxios({
 
 // Request Interceptor
 axiosInstance.interceptors.request.use(
-  (config: AxiosRequestConfig): AxiosRequestConfig => {
-    const customConfig = config as AxiosCustomeRequestConfig;
+  (config: AxiosRequestConfig): InternalAxiosRequestConfig => {
+    const customConfig = config as InternalAxiosRequestConfig;
     const accessToken = "asdfjkanl"; // Replace with a function to fetch a real token in production
 
-    if (!config.headers) {
-      config.headers = {};
+    if (!customConfig?.headers?.Authorization) {
+      customConfig.headers.Authorization = `Bearer ${accessToken}`;
     }
 
-    if (!customConfig.custom?.excludeTokenIdFromHeader) {
-      config.headers.Authorization = `Bearer ${accessToken}`;
-    }
-
-    return config;
+    return customConfig;
   },
   (error) => Promise.reject(error),
 );

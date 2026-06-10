@@ -2,7 +2,7 @@ export type AuthContextType = {
   user: User | null;
   setToken: (token: string) => void;
   setUserHandler: (user: User) => void;
-  getUserHandler: () => User | null;
+  getUserHandler: () => User | undefined;
   logout: () => void;
   isAuthenticated: boolean;
 };

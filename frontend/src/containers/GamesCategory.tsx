@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { mockCategories } from "../dummyData";
 
 const GamesCategory: React.FC = () => {
