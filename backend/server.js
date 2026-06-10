@@ -9,10 +9,10 @@ import authRoutes from "./routes/authRoute.js";
 const app = express();
 
 const allowedOrigins = [
-  "https://localhost:5173",
-  "https://game-verse-pern-stack-74zj.vercel.app",
+  "https://game-verse-pern-stack.vercel.app/",
+  "http://localhost:5173",
 ];
-
+console.log("Allowed Origins:", allowedOrigins);
 // Middleware
 app.use(cors({ origin: allowedOrigins, credentials: true })); //
 app.use(express.json());
