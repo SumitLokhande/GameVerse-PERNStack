@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://game-verse-api.onrender.com/api/:path*"
+      "destination": "https://game-verse-pern-stack.vercel.app/api/:path*"
     },
     {
       "source": "/(.*)",
