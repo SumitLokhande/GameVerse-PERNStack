@@ -9,7 +9,7 @@ import authRoutes from "./routes/authRoute.js";
 const app = express();
 
 const allowedOrigins = [
-  "https://game-verse-pern-stack.vercel.app/api",
+  "https://game-verse-pern-stack.vercel.app",
   "http://localhost:5173",
 ];
 console.log("Allowed Origins:", allowedOrigins);
