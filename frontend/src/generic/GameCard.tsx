@@ -1,14 +1,15 @@
 import { Button } from "@headlessui/react";
 import React from "react";
 import type { GameDetail } from "../types/authTypes";
+import { useAppDispatch } from "../redux/hooks";
+import { addToCart } from "../redux/Slices/cartSlice";
 
 interface GameCardProps {
   game: GameDetail;
-  onClick: () => void;
-  isSelected: boolean;
 }
 
-const GameCard: React.FC<GameCardProps> = ({ game, onClick, isSelected }) => {
+const GameCard: React.FC<GameCardProps> = ({ game }) => {
+  const dispatch = useAppDispatch();
   const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -63,16 +64,30 @@ const GameCard: React.FC<GameCardProps> = ({ game, onClick, isSelected }) => {
     return stars;
   };
 
-  const addToCart = (game: GameDetail) => {
-    console.log(game, "Add to cart");
+  const handleGameClick = (game: GameDetail) => {
+    console.log(game, "game Card clicked ");
+  };
+
+  const addGameToCart = (game: GameDetail) => {
+    const payload = {
+      id: game.id,
+      title: game.title,
+      text: game.text,
+      image: game.image,
+      platforms: game.platforms,
+      rating: game.rating,
+      price: game.price,
+      discount: game.discount,
+      description: game.description,
+      genre: game.genre,
+      quantity: 1,
+    };
+    dispatch(addToCart(payload));
   };
 
   return (
     <div
-      onClick={onClick}
-      className={`bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 h-full ${
-        isSelected ? "ring-2 ring-blue-500" : ""
-      }`}
+      className={`bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 h-full`}
     >
       {/* Game Image */}
       <div className="relative h-48 overflow-hidden p-2 ">
@@ -115,13 +130,21 @@ const GameCard: React.FC<GameCardProps> = ({ game, onClick, isSelected }) => {
             </span>
           )}
         </div> */}
+        <div className="flex gap-1 justify-between">
+          <Button
+            className="items-center rounded-md cursor-pointer bg-blue-700 mx-1 py-1.5 w-full text-sm font-semibold text-white"
+            onClick={() => handleGameClick(game)}
+          >
+            Show Details
+          </Button>
 
-        <Button
-          className="items-center rounded-md cursor-pointer bg-green-700 mx-1 py-1.5 text-sm font-semibold text-white"
-          onClick={() => addToCart(game)}
-        >
-          Add to Cart
-        </Button>
+          <Button
+            className="items-center rounded-md cursor-pointer bg-green-700 mx-1 py-1.5 w-full text-sm font-semibold text-white"
+            onClick={() => addGameToCart(game)}
+          >
+            Add to Cart
+          </Button>
+        </div>
       </div>
     </div>
   );

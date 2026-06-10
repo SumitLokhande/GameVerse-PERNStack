@@ -6,7 +6,6 @@ const GamesList = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedPlatform, setSelectedPlatform] = useState("");
-  const [selectedGameId, setSelectedGameId] = useState<number | null>(null);
 
   const genres = useMemo(() => {
     const uniqueGenres = [...new Set(allGames.map((game) => game.genre))];
@@ -31,10 +30,6 @@ const GamesList = () => {
       return matchesSearch && matchesGenre && matchesPlatform;
     });
   }, [searchTerm, selectedGenre, selectedPlatform]);
-
-  const handleGameClick = (gameId: number) => {
-    setSelectedGameId(selectedGameId === gameId ? null : gameId);
-  };
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
@@ -90,11 +85,7 @@ const GamesList = () => {
       <div className="flex flex-wrap gap-2">
         {filteredGames.map((game) => (
           <div key={game.id} className="space-y-4">
-            <GameCard
-              game={game}
-              onClick={() => handleGameClick(game.id)}
-              isSelected={selectedGameId === game.id}
-            />
+            <GameCard game={game} />
             {/* {selectedGameId === game.id && (
               <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
                 <GameDetailsCard game={game} />
