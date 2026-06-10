@@ -1,5 +1,5 @@
 import React from "react";
-import { mockCategories } from "../dummyData";
+import { gamesCategories } from "../dummyData";
 
 const GamesCategory: React.FC = () => {
   // const [hoveredGame, setHoveredGame] = useState<number | null>(null);
@@ -76,7 +76,7 @@ const GamesCategory: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-4 auto-rows-[150px] gap-5">
-        {mockCategories.map((category, i) => (
+        {gamesCategories.map((category, i) => (
           <div
             key={i}
             className={`relative overflow-hidden cursor-pointer rounded-xl shadow-lg hover:scale-105 transition-all duration-300 ${

@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@headlessui/react";
-import { gameList } from "../dummyData";
-import type { Game } from "../types/authTypes";
+import { latestGamesList } from "../dummyData";
+import type { GameDetail } from "../types/authTypes";
 
 const Banner = () => {
-  const [selectedNav, setSelectedNav] = useState(gameList[0].id);
+  const [selectedNav, setSelectedNav] = useState(latestGamesList[0].id);
   const SLIDE_DURATION = 5000;
-  const currentItem: Game =
-    gameList.find((item) => item.id === selectedNav) || gameList[0];
+  const currentItem: GameDetail =
+    latestGamesList.find((item) => item.id === selectedNav) ||
+    latestGamesList[0];
 
   const timerRef = useRef<number | null>(null);
 
@@ -18,12 +19,14 @@ const Banner = () => {
 
     timerRef.current = window.setInterval(() => {
       setSelectedNav((prevId) => {
-        const currentIndex = gameList.findIndex((game) => game.id === prevId);
+        const currentIndex = latestGamesList.findIndex(
+          (game) => game.id === prevId,
+        );
 
         const nextIndex =
-          currentIndex === gameList.length - 1 ? 0 : currentIndex + 1;
+          currentIndex === latestGamesList.length - 1 ? 0 : currentIndex + 1;
 
-        return gameList[nextIndex].id;
+        return latestGamesList[nextIndex].id;
       });
     }, SLIDE_DURATION);
   };
@@ -38,7 +41,7 @@ const Banner = () => {
     };
   }, []);
 
-  const handleGameSelect = (id: string) => {
+  const handleGameSelect = (id: number) => {
     setSelectedNav(id);
 
     // restart countdown from selected item
@@ -49,7 +52,7 @@ const Banner = () => {
     <div className="flex h-150 py-2">
       <div className="w-1/4 p-6 mx-2 flex flex-col justify-center">
         <ul className="space-y-4">
-          {gameList.map((item) => (
+          {latestGamesList.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => handleGameSelect(item.id)}
@@ -59,7 +62,7 @@ const Banner = () => {
                     : "text-gray-300 hover:bg-gray-700 hover:text-white"
                 }`}
               >
-                {item.label}
+                {item.title}
               </button>
             </li>
           ))}
@@ -69,7 +72,7 @@ const Banner = () => {
       <div className="w-3/4 relative overflow-hidden rounded-xl shadow-2xl">
         <img
           src={currentItem.image}
-          alt={currentItem.label}
+          alt={currentItem.title}
           className="w-full h-full object-cover transition-all duration-500"
         />
 
@@ -96,7 +99,7 @@ const Banner = () => {
               <div>
                 <div className="my-1">
                   <span className="font-bold">Price:</span>
-                  {` ₹ ${currentItem.price_inr}`}
+                  {` ₹ ${currentItem.price}`}
                 </div>
 
                 <Button className="inline-flex items-center gap-2 rounded-md cursor-pointer bg-green-700 px-4 mx-1 py-1.5 text-sm font-semibold text-white">

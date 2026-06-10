@@ -14,7 +14,7 @@ const GamesList = () => {
   }, []);
 
   const platforms = useMemo(() => {
-    const allPlatforms = allGames.flatMap((game) => game.platform);
+    const allPlatforms = allGames.flatMap((game) => game.platforms);
     const uniquePlatforms = [...new Set(allPlatforms)];
     return uniquePlatforms;
   }, []);
@@ -26,7 +26,7 @@ const GamesList = () => {
         .includes(searchTerm.toLowerCase());
       const matchesGenre = !selectedGenre || game.genre === selectedGenre;
       const matchesPlatform =
-        !selectedPlatform || game.platform.includes(selectedPlatform);
+        !selectedPlatform || game.platforms.includes(selectedPlatform);
 
       return matchesSearch && matchesGenre && matchesPlatform;
     });

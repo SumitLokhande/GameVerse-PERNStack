@@ -13,11 +13,28 @@ export type User = {
   name: string;
 };
 
-export interface Game {
-  id: string; // change to number if you're using numeric ids
-  label: string;
+export interface GameDetail {
+  id: number; // change to number if you're using numeric ids
+  title: string;
   text: string;
   image: string;
   platforms: string[];
-  price_inr: number;
+  rating: number;
+  price: number;
+  discount?: number;
+  description: string;
+  genre: string;
+}
+
+export interface Category {
+  id: string;
+  name: string;
+  description: string;
+  games: GameDetail[];
+  color: string;
+  backgroundImage: string;
+}
+
+export interface CartItem extends GameDetail {
+  quantity: number;
 }

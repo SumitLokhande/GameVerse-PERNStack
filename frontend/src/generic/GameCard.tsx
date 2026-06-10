@@ -1,19 +1,9 @@
 import { Button } from "@headlessui/react";
 import React from "react";
-
-interface Game {
-  id: number;
-  title: string;
-  genre: string;
-  platform: string[];
-  rating: number;
-  image: string;
-  description: string;
-  price: number;
-}
+import type { GameDetail } from "../types/authTypes";
 
 interface GameCardProps {
-  game: Game;
+  game: GameDetail;
   onClick: () => void;
   isSelected: boolean;
 }
@@ -73,7 +63,7 @@ const GameCard: React.FC<GameCardProps> = ({ game, onClick, isSelected }) => {
     return stars;
   };
 
-  const addToCart = (game: Game) => {
+  const addToCart = (game: GameDetail) => {
     console.log(game, "Add to cart");
   };
 

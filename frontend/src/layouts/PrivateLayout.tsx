@@ -10,7 +10,7 @@ const PrivateLayout = () => {
       {isAuthenticated ? (
         <div>
           <Header />
-          <div>
+          <div className="mt-10">
             <Outlet />
           </div>
           <Footer />
