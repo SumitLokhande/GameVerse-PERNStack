@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@headlessui/react";
 import { latestGamesList } from "../dummyData";
 import type { GameDetail } from "../types/authTypes";
+import { addToCart } from "../redux/Slices/cartSlice";
+import { useAppDispatch } from "../redux/hooks";
 
 const Banner = () => {
+  const dispatch = useAppDispatch();
   const [selectedNav, setSelectedNav] = useState(latestGamesList[0].id);
   const SLIDE_DURATION = 5000;
   const currentItem: GameDetail =
@@ -48,21 +51,29 @@ const Banner = () => {
     startAutoSlide();
   };
 
+  const buyGame = () => {
+    const payload = {
+      ...currentItem,
+      quantity: 1,
+    };
+    dispatch(addToCart(payload));
+  };
+
   return (
     <div className="flex h-150 py-2">
       <div className="w-1/4 p-6 mx-2 flex flex-col justify-center">
         <ul className="space-y-4">
-          {latestGamesList.map((item) => (
-            <li key={item.id}>
+          {latestGamesList.map((game) => (
+            <li key={game.id}>
               <button
-                onClick={() => handleGameSelect(item.id)}
+                onClick={() => handleGameSelect(game.id)}
                 className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${
-                  selectedNav === item.id
+                  selectedNav === game.id
                     ? "bg-blue-600 text-white shadow-lg scale-105"
                     : "text-gray-300 hover:bg-gray-700 hover:text-white"
                 }`}
               >
-                {item.title}
+                {game.title}
               </button>
             </li>
           ))}
@@ -102,8 +113,11 @@ const Banner = () => {
                   {` ₹ ${currentItem.price}`}
                 </div>
 
-                <Button className="inline-flex items-center gap-2 rounded-md cursor-pointer bg-green-700 px-4 mx-1 py-1.5 text-sm font-semibold text-white">
-                  Buy Now
+                <Button
+                  onClick={() => buyGame()}
+                  className="inline-flex items-center gap-2 rounded-md cursor-pointer bg-green-700 px-4 mx-1 py-1.5 text-sm font-semibold text-white"
+                >
+                  Add To Cart
                 </Button>
               </div>
             </div>
