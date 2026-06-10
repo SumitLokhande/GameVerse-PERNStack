@@ -8,8 +8,13 @@ import authRoutes from "./routes/authRoute.js";
 
 const app = express();
 
+const allowedOrigins = [
+  "https://localhost:5173",
+  "https://game-verse-pern-stack-74zj.vercel.app",
+];
+
 // Middleware
-app.use(cors());
+app.use(cors({ origin: allowedOrigins, credentials: true })); //
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
