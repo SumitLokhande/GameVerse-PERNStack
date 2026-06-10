@@ -11,7 +11,7 @@ import { makeUseAxios } from "axios-hooks";
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const apiConfig = {
-  baseUrl: `${API_URL}`,
+  baseUrl: `${API_URL}/api`,
 };
 
 const axiosInstance: AxiosInstance = axios.create({
