@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { useAuth } from "../hooks/customHooks";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { useAppSelector } from "../redux/hooks";
@@ -6,24 +6,18 @@ import { useAppSelector } from "../redux/hooks";
 const Header = () => {
   const { isAuthenticated, logout, user } = useAuth();
   const totalItems = useAppSelector((state) => state.cart.totalItems);
+  const navigate = useNavigate();
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-transparent/30 backdrop-blur-xs z-50 shadow-xl">
       <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
-        <div className="text-white font-bold text-xl">GamerVerse</div>
+        <div
+          className="text-white font-bold text-xl cursor-pointer"
+          onClick={() => navigate("/")}
+        >
+          GamerVerse
+        </div>
         <ul className="flex space-x-8">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                  : "text-white hover:text-gray-300 transition-colors duration-200"
-              }
-            >
-              Home
-            </NavLink>
-          </li>
           <li>
             <NavLink
               to="/games"
@@ -34,18 +28,6 @@ const Header = () => {
               }
             >
               Games
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/categories"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                  : "text-white hover:text-gray-300 transition-colors duration-200"
-              }
-            >
-              Categories
             </NavLink>
           </li>
           <li>
@@ -72,42 +54,42 @@ const Header = () => {
               GOTY
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/cart"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
+                  : "text-white hover:text-gray-300 transition-colors duration-200"
+              }
+            >
+              <button
+                className="relative text-gray-600 hover:text-blue-600 transition-colors focus:outline-none"
+                aria-label="Cart"
+              >
+                <svg
+                  xmlns="http://w3.org"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+
+                <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white bg-red-500 rounded-full transform translate-x-1/2 -translate-y-1/2">
+                  {totalItems}
+                </span>
+              </button>
+            </NavLink>
+          </li>
           {isAuthenticated ? (
             <>
-              <li>
-                <NavLink
-                  to="/cart"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                      : "text-white hover:text-gray-300 transition-colors duration-200"
-                  }
-                >
-                  <button
-                    className="relative text-gray-600 hover:text-blue-600 transition-colors focus:outline-none"
-                    aria-label="Cart"
-                  >
-                    <svg
-                      xmlns="http://w3.org"
-                      className="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
-
-                    <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white bg-red-500 rounded-full transform translate-x-1/2 -translate-y-1/2">
-                      {totalItems}
-                    </span>
-                  </button>
-                </NavLink>
-              </li>
               <li>
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
@@ -133,7 +115,7 @@ const Header = () => {
                     </MenuItem>
                     <MenuItem>
                       <a
-                        href="#"
+                        href="/settings"
                         className="block px-4 py-2 text-sm text-gray-300 data-focus:bg-white/5 data-focus:outline-hidden"
                       >
                         Settings

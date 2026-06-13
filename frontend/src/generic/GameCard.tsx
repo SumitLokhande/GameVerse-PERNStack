@@ -87,31 +87,30 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
 
   return (
     <div
-      className={`bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105 h-full`}
+      className={`bg-gray-800 h-75 w-45 rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105`}
     >
       {/* Game Image */}
-      <div className="relative h-48 overflow-hidden p-2 ">
+      <div className="relative p-2 " onClick={() => handleGameClick(game)}>
         <img
           src={game.image}
           alt={game.title}
-          className="w-full h-full object-cover rounded-l"
+          className="object-cover rounded-lg h-45 w-full"
         />
-        <div className="absolute top-2 right-2 bg-black bg-opacity-75 px-2 py-1 rounded text-white text-sm font-semibold">
-          ${game.price}
-        </div>
       </div>
 
       {/* Game Info */}
-      <div className="p-2 flex flex-col h-auto">
-        <h3 className="text-sm text-left font-semibold text-white mb-2 line-clamp-2">
+      <div className="px-2 flex flex-col h-auto">
+        <h3 className="text-sm text-left font-semibold text-white overflow-hidden text-wrap w-auto h-8 ">
           {game.title}
         </h3>
 
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm text-gray-400">{game.genre}</span>
-          <div className="flex items-center space-x-1">
-            {renderStars(game.rating)}
-            <span className="text-sm text-gray-300 ml-1">({game.rating})</span>
+        <div className="flex items-center justify-between">
+          <span className="text-sm text-gray-400 py-1">{game.genre}</span>
+          <div className="flex items-center">
+            <span className="text-md text-yellow-300 font-bold">
+              {game.rating}
+            </span>
+            <span className="font-semibold text-sm">/5</span>
           </div>
         </div>
 
@@ -130,16 +129,13 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
             </span>
           )}
         </div> */}
-        <div className="flex gap-1 justify-between">
-          <Button
-            className="items-center rounded-md cursor-pointer bg-blue-700 mx-1 py-1.5 w-full text-sm font-semibold text-white"
-            onClick={() => handleGameClick(game)}
-          >
-            Show Details
-          </Button>
+        <div className="flex justify-between gap-1 my-1">
+          <div className="items-start rounded-md cursor-pointer py-1.5 text-sm font-semibold text-white">
+            ₹ {game.price}
+          </div>
 
           <Button
-            className="items-center rounded-md cursor-pointer bg-green-700 mx-1 py-1.5 w-full text-sm font-semibold text-white"
+            className="items-center rounded-md cursor-pointer bg-green-700 w-2/4 text-xs font-semibold text-white"
             onClick={() => addGameToCart(game)}
           >
             Add to Cart

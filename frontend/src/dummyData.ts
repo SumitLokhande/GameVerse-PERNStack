@@ -1,4 +1,4 @@
-import type { Category, GameDetail } from "./types/authTypes";
+import type { Category, GameDetail, GOTYGameDetail } from "./types/authTypes";
 
 export const latestGamesList: GameDetail[] = [
   {
@@ -268,7 +268,7 @@ export const gamesCategories: Category[] = [
         image: "https://picsum.photos/200/150?random=14",
         text: "The ultimate virtual universe that lets you create and share experiences.",
         rating: 3.9,
-        price: 0,
+        price: 20,
         genre: "Sandbox",
         description:
           "An online game platform and storefront system that allows users to program games and play games created by other users.",
@@ -413,7 +413,7 @@ export const gamesCategories: Category[] = [
         image: "https://picsum.photos/200/150?random=6",
         text: "The premier competitive tactical squad game.",
         rating: 4.3,
-        price: 0,
+        price: 20,
         genre: "FPS",
         description:
           "A tactical five-versus-five team-based shooter focusing on mechanical aim skill, precise smoke setups, and map macro strategy.",
@@ -425,7 +425,7 @@ export const gamesCategories: Category[] = [
         image: "https://picsum.photos/200/150?random=7",
         text: "Conquer with character in a free-to-play battle royale shooter.",
         rating: 4.0,
-        price: 0,
+        price: 20,
         genre: "FPS",
         description:
           "A hero-driven high-mobility battle royale where squads match unique futuristic tactical toolsets across sprawling dynamic battlefields.",
@@ -444,7 +444,7 @@ export const gamesCategories: Category[] = [
         image: "https://picsum.photos/200/150?random=8",
         text: "A character-based 5v5 tactical shooter where gunplay meets utility.",
         rating: 4.4,
-        price: 0,
+        price: 20,
         genre: "FPS",
         description:
           "A competitive mechanical shooter blending hyper-accurate hitscan mechanics with unique fantasy hero ability utility packages.",
@@ -744,7 +744,7 @@ export const gamesCategories: Category[] = [
         image: "https://picsum.photos/200/150?random=27",
         text: "Wage real-time sci-fi war.",
         rating: 4.6,
-        price: 0,
+        price: 20,
         genre: "Strategy",
         description:
           "Wage real-time sci-fi war across the galaxy using three uniquely powerful races.",
@@ -770,10 +770,11 @@ export const allGames: GameDetail[] = [
   {
     id: 1,
     title: "Cyberpunk 2077",
-    image: "https://picsum.photos/200/150?random=1",
+    image:
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&q=80",
     text: "Welcome to Night City, a megalopolis obsessed with power.",
     rating: 4.2,
-    price: 59.99,
+    price: 2999,
     discount: 20,
     genre: "RPG",
     description:
@@ -783,10 +784,11 @@ export const allGames: GameDetail[] = [
   {
     id: 2,
     title: "The Witcher 3",
-    image: "https://picsum.photos/200/150?random=2",
+    image:
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80",
     text: "Become a professional monster hunter and embark on an epic journey.",
     rating: 4.8,
-    price: 39.99,
+    price: 1799,
     genre: "RPG",
     description:
       "A story-driven, next-generation open-world role-playing game set in a visually stunning fantasy universe.",
@@ -795,10 +797,11 @@ export const allGames: GameDetail[] = [
   {
     id: 3,
     title: "Dragon Age: Inquisition",
-    image: "https://picsum.photos/200/150?random=3",
+    image:
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=500&q=80",
     text: "Lead the Inquisition against the forces of chaos.",
     rating: 4.5,
-    price: 29.99,
+    price: 2499,
     genre: "RPG",
     description:
       "Become the Inquisitor and lead a team of legendary heroes to save a fractured world from the brink of destruction.",
@@ -807,10 +810,11 @@ export const allGames: GameDetail[] = [
   {
     id: 4,
     title: "The Elder Scrolls V",
-    image: "https://picsum.photos/200/150?random=4",
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80",
     text: "Epic fantasy reborn in a vast open world.",
     rating: 4.7,
-    price: 19.99,
+    price: 1799,
     genre: "RPG",
     description:
       "Epic fantasy reimagined, allowing you to play any type of character you can imagine and explore a vast open world.",
@@ -819,34 +823,24 @@ export const allGames: GameDetail[] = [
   {
     id: 13,
     title: "Minecraft",
-    image: "https://picsum.photos/200/150?random=13",
+    image:
+      "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=500&q=80",
     text: "Explore infinite worlds and build everything from simple homes to castles.",
     rating: 4.7,
-    price: 29.99,
+    price: 1999,
     genre: "Sandbox",
     description:
       "Explore infinite worlds and build everything from the simplest of homes to the grandest of castles.",
     platforms: ["PC", "PS4", "Xbox One", "Nintendo Switch", "iOS", "Android"],
   },
   {
-    id: 14,
-    title: "Roblox",
-    image: "https://picsum.photos/200/150?random=14",
-    text: "The ultimate virtual universe that lets you create and share experiences.",
-    rating: 3.9,
-    price: 0,
-    genre: "Sandbox",
-    description:
-      "An ultimate virtual universe that lets you create, share experiences with friends, and be anything you can imagine.",
-    platforms: ["PC", "PS4", "Xbox One", "iOS", "Android"],
-  },
-  {
     id: 15,
     title: "Terraria",
-    image: "https://picsum.photos/200/150?random=15",
+    image:
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&q=80",
     text: "Dig, fight, explore, and build in a vast 2D world.",
     rating: 4.3,
-    price: 9.99,
+    price: 479,
     genre: "Sandbox",
     description:
       "Dig, fight, explore, and build in an action-packed sandbox adventure where the world is your canvas.",
@@ -855,10 +849,11 @@ export const allGames: GameDetail[] = [
   {
     id: 16,
     title: "No Man's Sky",
-    image: "https://picsum.photos/200/150?random=16",
+    image:
+      "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=500&q=80",
     text: "A sci-fi game of exploration and survival in an infinite universe.",
     rating: 3.7,
-    price: 39.99,
+    price: 2400,
     genre: "Sandbox",
     description:
       "A sci-fi exploration game set in an infinite procedurally generated universe full of unique planets and lifeforms.",
@@ -867,10 +862,11 @@ export const allGames: GameDetail[] = [
   {
     id: 9,
     title: "FIFA 24",
-    image: "https://picsum.photos/200/150?random=9",
+    image:
+      "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=500&q=80",
     text: "Experience the World's Game with unrivaled realism.",
     rating: 4.0,
-    price: 69.99,
+    price: 3499,
     discount: 15,
     genre: "Sports",
     description:
@@ -880,10 +876,11 @@ export const allGames: GameDetail[] = [
   {
     id: 10,
     title: "NBA 2K24",
-    image: "https://picsum.photos/200/150?random=10",
+    image:
+      "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&q=80",
     text: "Grab your squad and experience the past, present, and future of hoops.",
     rating: 4.2,
-    price: 59.99,
+    price: 3299,
     genre: "Sports",
     description:
       "Grab your squad and experience the past, present, and future of hoops culture with pure, authentic basketball action.",
@@ -892,10 +889,11 @@ export const allGames: GameDetail[] = [
   {
     id: 11,
     title: "Madden NFL 24",
-    image: "https://picsum.photos/200/150?random=11",
+    image:
+      "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=500&q=80",
     text: "Lead your team to gridiron glory in Madden.",
     rating: 3.8,
-    price: 59.99,
+    price: 3499,
     genre: "Sports",
     description:
       "Lead your team to a Super Bowl victory with enhanced control, realistic collisions, and deeper gameplay systems.",
@@ -904,10 +902,11 @@ export const allGames: GameDetail[] = [
   {
     id: 12,
     title: "F1 2023",
-    image: "https://picsum.photos/200/150?random=12",
+    image:
+      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500&q=80",
     text: "Be the last to brake in the official Formula One game.",
     rating: 4.1,
-    price: 49.99,
+    price: 2999,
     genre: "Sports",
     description:
       "The official videogame of the FIA Formula One World Championship, featuring high-speed racing drama and tactics.",
@@ -916,58 +915,24 @@ export const allGames: GameDetail[] = [
   {
     id: 5,
     title: "Call of Duty: MWIII",
-    image: "https://picsum.photos/200/150?random=5",
+    image:
+      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&q=80",
     text: "Adapt or die in a fight against the ultimate threat.",
     rating: 4.1,
-    price: 69.99,
+    price: 5599,
     genre: "FPS",
     description:
       "Adapt or die in a fight against the ultimate threat, featuring iconic multiplayer maps and a cinematic campaign.",
     platforms: ["PC", "PS5", "Xbox Series X"],
   },
   {
-    id: 6,
-    title: "Counter-Strike 2",
-    image: "https://picsum.photos/200/150?random=6",
-    text: "The premier competitive tactical squad game.",
-    rating: 4.3,
-    price: 0,
-    genre: "FPS",
-    description:
-      "The next tactical leap forward in competitive shooter history, built on a modernized engine with responsive smoke.",
-    platforms: ["PC"],
-  },
-  {
-    id: 7,
-    title: "Apex Legends",
-    image: "https://picsum.photos/200/150?random=7",
-    text: "Conquer with character in a free-to-play battle royale shooter.",
-    rating: 4.0,
-    price: 0,
-    genre: "FPS",
-    description:
-      "A free-to-play battle royale hero shooter where legendary characters with powerful abilities team up for glory.",
-    platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
-  },
-  {
-    id: 8,
-    title: "Valorant",
-    image: "https://picsum.photos/200/150?random=8",
-    text: "A character-based 5v5 tactical shooter where gunplay meets utility.",
-    rating: 4.4,
-    price: 0,
-    genre: "FPS",
-    description:
-      "A 5v5 character-based tactical shooter where precise gunplay meets unique tactical agent abilities.",
-    platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
     id: 21,
     title: "Elden Ring",
-    image: "https://picsum.photos/200/150?random=21",
+    image:
+      "https://images.unsplash.com/photo-1655635643532-fa9ba2648cbe?w=500&q=80",
     text: "Rise, Tarnished, and be guided by grace to brandish the Elden Ring.",
     rating: 4.9,
-    price: 59.99,
+    price: 3599,
     genre: "Action-Adventure",
     description:
       "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring in a massive dark fantasy world.",
@@ -976,10 +941,11 @@ export const allGames: GameDetail[] = [
   {
     id: 22,
     title: "God of War Ragnarök",
-    image: "https://picsum.photos/200/150?random=22",
+    image:
+      "https://images.unsplash.com/photo-1608889174637-3c44f6326f2a?w=500&q=80",
     text: "Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on.",
     rating: 4.8,
-    price: 69.99,
+    price: 3999,
     discount: 10,
     genre: "Action-Adventure",
     description:
@@ -989,10 +955,11 @@ export const allGames: GameDetail[] = [
   {
     id: 23,
     title: "Red Dead Redemption 2",
-    image: "https://picsum.photos/200/150?random=23",
+    image:
+      "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=500&q=80",
     text: "An epic tale of life in America's unforgiving heartland.",
     rating: 4.9,
-    price: 59.99,
+    price: 3199,
     discount: 60,
     genre: "Action-Adventure",
     description:
@@ -1002,10 +969,11 @@ export const allGames: GameDetail[] = [
   {
     id: 24,
     title: "Grand Theft Auto V",
-    image: "https://picsum.photos/200/150?random=24",
+    image:
+      "https://images.unsplash.com/photo-1548685913-fe65783aa75f?w=500&q=80",
     text: "Explore the vast world of Los Santos and Blaine County.",
     rating: 4.7,
-    price: 29.99,
+    price: 2321,
     genre: "Action-Adventure",
     description:
       "When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled, they must pull off heists to survive.",
@@ -1014,10 +982,11 @@ export const allGames: GameDetail[] = [
   {
     id: 37,
     title: "Street Fighter 6",
-    image: "https://picsum.photos/200/150?random=37",
+    image:
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80",
     text: "The evolving fighting arena built for casual and pro warriors alike.",
     rating: 4.6,
-    price: 59.99,
+    price: 3999,
     genre: "Fighting",
     description:
       "Powered by a proprietary engine, experience a new era of fighting games with evolved mechanics and vibrant visuals.",
@@ -1026,10 +995,11 @@ export const allGames: GameDetail[] = [
   {
     id: 38,
     title: "Mortal Kombat 1",
-    image: "https://picsum.photos/200/150?random=38",
+    image:
+      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=500&q=80",
     text: "Discover a reborn Mortal Kombat Universe created by the Fire God Liu Kang.",
     rating: 4.2,
-    price: 69.99,
+    price: 4499,
     genre: "Fighting",
     description:
       "Discover a reborn Mortal Kombat Universe created by the Fire God Liu Kang, featuring gory fatalities and new fight styles.",
@@ -1038,10 +1008,11 @@ export const allGames: GameDetail[] = [
   {
     id: 39,
     title: "Tekken 8",
-    image: "https://picsum.photos/200/150?random=39",
+    image:
+      "https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?w=500&q=80",
     text: "Fist Meets Fate in the ultimate next-generation fighting tournament.",
     rating: 4.7,
-    price: 69.99,
+    price: 4399,
     genre: "Fighting",
     description:
       "Fist Meets Fate in this next-generation installment of the historic fighting franchise, powered by highly aggressive gameplay mechanics.",
@@ -1050,10 +1021,11 @@ export const allGames: GameDetail[] = [
   {
     id: 40,
     title: "Super Smash Bros. Ultimate",
-    image: "https://picsum.photos/200/150?random=40",
+    image:
+      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=500&q=80",
     text: "Legendary game worlds and characters collide in the ultimate showdown.",
     rating: 4.8,
-    price: 59.99,
+    price: 4999,
     genre: "Fighting",
     description:
       "Legendary game worlds and fighters collide in the ultimate showdown, where the goal is to launch rivals off the stage.",
@@ -1062,10 +1034,11 @@ export const allGames: GameDetail[] = [
   {
     id: 29,
     title: "Resident Evil 4 (Remake)",
-    image: "https://picsum.photos/200/150?random=29",
+    image:
+      "https://images.unsplash.com/photo-1601987177651-8edfe6c20009?w=500&q=80",
     text: "Survival is just the beginning in this reimagined horror masterpiece.",
     rating: 4.8,
-    price: 59.99,
+    price: 3599,
     genre: "Horror",
     description:
       "Survival is just the beginning in this fully reimagined survival-horror masterpiece featuring updated modern combat.",
@@ -1074,10 +1047,11 @@ export const allGames: GameDetail[] = [
   {
     id: 30,
     title: "Dead by Daylight",
-    image: "https://picsum.photos/200/150?random=30",
+    image:
+      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=500&q=80",
     text: "Death is not an escape in this asymmetrical multiplayer horror game.",
     rating: 4.1,
-    price: 19.99,
+    price: 999,
     genre: "Horror",
     description:
       "A multiplayer 4v1 horror game where one player takes on the role of the savage Killer, and the other four play as Survivors.",
@@ -1086,10 +1060,11 @@ export const allGames: GameDetail[] = [
   {
     id: 31,
     title: "Phasmophobia",
-    image: "https://picsum.photos/200/150?random=31",
+    image:
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80",
     text: "Use paranormal investigation equipment to gather evidence of ghost activity.",
     rating: 4.5,
-    price: 13.99,
+    price: 690,
     genre: "Horror",
     description:
       "A 4-player online co-op psychological horror where you and your team of paranormal investigators enter haunted locations.",
@@ -1098,10 +1073,11 @@ export const allGames: GameDetail[] = [
   {
     id: 32,
     title: "Outlast 2",
-    image: "https://picsum.photos/200/150?random=32",
+    image:
+      "https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?w=500&q=80",
     text: "A twisted journey into the depths of the human mind and its dark secrets.",
     rating: 4.0,
-    price: 29.99,
+    price: 1300,
     discount: 80,
     genre: "Horror",
     description:
@@ -1111,10 +1087,11 @@ export const allGames: GameDetail[] = [
   {
     id: 33,
     title: "Forza Horizon 5",
-    image: "https://picsum.photos/200/150?random=33",
+    image:
+      "https://images.unsplash.com/photo-1612462551868-fba8b1d72368?w=500&q=80",
     text: "Your ultimate Horizon Adventure awaits! Explore vibrant open worlds.",
     rating: 4.7,
-    price: 59.99,
+    price: 3499,
     genre: "Racing",
     description:
       "Lead breathtaking expeditions across the vibrant and ever-evolving open world landscapes of Mexico in hundreds of world-class cars.",
@@ -1123,10 +1100,11 @@ export const allGames: GameDetail[] = [
   {
     id: 34,
     title: "Need for Speed Unbound",
-    image: "https://picsum.photos/200/150?random=34",
+    image:
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=500&q=80",
     text: "Race against time, outsmart the cops, and take on weekly qualifiers.",
     rating: 3.9,
-    price: 69.99,
+    price: 3499,
     discount: 40,
     genre: "Racing",
     description:
@@ -1136,10 +1114,11 @@ export const allGames: GameDetail[] = [
   {
     id: 35,
     title: "Gran Turismo 7",
-    image: "https://picsum.photos/200/150?random=35",
+    image:
+      "https://images.unsplash.com/photo-1562591176-bf1051528646?w=500&q=80",
     text: "The Real Driving Simulator. Find your line.",
     rating: 4.5,
-    price: 69.99,
+    price: 4999,
     genre: "Racing",
     description:
       "The ultimate driving simulator brings together the best features of the real-world racing franchise with deep customization.",
@@ -1148,10 +1127,11 @@ export const allGames: GameDetail[] = [
   {
     id: 36,
     title: "Assetto Corsa Competizione",
-    image: "https://picsum.photos/200/150?random=36",
+    image:
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=500&q=80",
     text: "The official GT World Challenge videogame.",
     rating: 4.4,
-    price: 39.99,
+    price: 1999,
     genre: "Racing",
     description:
       "The official GT World Challenge videogame allows you to experience the real atmosphere of the GT3 championship.",
@@ -1160,10 +1140,11 @@ export const allGames: GameDetail[] = [
   {
     id: 25,
     title: "Civilization VI",
-    image: "https://picsum.photos/200/150?random=25",
+    image:
+      "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&q=80",
     text: "Build an empire to stand the test of time.",
     rating: 4.4,
-    price: 59.99,
+    price: 2499,
     discount: 75,
     genre: "Strategy",
     description:
@@ -1173,37 +1154,187 @@ export const allGames: GameDetail[] = [
   {
     id: 26,
     title: "Age of Empires IV",
-    image: "https://picsum.photos/200/150?random=26",
+    image:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&q=80",
     text: "Epic historical battles await.",
     rating: 4.3,
-    price: 39.99,
+    price: 2399,
     genre: "Strategy",
     description:
       "Puts you at the center of epic historical battles that shaped the modern world in a real-time strategy experience.",
     platforms: ["PC", "Xbox Series X", "Xbox One"],
   },
   {
-    id: 27,
-    title: "StarCraft II",
-    image: "https://picsum.photos/200/150?random=27",
-    text: "Wage real-time sci-fi war.",
-    rating: 4.6,
-    price: 0,
-    genre: "Strategy",
-    description:
-      "Wage real-time sci-fi war across the galaxy using three uniquely powerful, highly distinct alien and human factions.",
-    platforms: ["PC"],
-  },
-  {
     id: 28,
     title: "Total War: Warhammer III",
-    image: "https://picsum.photos/200/150?random=28",
+    image:
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&q=80",
     text: "Rally your forces and step into the Realm of Chaos.",
     rating: 4.1,
-    price: 59.99,
+    price: 3399,
     genre: "Strategy",
     description:
       "Rally your forces and step into the Realm of Chaos, a dimension of mind-bending horror where the world's fate is decided.",
     platforms: ["PC"],
+  },
+];
+
+export const GOTYList: GOTYGameDetail[] = [
+  {
+    id: 2025,
+    title: "Clair Obscur: Expedition 33",
+    developer: "Sandfall Interactive",
+    image:
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80",
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80",
+    ],
+    year: 2025,
+    awards: ["Game of the Year", "Best RPG", "Best Art Direction"],
+    description:
+      "A turn-based RPG featuring real-time mechanics where you lead the Expeditionary force to destroy the Paintress before she paints death upon the world.",
+    rating: 4.8,
+    isWinner: true,
+    category: "Game of the Year",
+    platforms: ["PC", "PS5", "Xbox Series X"],
+    recommendedSystemRequirements: {
+      os: "Windows 11 (64-bit)",
+      processor: "Intel Core i7-12700K / AMD Ryzen 7 7700X",
+      memory: "16 GB RAM",
+      graphics: "NVIDIA GeForce RTX 4070 / AMD Radeon RX 7800 XT",
+      vram: "12 GB",
+      directX: "Version 12",
+      storage: "90 GB available space (SSD required)",
+    },
+  },
+  {
+    id: 2024,
+    title: "Astro Bot",
+    developer: "Team Asobi",
+    image:
+      "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&q=80",
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
+    ],
+    year: 2024,
+    awards: ["Game of the Year", "Best Game Direction", "Best Family Game"],
+    description:
+      "An celebration of PlayStation history wrapped inside a masterpiece of a 3D platformer featuring creative level designs and deep DualSense integration.",
+    rating: 4.9,
+    isWinner: true,
+    category: "Game of the Year",
+    platforms: ["PS5"],
+    recommendedSystemRequirements: {
+      os: "N/A (PlayStation 5 Exclusive)",
+      processor: "N/A",
+      memory: "N/A",
+      graphics: "N/A",
+      vram: "N/A",
+      directX: "N/A",
+      storage: "66 GB available space (Internal SSD)",
+    },
+  },
+  {
+    id: 2023,
+    title: "Baldur's Gate 3",
+    developer: "Larian Studios",
+    image:
+      "https://images.unsplash.com/photo-1655635643532-fa9ba2648cbe?w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1655635643532-fa9ba2648cbe?w=600&q=80",
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80",
+    ],
+    year: 2023,
+    awards: [
+      "Game of the Year",
+      "Best RPG",
+      "Best Narrative",
+      "Player's Voice",
+    ],
+    description:
+      "An expansive, player-choice-driven RPG set in the universe of Dungeons & Dragons, boasting deep tactical turn-based combat and rich storytelling.",
+    rating: 4.9,
+    isWinner: true,
+    category: "Game of the Year",
+    platforms: ["PC", "PS5", "Xbox Series X"],
+    recommendedSystemRequirements: {
+      os: "Windows 10 / 11 (64-bit)",
+      processor: "Intel Core i7-8700K / AMD Ryzen 5 3600X",
+      memory: "16 GB RAM",
+      graphics: "NVIDIA GeForce RTX 2060 Super / AMD Radeon RX 5700 XT",
+      vram: "8 GB",
+      directX: "Version 11",
+      storage: "150 GB available space (SSD required)",
+    },
+  },
+  {
+    id: 2022,
+    title: "Elden Ring",
+    developer: "FromSoftware",
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&q=80",
+    ],
+    year: 2022,
+    awards: [
+      "Game of the Year",
+      "Best Game Direction",
+      "Best Art Direction",
+      "Best RPG",
+    ],
+    description:
+      "Rise, Tarnished, and explore a massive open world filled with challenging bosses, deep lore, and dark fantasy visuals crafted by FromSoftware.",
+    rating: 4.9,
+    isWinner: true,
+    category: "Game of the Year",
+    platforms: ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X"],
+    recommendedSystemRequirements: {
+      os: "Windows 10 / 11 (64-bit)",
+      processor: "Intel Core i7-8700K / AMD Ryzen 5 3600X",
+      memory: "16 GB RAM",
+      graphics: "NVIDIA GeForce GTX 1070 / AMD Radeon RX Vega 56",
+      vram: "8 GB",
+      directX: "Version 12",
+      storage: "60 GB available space (SSD recommended)",
+    },
+  },
+  {
+    id: 2021,
+    title: "It Takes Two",
+    developer: "Hazelight Studios",
+    image:
+      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&q=80",
+      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=600&q=80",
+    ],
+    year: 2021,
+    awards: ["Game of the Year", "Best Family Game", "Best Multiplayer Game"],
+    description:
+      "An genre-bending co-op adventure platformer built purely for two players, exploring themes of relationships through highly varied gameplay.",
+    rating: 4.8,
+    isWinner: true,
+    category: "Game of the Year",
+    platforms: [
+      "PC",
+      "PS4",
+      "PS5",
+      "Xbox One",
+      "Xbox Series X",
+      "Nintendo Switch",
+    ],
+    recommendedSystemRequirements: {
+      os: "Windows 10 (64-bit)",
+      processor: "Intel Core i5-3570K / AMD FX-8350",
+      memory: "16 GB RAM",
+      graphics: "NVIDIA GeForce GTX 980 / AMD Radeon R9 290X",
+      vram: "4 GB",
+      directX: "Version 11",
+      storage: "50 GB available space",
+    },
   },
 ];

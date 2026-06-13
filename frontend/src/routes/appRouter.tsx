@@ -9,7 +9,8 @@ import UserProfile from "../pages/private/UserProfile";
 import GameReviews from "../containers/GameReviews";
 import GamesCategory from "../containers/GamesCategory";
 import GOTYContainer from "../containers/GOTYContainer";
-import Cart from "../pages/private/Cart";
+import Cart from "../pages/public/Cart";
+import Settings from "../pages/private/Settings";
 
 const AppRouter = () => {
   return (
@@ -23,10 +24,11 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/game-list" element={<GamesList />} />
+        <Route path="/cart" element={<Cart />} />
       </Route>
       <Route element={<PrivateLayout />}>
         <Route path="/profile" element={<UserProfile />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/settings" element={<Settings />} />
       </Route>
     </Routes>
   );

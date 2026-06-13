@@ -102,7 +102,7 @@ const Cart = () => {
                           <button
                             type="button"
                             onClick={() => removeProduct(game.id)}
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
+                            className="font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer"
                           >
                             Remove
                           </button>
@@ -114,10 +114,10 @@ const Cart = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-200 py-6">
+          <div className="border-t border-gray-200 py-6 px-4">
             <div className="flex items-end justify-end gap-4 text-base font-medium text-white-900">
               <p>Subtotal</p>
-              <p> ₹ {totalPrice}</p>
+              <p> ₹ {totalPrice.toFixed(2)}</p>
             </div>
             <div className="my-4 text-sm text-white-500 text-right">
               Shipping and taxes calculated at checkout.

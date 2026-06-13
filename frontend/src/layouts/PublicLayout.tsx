@@ -7,7 +7,7 @@ const PublicLayout = ({ children }: PropsWithChildren<{}>) => {
   return (
     <div>
       <Header />
-      <div className="mt-10">{children || <Outlet />}</div>
+      <div className="mt-16">{children || <Outlet />}</div>
       <Footer />
     </div>
   );

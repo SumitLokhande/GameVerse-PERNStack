@@ -82,9 +82,9 @@ const GamesList = () => {
       </div>
 
       {/* Games Grid */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-4">
         {filteredGames.map((game) => (
-          <div key={game.id} className="space-y-4">
+          <div key={game.id}>
             <GameCard game={game} />
             {/* {selectedGameId === game.id && (
               <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">

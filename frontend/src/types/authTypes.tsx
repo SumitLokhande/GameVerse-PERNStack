@@ -38,3 +38,29 @@ export interface Category {
 export interface CartItem extends GameDetail {
   quantity: number;
 }
+
+export interface SystemRequirements {
+  os: string;
+  processor: string;
+  memory: string;
+  graphics: string;
+  vram: string;
+  directX: string;
+  storage: string;
+}
+
+export interface GOTYGameDetail {
+  id: number;
+  title: string;
+  developer: string;
+  image: string; // Primary hero image URL
+  images: string[]; // Array of additional screenshot URLs
+  year: number;
+  awards: string[];
+  description: string;
+  rating: number;
+  isWinner: boolean;
+  category: string;
+  platforms: string[];
+  recommendedSystemRequirements: SystemRequirements;
+}

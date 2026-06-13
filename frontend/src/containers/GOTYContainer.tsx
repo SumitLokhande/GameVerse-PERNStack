@@ -1,70 +1,14 @@
 import { useState } from "react";
-
-interface GOTYGame {
-  id: number;
-  title: string;
-  developer: string;
-  image: string;
-  year: number;
-  awards: string[];
-  description: string;
-  rating: number;
-  isWinner: boolean;
-  category: string;
-}
-
-const mockGOTYGames: GOTYGame[] = [
-  {
-    id: 1,
-    title: "The Legend of Zelda: Tears of the Kingdom",
-    developer: "Nintendo",
-    image: "https://picsum.photos/400/300?random=21",
-    year: 2023,
-    awards: ["Game of the Year", "Best Game Direction", "Best Family Game"],
-    description:
-      "An epic adventure that redefines open-world exploration with innovative mechanics and breathtaking landscapes.",
-    rating: 4.9,
-    isWinner: true,
-    category: "GOTY 2023",
-  },
-  {
-    id: 2,
-    title: "Elden Ring",
-    developer: "FromSoftware",
-    image: "https://picsum.photos/400/300?random=27",
-    year: 2022,
-    awards: ["Game of the Year", "Best Game Direction", "Best Art Direction"],
-    description:
-      "A masterpiece of action RPG design that challenges players with its depth and difficulty while rewarding exploration and discovery.",
-    rating: 4.8,
-    isWinner: true,
-    category: "GOTY 2022",
-  },
-  {
-    id: 3,
-    title: "It Takes Two",
-    developer: "Hazelight Studios",
-    image: "https://picsum.photos/400/300?random=28",
-    year: 2021,
-    awards: ["Game of the Year", "Best Multiplayer Game", "Best Family Game"],
-    description:
-      "A unique co-op platformer that transforms relationships through creative gameplay mechanics and emotional storytelling.",
-    rating: 4.7,
-    isWinner: true,
-    category: "GOTY 2021",
-  },
-];
+import { GOTYList } from "../dummyData";
 
 function GOTYContainer() {
   const [selectedYear, setSelectedYear] = useState<number>(2023);
 
-  const years = Array.from(
-    new Set(mockGOTYGames.map((game) => game.year)),
-  ).sort((a, b) => b - a);
-
-  const filteredGames = mockGOTYGames.filter(
-    (game) => game.year === selectedYear,
+  const years = Array.from(new Set(GOTYList.map((game) => game.year))).sort(
+    (a, b) => b - a,
   );
+
+  const filteredGames = GOTYList.filter((game) => game.year === selectedYear);
 
   const renderStars = (rating: number) => {
     const stars = [];
