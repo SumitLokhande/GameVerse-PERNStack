@@ -182,16 +182,14 @@ function GOTYContainer() {
             <div className="flex flex-col items-start m-2">
               {openSpecification && (
                 <>
-                  {Object.keys(game.recommendedSystemRequirements).map(
-                    (option: string) => (
-                      <div>
+                  {Object.entries(game.recommendedSystemRequirements).map(
+                    ([option, value]) => (
+                      <div key={option}>
                         <span className="font-bold text-lg">
                           {`${option.toUpperCase()}: `}
                         </span>
 
-                        <span className="text-gray-500">
-                          {game.recommendedSystemRequirements[option]}
-                        </span>
+                        <span className="text-gray-500">{value}</span>
                       </div>
                     ),
                   )}

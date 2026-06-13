@@ -9,7 +9,7 @@ const GamesList = () => {
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const userData = location.state;
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     console.log(userData, "hit userData");
