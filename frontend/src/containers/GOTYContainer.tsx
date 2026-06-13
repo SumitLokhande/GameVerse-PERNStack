@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { GOTYList } from "../dummyData";
 import type { GOTYGameDetail } from "../types/authTypes";
+import { Button } from "@headlessui/react";
+import { useAppDispatch } from "../redux/hooks";
+import { addToCart } from "../redux/Slices/cartSlice";
 
 function GOTYContainer() {
   const [selectedYear, setSelectedYear] = useState<number>(2023);
   const [activeImage, setActiveImage] = useState<string>();
   const [openSpecification, setOpenSpecification] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
 
   const years = Array.from(new Set(GOTYList.map((game) => game.year))).sort(
     (a, b) => b - a,
@@ -36,6 +40,23 @@ function GOTYContainer() {
 
   const showSpecification = () => {
     setOpenSpecification((prev) => !prev);
+  };
+
+  const addGameToCart = (game: GOTYGameDetail) => {
+    const payload = {
+      id: game.id,
+      title: game.title,
+      text: "game.text",
+      image: game.images[0],
+      platforms: game.platforms,
+      rating: game.rating,
+      price: game.price,
+      discount: game.discount,
+      description: game.description,
+      genre: game.genre,
+      quantity: 1,
+    };
+    dispatch(addToCart(payload));
   };
 
   return (
@@ -105,7 +126,7 @@ function GOTYContainer() {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-center lg:justify-start space-x-6 my-4">
+                <div className="flex items-center justify-center lg:justify-between space-x-6 my-4">
                   <div className="flex items-center space-x-2">
                     <span className="text-white/80">Rating:</span>
                     <div className="flex items-center space-x-1">
@@ -118,12 +139,23 @@ function GOTYContainer() {
                   <span className="text-white/80">
                     Developer: {game.developer}
                   </span>
+                  <span className="text-white font-semibold">
+                    ₹ {game.price}
+                  </span>
                 </div>
-                <div
-                  className="font-bold text-lg mt-8 cursor-pointer rounded-md p-2 bg-amber-500 w-2/4 text-center"
-                  onClick={() => showSpecification()}
-                >
-                  Show Specification
+                <div className="flex items-end justify-between mt-8">
+                  <div
+                    className="font-bold text-lg cursor-pointer rounded-md p-1 bg-amber-500 w-1/3 text-center"
+                    onClick={() => showSpecification()}
+                  >
+                    Show Specification
+                  </div>
+                  <Button
+                    className="rounded-md cursor-pointer bg-green-700 w-1/4 p-2 text-xs font-semibold text-white"
+                    onClick={() => addGameToCart(game)}
+                  >
+                    Add to Cart
+                  </Button>
                 </div>
               </div>
 

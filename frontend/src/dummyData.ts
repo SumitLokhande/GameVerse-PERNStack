@@ -1168,6 +1168,9 @@ export const GOTYList: GOTYGameDetail[] = [
     isWinner: true,
     category: "Game of the Year",
     platforms: ["PC", "PS5", "Xbox Series X"],
+    genre: "RPG",
+    discount: 20,
+    price: 49.99,
     recommendedSystemRequirements: {
       os: "Windows 11 (64-bit)",
       processor: "Intel Core i7-12700K / AMD Ryzen 7 7700X",
@@ -1197,6 +1200,9 @@ export const GOTYList: GOTYGameDetail[] = [
     isWinner: true,
     category: "Game of the Year",
     platforms: ["PS5"],
+    genre: "Platformer",
+    discount: 0,
+    price: 59.99,
     recommendedSystemRequirements: {
       os: "N/A (PlayStation 5 Exclusive)",
       processor: "N/A",
@@ -1231,6 +1237,9 @@ export const GOTYList: GOTYGameDetail[] = [
     isWinner: true,
     category: "Game of the Year",
     platforms: ["PC", "PS5", "Xbox Series X"],
+    genre: "RPG",
+    discount: 0,
+    price: 59.99,
     recommendedSystemRequirements: {
       os: "Windows 10 / 11 (64-bit)",
       processor: "Intel Core i7-8700K / AMD Ryzen 5 3600X",
@@ -1265,6 +1274,9 @@ export const GOTYList: GOTYGameDetail[] = [
     isWinner: true,
     category: "Game of the Year",
     platforms: ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X"],
+    genre: "Action RPG",
+    discount: 0,
+    price: 59.99,
     recommendedSystemRequirements: {
       os: "Windows 10 / 11 (64-bit)",
       processor: "Intel Core i7-8700K / AMD Ryzen 5 3600X",
@@ -1301,6 +1313,9 @@ export const GOTYList: GOTYGameDetail[] = [
       "Xbox Series X",
       "Nintendo Switch",
     ],
+    genre: "Co-op Platformer",
+    discount: 0,
+    price: 39.99,
     recommendedSystemRequirements: {
       os: "Windows 10 (64-bit)",
       processor: "Intel Core i5-3570K / AMD FX-8350",

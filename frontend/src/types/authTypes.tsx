@@ -61,5 +61,8 @@ export interface GOTYGameDetail {
   isWinner: boolean;
   category: string;
   platforms: string[];
+  genre: string;
+  discount: number;
+  price: number;
   recommendedSystemRequirements: SystemRequirements;
 }

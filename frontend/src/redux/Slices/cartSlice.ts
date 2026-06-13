@@ -38,14 +38,14 @@ const cartSlice = createSlice({
       console.log(action, "state in addToCart");
       state.cartItems.push(action.payload);
       Object.assign(state, calculateTotals(state.cartItems));
-      toast.success("Item added to cart");
+      toast.success("Game added to cart");
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
       state.cartItems = state.cartItems.filter(
         (item) => item.id !== action.payload,
       );
       Object.assign(state, calculateTotals(state.cartItems));
-      toast.info("Item removed from cart");
+      toast.info("Game removed from cart");
     },
     updateQuantity: (
       state,

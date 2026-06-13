@@ -77,8 +77,8 @@ const Cart = () => {
                   <li key={game.id} className="flex py-6">
                     <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
                       <img
-                        alt={game.image}
-                        src={game.title}
+                        src={game.image}
+                        alt={game.title}
                         className="size-full object-cover"
                       />
                     </div>
