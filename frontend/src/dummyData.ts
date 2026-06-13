@@ -770,8 +770,7 @@ export const allGames: GameDetail[] = [
   {
     id: 1,
     title: "Cyberpunk 2077",
-    image:
-      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp6823992.jpg",
     text: "Welcome to Night City, a megalopolis obsessed with power.",
     rating: 4.2,
     price: 2999,
@@ -784,8 +783,7 @@ export const allGames: GameDetail[] = [
   {
     id: 2,
     title: "The Witcher 3",
-    image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp1854635.jpg",
     text: "Become a professional monster hunter and embark on an epic journey.",
     rating: 4.8,
     price: 1799,
@@ -797,8 +795,7 @@ export const allGames: GameDetail[] = [
   {
     id: 3,
     title: "Dragon Age: Inquisition",
-    image:
-      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp2179404.jpg",
     text: "Lead the Inquisition against the forces of chaos.",
     rating: 4.5,
     price: 2499,
@@ -810,8 +807,7 @@ export const allGames: GameDetail[] = [
   {
     id: 4,
     title: "The Elder Scrolls V",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp72199.jpg",
     text: "Epic fantasy reborn in a vast open world.",
     rating: 4.7,
     price: 1799,
@@ -823,8 +819,7 @@ export const allGames: GameDetail[] = [
   {
     id: 13,
     title: "Minecraft",
-    image:
-      "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp2777682.jpg",
     text: "Explore infinite worlds and build everything from simple homes to castles.",
     rating: 4.7,
     price: 1999,
@@ -836,8 +831,7 @@ export const allGames: GameDetail[] = [
   {
     id: 15,
     title: "Terraria",
-    image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp2610586.jpg",
     text: "Dig, fight, explore, and build in a vast 2D world.",
     rating: 4.3,
     price: 479,
@@ -849,8 +843,7 @@ export const allGames: GameDetail[] = [
   {
     id: 16,
     title: "No Man's Sky",
-    image:
-      "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp1851426.jpg",
     text: "A sci-fi game of exploration and survival in an infinite universe.",
     rating: 3.7,
     price: 2400,
@@ -862,8 +855,7 @@ export const allGames: GameDetail[] = [
   {
     id: 9,
     title: "FIFA 24",
-    image:
-      "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp12593837.jpg",
     text: "Experience the World's Game with unrivaled realism.",
     rating: 4.0,
     price: 3499,
@@ -876,8 +868,7 @@ export const allGames: GameDetail[] = [
   {
     id: 10,
     title: "NBA 2K24",
-    image:
-      "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp12585965.jpg",
     text: "Grab your squad and experience the past, present, and future of hoops.",
     rating: 4.2,
     price: 3299,
@@ -889,8 +880,7 @@ export const allGames: GameDetail[] = [
   {
     id: 11,
     title: "Madden NFL 24",
-    image:
-      "https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp12699956.jpg",
     text: "Lead your team to gridiron glory in Madden.",
     rating: 3.8,
     price: 3499,
@@ -902,8 +892,7 @@ export const allGames: GameDetail[] = [
   {
     id: 12,
     title: "F1 2023",
-    image:
-      "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp9896704.jpg",
     text: "Be the last to brake in the official Formula One game.",
     rating: 4.1,
     price: 2999,
@@ -915,8 +904,7 @@ export const allGames: GameDetail[] = [
   {
     id: 5,
     title: "Call of Duty: MWIII",
-    image:
-      "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp13002741.jpg",
     text: "Adapt or die in a fight against the ultimate threat.",
     rating: 4.1,
     price: 5599,
@@ -928,8 +916,7 @@ export const allGames: GameDetail[] = [
   {
     id: 21,
     title: "Elden Ring",
-    image:
-      "https://images.unsplash.com/photo-1655635643532-fa9ba2648cbe?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp14808661.webp",
     text: "Rise, Tarnished, and be guided by grace to brandish the Elden Ring.",
     rating: 4.9,
     price: 3599,
@@ -941,8 +928,7 @@ export const allGames: GameDetail[] = [
   {
     id: 22,
     title: "God of War Ragnarök",
-    image:
-      "https://images.unsplash.com/photo-1608889174637-3c44f6326f2a?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp11690916.jpg",
     text: "Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on.",
     rating: 4.8,
     price: 3999,
@@ -955,8 +941,7 @@ export const allGames: GameDetail[] = [
   {
     id: 23,
     title: "Red Dead Redemption 2",
-    image:
-      "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp3770429.png",
     text: "An epic tale of life in America's unforgiving heartland.",
     rating: 4.9,
     price: 3199,
@@ -969,8 +954,7 @@ export const allGames: GameDetail[] = [
   {
     id: 24,
     title: "Grand Theft Auto V",
-    image:
-      "https://images.unsplash.com/photo-1548685913-fe65783aa75f?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp1809630.jpg",
     text: "Explore the vast world of Los Santos and Blaine County.",
     rating: 4.7,
     price: 2321,
@@ -982,8 +966,7 @@ export const allGames: GameDetail[] = [
   {
     id: 37,
     title: "Street Fighter 6",
-    image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp12751223.jpg",
     text: "The evolving fighting arena built for casual and pro warriors alike.",
     rating: 4.6,
     price: 3999,
@@ -995,8 +978,7 @@ export const allGames: GameDetail[] = [
   {
     id: 38,
     title: "Mortal Kombat 1",
-    image:
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp13016862.png",
     text: "Discover a reborn Mortal Kombat Universe created by the Fire God Liu Kang.",
     rating: 4.2,
     price: 4499,
@@ -1008,8 +990,7 @@ export const allGames: GameDetail[] = [
   {
     id: 39,
     title: "Tekken 8",
-    image:
-      "https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp12826870.jpg",
     text: "Fist Meets Fate in the ultimate next-generation fighting tournament.",
     rating: 4.7,
     price: 4399,
@@ -1021,8 +1002,7 @@ export const allGames: GameDetail[] = [
   {
     id: 40,
     title: "Super Smash Bros. Ultimate",
-    image:
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp3755804.jpg",
     text: "Legendary game worlds and characters collide in the ultimate showdown.",
     rating: 4.8,
     price: 4999,
@@ -1034,8 +1014,7 @@ export const allGames: GameDetail[] = [
   {
     id: 29,
     title: "Resident Evil 4 (Remake)",
-    image:
-      "https://images.unsplash.com/photo-1601987177651-8edfe6c20009?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp12116688.jpg",
     text: "Survival is just the beginning in this reimagined horror masterpiece.",
     rating: 4.8,
     price: 3599,
@@ -1047,8 +1026,7 @@ export const allGames: GameDetail[] = [
   {
     id: 30,
     title: "Dead by Daylight",
-    image:
-      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp2222211.jpg",
     text: "Death is not an escape in this asymmetrical multiplayer horror game.",
     rating: 4.1,
     price: 999,
@@ -1060,8 +1038,7 @@ export const allGames: GameDetail[] = [
   {
     id: 31,
     title: "Phasmophobia",
-    image:
-      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp7775365.jpg",
     text: "Use paranormal investigation equipment to gather evidence of ghost activity.",
     rating: 4.5,
     price: 690,
@@ -1073,8 +1050,7 @@ export const allGames: GameDetail[] = [
   {
     id: 32,
     title: "Outlast 2",
-    image:
-      "https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp2329691.jpg",
     text: "A twisted journey into the depths of the human mind and its dark secrets.",
     rating: 4.0,
     price: 1300,
@@ -1087,8 +1063,7 @@ export const allGames: GameDetail[] = [
   {
     id: 33,
     title: "Forza Horizon 5",
-    image:
-      "https://images.unsplash.com/photo-1612462551868-fba8b1d72368?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp12405465.jpg",
     text: "Your ultimate Horizon Adventure awaits! Explore vibrant open worlds.",
     rating: 4.7,
     price: 3499,
@@ -1100,8 +1075,7 @@ export const allGames: GameDetail[] = [
   {
     id: 34,
     title: "Need for Speed Unbound",
-    image:
-      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp11595581.png",
     text: "Race against time, outsmart the cops, and take on weekly qualifiers.",
     rating: 3.9,
     price: 3499,
@@ -1114,8 +1088,7 @@ export const allGames: GameDetail[] = [
   {
     id: 35,
     title: "Gran Turismo 7",
-    image:
-      "https://images.unsplash.com/photo-1562591176-bf1051528646?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp7722224.jpg",
     text: "The Real Driving Simulator. Find your line.",
     rating: 4.5,
     price: 4999,
@@ -1127,8 +1100,7 @@ export const allGames: GameDetail[] = [
   {
     id: 36,
     title: "Assetto Corsa Competizione",
-    image:
-      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp13905088.jpg",
     text: "The official GT World Challenge videogame.",
     rating: 4.4,
     price: 1999,
@@ -1140,8 +1112,7 @@ export const allGames: GameDetail[] = [
   {
     id: 25,
     title: "Civilization VI",
-    image:
-      "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp3805937.jpg",
     text: "Build an empire to stand the test of time.",
     rating: 4.4,
     price: 2499,
@@ -1154,8 +1125,7 @@ export const allGames: GameDetail[] = [
   {
     id: 26,
     title: "Age of Empires IV",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp9682100.jpg",
     text: "Epic historical battles await.",
     rating: 4.3,
     price: 2399,
@@ -1167,8 +1137,7 @@ export const allGames: GameDetail[] = [
   {
     id: 28,
     title: "Total War: Warhammer III",
-    image:
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&q=80",
+    image: "https://wallpapercave.com/wp/wp8532667.jpg",
     text: "Rally your forces and step into the Realm of Chaos.",
     rating: 4.1,
     price: 3399,
@@ -1184,11 +1153,12 @@ export const GOTYList: GOTYGameDetail[] = [
     id: 2025,
     title: "Clair Obscur: Expedition 33",
     developer: "Sandfall Interactive",
-    image:
-      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80",
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80",
+      "https://wallpapercave.com/wp/wp15037158.webp",
+      "https://wallpapercave.com/wp/wp15037159.webp",
+      "https://wallpapercave.com/wp/wp15037157.webp",
+      "https://wallpapercave.com/wp/wp15037156.webp",
+      "https://wallpapercave.com/wp/wp15037155.webp",
     ],
     year: 2025,
     awards: ["Game of the Year", "Best RPG", "Best Art Direction"],
@@ -1212,11 +1182,12 @@ export const GOTYList: GOTYGameDetail[] = [
     id: 2024,
     title: "Astro Bot",
     developer: "Team Asobi",
-    image:
-      "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&q=80",
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&q=80",
+      "https://wallpapercave.com/wp/wp14428873.jpg",
+      "https://wallpapercave.com/wp/wp8415018.jpg",
+      "https://wallpapercave.com/wp/wp14428871.jpg",
+      "https://wallpapercave.com/wp/wp12002657.jpg",
+      "https://wallpapercave.com/wp/wp8395512.jpg",
     ],
     year: 2024,
     awards: ["Game of the Year", "Best Game Direction", "Best Family Game"],
@@ -1240,11 +1211,12 @@ export const GOTYList: GOTYGameDetail[] = [
     id: 2023,
     title: "Baldur's Gate 3",
     developer: "Larian Studios",
-    image:
-      "https://images.unsplash.com/photo-1655635643532-fa9ba2648cbe?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1655635643532-fa9ba2648cbe?w=600&q=80",
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80",
+      "https://wallpapercave.com/wp/wp6376877.jpg",
+      "https://wallpapercave.com/wp/wp7527718.jpg",
+      "https://wallpapercave.com/wp/wp8231508.jpg",
+      "https://wallpapercave.com/wp/wp7527536.jpg",
+      "https://wallpapercave.com/wp/wp8231682.jpg",
     ],
     year: 2023,
     awards: [
@@ -1273,11 +1245,12 @@ export const GOTYList: GOTYGameDetail[] = [
     id: 2022,
     title: "Elden Ring",
     developer: "FromSoftware",
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&q=80",
-      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600&q=80",
+      "https://wallpapercave.com/wp/wp14808661.webp",
+      "https://wallpapercave.com/wp/wp13489035.jpg",
+      "https://wallpapercave.com/wp/wp14808666.webp",
+      "https://wallpapercave.com/wp/wp14035067.webp",
+      "https://wallpapercave.com/wp/wp14808672.webp",
     ],
     year: 2022,
     awards: [
@@ -1306,11 +1279,12 @@ export const GOTYList: GOTYGameDetail[] = [
     id: 2021,
     title: "It Takes Two",
     developer: "Hazelight Studios",
-    image:
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&q=80",
     images: [
-      "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=600&q=80",
-      "https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=600&q=80",
+      "https://wallpapercave.com/wp/wp14614899.jpg",
+      "https://wallpapercave.com/wp/wp14614900.jpg",
+      "https://wallpapercave.com/wp/wp14614906.jpg",
+      "https://wallpapercave.com/wp/wp14614909.jpg",
+      "https://wallpapercave.com/wp/wp14614912.jpg",
     ],
     year: 2021,
     awards: ["Game of the Year", "Best Family Game", "Best Multiplayer Game"],

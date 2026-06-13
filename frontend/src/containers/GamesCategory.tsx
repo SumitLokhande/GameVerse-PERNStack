@@ -1,7 +1,10 @@
 import React from "react";
 import { gamesCategories } from "../dummyData";
+import { useNavigate } from "react-router";
+import type { Category } from "../types/authTypes";
 
 const GamesCategory: React.FC = () => {
+  const navigate = useNavigate();
   // const [hoveredGame, setHoveredGame] = useState<number | null>(null);
 
   // const renderStars = (rating: number) => {
@@ -57,6 +60,14 @@ const GamesCategory: React.FC = () => {
 
   //   return stars;
   // };
+
+  const handleNavigation = (category: Category) => {
+    const userData = { category: category.name };
+
+    // Pass the route path first, then the state object
+    navigate("/game-list", { state: userData });
+  };
+
   const spanClasses = [
     "col-span-1 row-span-1",
     "col-span-2 row-span-1",
@@ -82,6 +93,7 @@ const GamesCategory: React.FC = () => {
             className={`relative overflow-hidden cursor-pointer rounded-xl shadow-lg hover:scale-105 transition-all duration-300 ${
               spanClasses[i % spanClasses.length]
             }`}
+            onClick={() => handleNavigation(category)}
           >
             <img
               src={category.backgroundImage}

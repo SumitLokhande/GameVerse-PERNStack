@@ -1,11 +1,25 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import GameCard from "../../generic/GameCard";
 import { allGames } from "../../dummyData";
+import { useLocation } from "react-router";
 
 const GamesList = () => {
+  const location = useLocation();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedGenre, setSelectedGenre] = useState("");
   const [selectedPlatform, setSelectedPlatform] = useState("");
+  const userData = location.state;
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    console.log(userData, "hit userData");
+    if (containerRef.current) {
+      containerRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    if (userData) {
+      setSelectedGenre(userData.category);
+    }
+  }, [userData]);
 
   const genres = useMemo(() => {
     const uniqueGenres = [...new Set(allGames.map((game) => game.genre))];
@@ -32,7 +46,7 @@ const GamesList = () => {
   }, [searchTerm, selectedGenre, selectedPlatform]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
+    <div ref={containerRef} className="min-h-screen bg-gray-900 text-white p-6">
       {/* Header Section */}
       <div className="flex items-center justify-between mb-8">
         {/* Filters on Left */}

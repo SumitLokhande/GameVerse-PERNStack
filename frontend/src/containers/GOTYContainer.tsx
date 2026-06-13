@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GOTYList } from "../dummyData";
+import type { GOTYGameDetail } from "../types/authTypes";
 
 function GOTYContainer() {
   const [selectedYear, setSelectedYear] = useState<number>(2023);
+  const [activeImage, setActiveImage] = useState<string>();
+  const [openSpecification, setOpenSpecification] = useState<boolean>(false);
 
   const years = Array.from(new Set(GOTYList.map((game) => game.year))).sort(
     (a, b) => b - a,
@@ -26,6 +29,15 @@ function GOTYContainer() {
     return stars;
   };
 
+  useEffect(() => {
+    const currentGame = GOTYList.find((game) => game.year === selectedYear);
+    setActiveImage(currentGame?.images[0]);
+  }, [selectedYear]);
+
+  const showSpecification = () => {
+    setOpenSpecification((prev) => !prev);
+  };
+
   return (
     <div className="bg-gray-900 text-white p-6">
       <div className="mb-8">
@@ -39,7 +51,7 @@ function GOTYContainer() {
 
       {/* Year Filter */}
       <div className="mb-8">
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-wrap gap-4 items-center justify-center">
           {years.map((year) => (
             <button
               key={year}
@@ -59,10 +71,7 @@ function GOTYContainer() {
       {/* GOTY Winners */}
       <div className="space-y-8">
         {filteredGames.map((game) => (
-          <div
-            key={game.id}
-            className="bg-linear-to-r from-yellow-600 to-orange-600 p-8 rounded-xl shadow-2xl"
-          >
+          <div key={game.id} className=" p-4 rounded-xl shadow-2xl">
             <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-8">
               <div className="lg:w-2/3 text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start mb-4">
@@ -85,7 +94,7 @@ function GOTYContainer() {
 
                 <p className="text-white/90 text-lg mb-4">{game.description}</p>
 
-                <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-4">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2 my-2">
                   {game.awards.map((award, index) => (
                     <span
                       key={index}
@@ -96,7 +105,7 @@ function GOTYContainer() {
                   ))}
                 </div>
 
-                <div className="flex items-center justify-center lg:justify-start space-x-4">
+                <div className="flex items-center justify-center lg:justify-start space-x-6 my-4">
                   <div className="flex items-center space-x-2">
                     <span className="text-white/80">Rating:</span>
                     <div className="flex items-center space-x-1">
@@ -110,15 +119,52 @@ function GOTYContainer() {
                     Developer: {game.developer}
                   </span>
                 </div>
+                <div
+                  className="font-bold text-lg mt-8 cursor-pointer rounded-md p-2 bg-amber-500 w-2/4 text-center"
+                  onClick={() => showSpecification()}
+                >
+                  Show Specification
+                </div>
               </div>
 
-              <div className="lg:w-1/3">
-                <img
-                  src={game.image}
-                  alt={game.title}
-                  className="w-full h-64 object-cover rounded-lg shadow-lg"
-                />
+              <div>
+                <div className="w-full p-2">
+                  <img
+                    src={activeImage}
+                    alt={game.title}
+                    className="w-full h-90 object-fit rounded-lg shadow-lg"
+                  />
+                </div>
+                <div className=" flex items-center justify-around gap-2 p-1 w-2xl">
+                  {game.images.map((image) => (
+                    <img
+                      src={image}
+                      alt={game.title}
+                      className={`w-full h-18 object-cover rounded-lg shadow-lg cursor-pointer ${activeImage === image && "border-green-700 border-b-3 shadow-2xl"}`}
+                      onClick={() => setActiveImage(image)}
+                    />
+                  ))}
+                </div>
               </div>
+            </div>
+            <div className="flex flex-col items-start m-2">
+              {openSpecification && (
+                <>
+                  {Object.keys(game.recommendedSystemRequirements).map(
+                    (option: string) => (
+                      <div>
+                        <span className="font-bold text-lg">
+                          {`${option.toUpperCase()}: `}
+                        </span>
+
+                        <span className="text-gray-500">
+                          {game.recommendedSystemRequirements[option]}
+                        </span>
+                      </div>
+                    ),
+                  )}
+                </>
+              )}
             </div>
           </div>
         ))}

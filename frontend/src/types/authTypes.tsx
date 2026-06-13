@@ -53,7 +53,6 @@ export interface GOTYGameDetail {
   id: number;
   title: string;
   developer: string;
-  image: string; // Primary hero image URL
   images: string[]; // Array of additional screenshot URLs
   year: number;
   awards: string[];

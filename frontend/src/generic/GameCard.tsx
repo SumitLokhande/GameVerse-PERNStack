@@ -87,7 +87,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
 
   return (
     <div
-      className={`bg-gray-800 h-75 w-45 rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105`}
+      className={`bg-gray-800 h-80 w-45 rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105`}
     >
       {/* Game Image */}
       <div className="relative p-2 " onClick={() => handleGameClick(game)}>
@@ -100,7 +100,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
 
       {/* Game Info */}
       <div className="px-2 flex flex-col h-auto">
-        <h3 className="text-sm text-left font-semibold text-white overflow-hidden text-wrap w-auto h-8 ">
+        <h3 className="text-sm text-left font-semibold text-white overflow-hidden text-wrap w-auto h-10 ">
           {game.title}
         </h3>
 
@@ -129,7 +129,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
             </span>
           )}
         </div> */}
-        <div className="flex justify-between gap-1 my-1">
+        <div className="flex justify-between gap-1 my-1 pt-2">
           <div className="items-start rounded-md cursor-pointer py-1.5 text-sm font-semibold text-white">
             ₹ {game.price}
           </div>
