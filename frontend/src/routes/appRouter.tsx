@@ -11,6 +11,7 @@ import GamesCategory from "../containers/GamesCategory";
 import GOTYContainer from "../containers/GOTYContainer";
 import Cart from "../pages/public/Cart";
 import Settings from "../pages/private/Settings";
+import GameDetails from "../pages/public/GameDetails";
 
 const AppRouter = () => {
   return (
@@ -25,6 +26,7 @@ const AppRouter = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/game-list" element={<GamesList />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/game-details/:name" element={<GameDetails />} />
       </Route>
       <Route element={<PrivateLayout />}>
         <Route path="/profile" element={<UserProfile />} />

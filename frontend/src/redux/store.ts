@@ -3,6 +3,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import userReducer from "./Slices/userSlice";
 import cartReducer from "./Slices/cartSlice";
+import gamesReducer from "./Slices/gamesSlice";
 import storageImport from "redux-persist/lib/storage";
 
 const storage = (storageImport as any).default || storageImport;
@@ -10,6 +11,7 @@ const storage = (storageImport as any).default || storageImport;
 const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,
+  games: gamesReducer,
 });
 
 const persistConfig = {

@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
-import { GOTYList } from "../dummyData";
 import type { GOTYGameDetail } from "../types/authTypes";
 import { Button } from "@headlessui/react";
-import { useAppDispatch } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { addToCart } from "../redux/Slices/cartSlice";
+import { getGOTYGamesList } from "../redux/Slices/gamesSlice";
 
 function GOTYContainer() {
   const [selectedYear, setSelectedYear] = useState<number>(2023);
   const [activeImage, setActiveImage] = useState<string>();
   const [openSpecification, setOpenSpecification] = useState<boolean>(false);
   const dispatch = useAppDispatch();
+  const GOTYList = useAppSelector((state) => state.games.allGOTYList);
+  useEffect(() => {
+    dispatch(getGOTYGamesList());
+  }, [dispatch]);
 
   const years = Array.from(new Set(GOTYList.map((game) => game.year))).sort(
     (a, b) => b - a,

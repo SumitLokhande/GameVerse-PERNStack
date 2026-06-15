@@ -1,7 +1,8 @@
-import React from "react";
-import { gamesCategories } from "../dummyData";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
 import type { Category } from "../types/authTypes";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { getGamesCategoriesList } from "../redux/Slices/gamesSlice";
 
 const GamesCategory: React.FC = () => {
   const navigate = useNavigate();
@@ -60,6 +61,14 @@ const GamesCategory: React.FC = () => {
 
   //   return stars;
   // };
+  const dispatch = useAppDispatch();
+  const gamesCategories = useAppSelector(
+    (state) => state.games.gamesCategories,
+  );
+
+  useEffect(() => {
+    dispatch(getGamesCategoriesList());
+  }, [dispatch]);
 
   const handleNavigation = (category: Category) => {
     const userData = { category: category.name };

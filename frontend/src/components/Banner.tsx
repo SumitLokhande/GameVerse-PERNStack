@@ -1,14 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@headlessui/react";
-import { latestGamesList } from "../dummyData";
 import type { GameDetail } from "../types/authTypes";
 import { addToCart } from "../redux/Slices/cartSlice";
-import { useAppDispatch } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { getLatestGamesList } from "../redux/Slices/gamesSlice";
 
 const Banner = () => {
   const dispatch = useAppDispatch();
+  const latestGamesList = useAppSelector((state) => state.games.latestGames);
   const [selectedNav, setSelectedNav] = useState(latestGamesList[0].id);
   const SLIDE_DURATION = 5000;
+
+  useEffect(() => {
+    dispatch(getLatestGamesList());
+  }, [dispatch]);
+
   const currentItem: GameDetail =
     latestGamesList.find((item) => item.id === selectedNav) ||
     latestGamesList[0];

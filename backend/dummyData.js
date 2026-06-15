@@ -1,6 +1,4 @@
-import type { Category, GameDetail, GOTYGameDetail } from "./types/authTypes";
-
-export const latestGamesList: GameDetail[] = [
+export const latestGamesList = [
   {
     id: 101,
     title: "Crysis",
@@ -58,8 +56,7 @@ export const latestGamesList: GameDetail[] = [
   {
     id: 104,
     title: "Mortal Kombat",
-    image:
-      "https://scontent.fpnq7-6.fna.fbcdn.net/v/t39.30808-6/496006676_4285181185046705_2630935143941272565_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=111&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=RPnahlYseIYQ7kNvwGC-bZ0&_nc_oc=AdoHV6JJUcPmuLx0e5NG0afEUCsQMNCkovkugepXlcERaqj8J_AbE1sORVuA6DP2Y-8ybLhICcbWHf7c8rKWT0m5&_nc_zt=23&_nc_ht=scontent.fpnq7-6.fna&_nc_gid=mFfUOo4zbvqiD5yIpGXSFw&_nc_ss=7b2a8&oh=00_Af_TwzpYPx1Ut9uZ26-yzbP_mrzOV5nhwOsuDb92X1YBIw&oe=6A2B2DE2",
+    image: "https://wallpapercave.com/wp/wp13016862.png",
     text: "Test your might in the iconic and brutal arenas of Mortal Kombat.",
     genre: "Fighting",
     rating: 4.6,
@@ -161,612 +158,64 @@ export const latestGamesList: GameDetail[] = [
   },
 ];
 
-export const gamesCategories: Category[] = [
+export const gamesCategories = [
   {
-    id: "rpg",
+    id: 1,
     name: "RPG",
-    description: "Immerse yourself in epic role-playing adventures",
-    color: "from-purple-600 to-blue-600",
     backgroundImage:
       "https://scontent.fpnq7-7.fna.fbcdn.net/v/t39.30808-6/541678251_804297732250685_4928180402584960456_n.jpg?stp=dst-jpg_tt6&cstp=mx736x414&ctp=s736x414&_nc_cat=106&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=SId72a1p9JcQ7kNvwF6kfNe&_nc_oc=Adqai2VrR9QyqkC9GQLoActtlMP61PtXjB8eNMIctlTQfi5tuSMwbn_NvI_E63ZvPnILj7WpkymxCqFBGJDFUD81&_nc_zt=23&_nc_ht=scontent.fpnq7-7.fna&_nc_gid=1vZ82kzbMp_k7zZjumLsyw&_nc_ss=7b2a8&oh=00_Af_h5BR_eWB6W0OJ76-6Fy_XcrQZ8LcmQF-mjYwaoa7-kQ&oe=6A2DDF1F",
-    games: [
-      {
-        id: 1,
-        title: "Cyberpunk 2077",
-        image: "https://picsum.photos/200/150?random=1",
-        text: "Welcome to Night City, a megalopolis obsessed with power.",
-        rating: 4.2,
-        price: 59.99,
-        discount: 20,
-        genre: "RPG",
-        description:
-          "An open-world, action-adventure RPG set in the dark future of Night City, a dangerous megalopolis where power and modifications are everything.",
-        platforms: ["PC", "PS5", "Xbox Series X", "PS4", "Xbox One"],
-      },
-      {
-        id: 2,
-        title: "The Witcher 3",
-        image: "https://picsum.photos/200/150?random=2",
-        text: "Become a professional monster hunter and embark on an epic journey.",
-        rating: 4.8,
-        price: 39.99,
-        genre: "RPG",
-        description:
-          "A story-driven open world RPG set in a visually stunning dark fantasy universe where you play as Geralt of Rivia, a monster hunter for hire.",
-        platforms: [
-          "PC",
-          "PS5",
-          "Xbox Series X",
-          "PS4",
-          "Xbox One",
-          "Nintendo Switch",
-        ],
-      },
-      {
-        id: 3,
-        title: "Dragon Age: Inquisition",
-        image: "https://picsum.photos/200/150?random=3",
-        text: "Lead the Inquisition against the forces of chaos.",
-        rating: 4.5,
-        price: 29.99,
-        genre: "RPG",
-        description:
-          "A massive action role-playing game where a cataclysmic event plunges the land of Thedas into turmoil, and you must lead the Inquisition to restore order.",
-        platforms: ["PC", "PS4", "Xbox One", "PS3", "Xbox 360"],
-      },
-      {
-        id: 4,
-        title: "The Elder Scrolls V",
-        image: "https://picsum.photos/200/150?random=4",
-        text: "Epic fantasy reborn in a vast open world.",
-        rating: 4.7,
-        price: 19.99,
-        genre: "RPG",
-        description:
-          "The definitive open-world fantasy epic where players can choose any path, play as the Dragonborn, and determine the fate of the empire.",
-        platforms: [
-          "PC",
-          "PS5",
-          "Xbox Series X",
-          "PS4",
-          "Xbox One",
-          "Nintendo Switch",
-        ],
-      },
-    ],
   },
   {
-    id: "sandbox",
+    id: 2,
     name: "Sandbox",
-    description: "Unleash your creativity in open worlds",
-    color: "from-yellow-600 to-orange-500",
     backgroundImage:
       "https://scontent.fpnq7-7.fna.fbcdn.net/v/t1.6435-9/49102300_1947651862197978_2336654773882716160_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=pFZLGWKAkk8Q7kNvwG3aDml&_nc_oc=AdomgKPBD2beNRzF8zZA90j4OVKkg6NT-yPpCb5eHFXldm5WOhe3LuO2WB1bJ_Qu4o0tzzm3mu_eah3cj-4t8QEo&_nc_zt=23&_nc_ht=scontent.fpnq7-7.fna&_nc_gid=SImJClaJkUAoMumOuDJK3A&_nc_ss=7b2a8&oh=00_Af_L6R2fXyZfC0aMVHdFku1Yp3TzQ3DDeA3FIJN_7wVy_A&oe=6A4FABB3",
-    games: [
-      {
-        id: 13,
-        title: "Minecraft",
-        image: "https://picsum.photos/200/150?random=13",
-        text: "Explore infinite worlds and build everything from simple homes to castles.",
-        rating: 4.7,
-        price: 29.99,
-        genre: "Sandbox",
-        description:
-          "A block-building sandbox game focused on exploration, survival, and limitless creativity in procedurally generated 3D environments.",
-        platforms: [
-          "PC",
-          "Android",
-          "iOS",
-          "Xbox One",
-          "PS4",
-          "Nintendo Switch",
-        ],
-      },
-      {
-        id: 14,
-        title: "Roblox",
-        image: "https://picsum.photos/200/150?random=14",
-        text: "The ultimate virtual universe that lets you create and share experiences.",
-        rating: 3.9,
-        price: 20,
-        genre: "Sandbox",
-        description:
-          "An online game platform and storefront system that allows users to program games and play games created by other users.",
-        platforms: ["PC", "Xbox One", "PS4", "iOS", "Android"],
-      },
-      {
-        id: 15,
-        title: "Terraria",
-        image: "https://picsum.photos/200/150?random=15",
-        text: "Dig, fight, explore, and build in a vast 2D world.",
-        rating: 4.3,
-        price: 9.99,
-        genre: "Sandbox",
-        description:
-          "A 2D sandbox action-adventure game emphasizing crafting, building, boss fighting, and deep cavern exploration.",
-        platforms: [
-          "PC",
-          "PS4",
-          "Xbox One",
-          "Nintendo Switch",
-          "iOS",
-          "Android",
-        ],
-      },
-      {
-        id: 16,
-        title: "No Man's Sky",
-        image: "https://picsum.photos/200/150?random=16",
-        text: "A sci-fi game of exploration and survival in an infinite universe.",
-        rating: 3.7,
-        price: 39.99,
-        genre: "Sandbox",
-        description:
-          "An ambitious space exploration sandbox game featuring a procedurally generated universe containing billions of unique planets to discover.",
-        platforms: [
-          "PC",
-          "PS5",
-          "Xbox Series X",
-          "PS4",
-          "Xbox One",
-          "Nintendo Switch",
-        ],
-      },
-    ],
   },
   {
-    id: "sports",
+    id: 3,
     name: "Sports",
-    description: "Experience realistic sports simulation",
-    color: "from-green-600 to-teal-600",
     backgroundImage:
       "https://scontent.fpnq7-4.fna.fbcdn.net/v/t1.6435-9/122060849_2395305047432655_6301721277857317084_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=GUgiVMnjX0YQ7kNvwEcKQvs&_nc_oc=AdqkibYEgQ-oDmdhe8tf1VoEUumK-R5CkSQhtWWT2qTTuyzllDJHznij_VoWpluttO2xvYYzS0WKqXTTugUUEJLl&_nc_zt=23&_nc_ht=scontent.fpnq7-4.fna&_nc_gid=VqnyV6W2hbs-_63nQ9SEAg&_nc_ss=7b2a8&oh=00_Af-QJ_Ipt70LKHJBp0JGKOitjq5ptL7T3YxmG0a31NUwXg&oe=6A4F88C8",
-    games: [
-      {
-        id: 9,
-        title: "FIFA 24",
-        image: "https://picsum.photos/200/150?random=9",
-        text: "Experience the World's Game with unrivaled realism.",
-        rating: 4.0,
-        price: 69.99,
-        discount: 15,
-        genre: "Sports",
-        description:
-          "The premier football sports simulation engine delivering next-generation tactical engine dynamics and authentic player modeling.",
-        platforms: [
-          "PC",
-          "PS5",
-          "Xbox Series X",
-          "PS4",
-          "Xbox One",
-          "Nintendo Switch",
-        ],
-      },
-      {
-        id: 10,
-        title: "NBA 2K24",
-        image: "https://picsum.photos/200/150?random=10",
-        text: "Grab your squad and experience the past, present, and future of hoops.",
-        rating: 4.2,
-        price: 59.99,
-        genre: "Sports",
-        description:
-          "An elite basketball simulation replicating professional NBA action with highly detailed franchise modes and dynamic online street courts.",
-        platforms: [
-          "PC",
-          "PS5",
-          "Xbox Series X",
-          "PS4",
-          "Xbox One",
-          "Nintendo Switch",
-        ],
-      },
-      {
-        id: 11,
-        title: "Madden NFL 24",
-        image: "https://picsum.photos/200/150?random=11",
-        text: "Lead your team to gridiron glory in Madden.",
-        rating: 3.8,
-        price: 59.99,
-        genre: "Sports",
-        description:
-          "Replicate authentic American football matchups with enhanced collision systems and tactical playbook implementations.",
-        platforms: ["PC", "PS5", "Xbox Series X", "PS4", "Xbox One"],
-      },
-      {
-        id: 12,
-        title: "F1 2023",
-        image: "https://picsum.photos/200/150?random=12",
-        text: "Be the last to brake in the official Formula One game.",
-        rating: 4.1,
-        price: 49.99,
-        genre: "Sports",
-        description:
-          "The official racing simulation of the FIA Formula One World Championship featuring all real-world drivers, teams, and technical tracks.",
-        platforms: ["PC", "PS5", "Xbox Series X", "PS4", "Xbox One"],
-      },
-    ],
   },
   {
-    id: "fps",
+    id: 4,
     name: "FPS",
-    description: "Fast-paced first-person shooter action",
-    color: "from-red-600 to-orange-600",
     backgroundImage:
       "https://scontent.fpnq7-10.fna.fbcdn.net/v/t39.30808-6/306163056_395896469359663_7079360747547170045_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=hiK-M0_B7zkQ7kNvwFMc8vU&_nc_oc=AdomJxW3UxBN3VZHVzvHV716itzOvDfpWPIFUTnUumzc4Wpitu8x-677_Q5LHO3dBs9M-qTbkFbvPyvdZK_ueIbL&_nc_zt=23&_nc_ht=scontent.fpnq7-10.fna&_nc_gid=FhUjmVSvzZm3rPKT_fsXYQ&_nc_ss=7b2a8&oh=00_Af_lCQr7GX6GZE2I07rSnR_V1tFSEU8qVJoMkl9qB21hCw&oe=6A2E0853",
-    games: [
-      {
-        id: 5,
-        title: "Call of Duty: MWIII",
-        image: "https://picsum.photos/200/150?random=5",
-        text: "Adapt or die in a fight against the ultimate threat.",
-        rating: 4.1,
-        price: 69.99,
-        genre: "FPS",
-        description:
-          "A fast-paced military multiplayer and blockbuster cinematic first-person military campaign pushing modern infantry combat bounds.",
-        platforms: ["PC", "PS5", "Xbox Series X", "PS4", "Xbox One"],
-      },
-      {
-        id: 6,
-        title: "Counter-Strike 2",
-        image: "https://picsum.photos/200/150?random=6",
-        text: "The premier competitive tactical squad game.",
-        rating: 4.3,
-        price: 20,
-        genre: "FPS",
-        description:
-          "A tactical five-versus-five team-based shooter focusing on mechanical aim skill, precise smoke setups, and map macro strategy.",
-        platforms: ["PC"],
-      },
-      {
-        id: 7,
-        title: "Apex Legends",
-        image: "https://picsum.photos/200/150?random=7",
-        text: "Conquer with character in a free-to-play battle royale shooter.",
-        rating: 4.0,
-        price: 20,
-        genre: "FPS",
-        description:
-          "A hero-driven high-mobility battle royale where squads match unique futuristic tactical toolsets across sprawling dynamic battlefields.",
-        platforms: [
-          "PC",
-          "PS4",
-          "Xbox One",
-          "Nintendo Switch",
-          "PS5",
-          "Xbox Series X",
-        ],
-      },
-      {
-        id: 8,
-        title: "Valorant",
-        image: "https://picsum.photos/200/150?random=8",
-        text: "A character-based 5v5 tactical shooter where gunplay meets utility.",
-        rating: 4.4,
-        price: 20,
-        genre: "FPS",
-        description:
-          "A competitive mechanical shooter blending hyper-accurate hitscan mechanics with unique fantasy hero ability utility packages.",
-        platforms: ["PC", "PS5", "Xbox Series X"],
-      },
-    ],
   },
   {
-    id: "action-adventure",
+    id: 5,
     name: "Action-Adventure",
-    description:
-      "Thrilling stories combined with intense combat and exploration",
-    color: "from-sky-600 to-indigo-700",
     backgroundImage:
       "https://scontent.fpnq7-1.fna.fbcdn.net/v/t1.6435-9/48249833_1935754300054401_116974108616425472_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1280&ctp=s2048x1280&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=YuBgyKTJ1eQQ7kNvwF3dQZb&_nc_oc=Adq2MeWkmA_2VclCn60z-WXnthH4IqM39nYVV6meDCw7jGFv_0jk2Vpcymisp3uQ9Rd-MEsWBROfzFv_rNFQmDZx&_nc_zt=23&_nc_ht=scontent.fpnq7-1.fna&_nc_gid=21WLLZWG63MgVt9KAmEfgQ&_nc_ss=7b2a8&oh=00_Af_jDh8y-bmxAseRUxNPgQVV-7NGscvHONa00bGNLlupLQ&oe=6A4FA1A6",
-    games: [
-      {
-        id: 21,
-        title: "Elden Ring",
-        image: "https://picsum.photos/200/150?random=21",
-        text: "Rise, Tarnished, and be guided by grace to brandish the Elden Ring.",
-        rating: 4.9,
-        price: 59.99,
-        genre: "Action-Adventure",
-        description:
-          "An sprawling open-world action masterpiece showcasing rigorous high-stakes swordplay within an layered dark fantasy ecosystem.",
-        platforms: ["PC", "PS5", "Xbox Series X", "PS4", "Xbox One"],
-      },
-      {
-        id: 22,
-        title: "God of War Ragnarök",
-        image: "https://picsum.photos/200/150?random=22",
-        text: "Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on.",
-        rating: 4.8,
-        price: 69.99,
-        discount: 10,
-        genre: "Action-Adventure",
-        description:
-          "Follow the intense emotional mythic journey of Kratos and Atreus as they navigate ancient prophecy and Norse apocalyptic horizons.",
-        platforms: ["PS5", "PS4", "PC"],
-      },
-      {
-        id: 23,
-        title: "Red Dead Redemption 2",
-        image: "https://picsum.photos/200/150?random=23",
-        text: "An epic tale of life in America's unforgiving heartland.",
-        rating: 4.9,
-        price: 59.99,
-        discount: 60,
-        genre: "Action-Adventure",
-        description:
-          "A deeply interactive open-world western tracking Arthur Morgan and the infamous Van der Linde gang as they run from the dawn of industrialization.",
-        platforms: ["PC", "PS4", "Xbox One"],
-      },
-      {
-        id: 24,
-        title: "Grand Theft Auto V",
-        image: "https://picsum.photos/200/150?random=24",
-        text: "Explore the vast world of Los Santos and Blaine County.",
-        rating: 4.7,
-        price: 29.99,
-        genre: "Action-Adventure",
-        description:
-          "A satirical open-world crime thriller featuring interwoven paths of three criminals pulling off major multi-stage heist sequences.",
-        platforms: [
-          "PC",
-          "PS5",
-          "Xbox Series X",
-          "PS4",
-          "Xbox One",
-          "PS3",
-          "Xbox 360",
-        ],
-      },
-    ],
   },
   {
-    id: "fighting",
+    id: 6,
     name: "Fighting",
-    description:
-      "Go head-to-head in precise, martial arts-driven competitive brawls",
-    color: "from-rose-700 to-orange-600",
     backgroundImage:
       "https://scontent.fpnq7-9.fna.fbcdn.net/v/t39.30808-6/495740684_3008250769352391_3077427185784118430_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=102&ccb=1-7&_nc_sid=536f4a&_nc_ohc=VXylwiBK4Q0Q7kNvwGjpQBo&_nc_oc=AdqZfn_hN3Hk6LuDL9WYZ67gZvG-CYESDAuZEyy5aMu9vWg8LOaUdF-16T-P47YZofaTY0kvibP4-9i03ocihldS&_nc_zt=23&_nc_ht=scontent.fpnq7-9.fna&_nc_gid=ApDjYHSiqLLVj5jw2odGPg&_nc_ss=7b2a8&oh=00_Af-pGEcbTke-JuAg1pUVGWMB8lzF9poVe9BImiVQeCgpgw&oe=6A2E01DD",
-    games: [
-      {
-        id: 37,
-        title: "Street Fighter 6",
-        image: "https://picsum.photos/200/150?random=37",
-        text: "The evolving fighting arena built for casual and pro warriors alike.",
-        rating: 4.6,
-        price: 59.99,
-        genre: "Fighting",
-        description:
-          "Capcom's elite fighting evolution integrating fluid command link systems alongside robust neutral tactical control spacing mechanics.",
-        platforms: ["PC", "PS5", "PS4", "Xbox Series X"],
-      },
-      {
-        id: 38,
-        title: "Mortal Kombat 1",
-        image: "https://picsum.photos/200/150?random=38",
-        text: "Discover a reborn Mortal Kombat Universe created by the Fire God Liu Kang.",
-        rating: 4.2,
-        price: 69.99,
-        genre: "Fighting",
-        description:
-          "A complete structural combat reset featuring dramatic Kameo partner combat dynamics alongside iconic bone-crushing finish maneuvers.",
-        platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
-      },
-      {
-        id: 39,
-        title: "Tekken 8",
-        image: "https://picsum.photos/200/150?random=39",
-        text: "Fist Meets Fate in the ultimate next-generation fighting tournament.",
-        rating: 4.7,
-        price: 69.99,
-        genre: "Fighting",
-        description:
-          "The peak implementation of intense 3D arena spatial fighting mechanics emphasizing tactical spatial aggression and robust combo architecture.",
-        platforms: ["PC", "PS5", "Xbox Series X"],
-      },
-      {
-        id: 40,
-        title: "Super Smash Bros. Ultimate",
-        image: "https://picsum.photos/200/150?random=40",
-        text: "Legendary game worlds and characters collide in the ultimate showdown.",
-        rating: 4.8,
-        price: 59.99,
-        genre: "Fighting",
-        description:
-          "The ultimate historic celebration crossover brawler matching vast dynamic rosters on custom changing geographic platform sets.",
-        platforms: ["Nintendo Switch"],
-      },
-    ],
   },
   {
-    id: "horror",
+    id: 7,
     name: "Horror",
-    description: "Face your deepest fears in terrifying survival experiences",
-    color: "from-zinc-900 to-red-950",
     backgroundImage:
       "https://scontent.fpnq7-4.fna.fbcdn.net/v/t1.6435-9/51795563_1971043259858838_6754995215913713664_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kGhfw1W-5gYQ7kNvwHViCnu&_nc_oc=AdqctT03sIzmxua3uMa1sJgGTmmddV17KsSRfrGDBLHkmjflMohFzdWKxBGelwqR8aBGtw-JbyUP5FjXUEdwQa1Z&_nc_zt=23&_nc_ht=scontent.fpnq7-4.fna&_nc_gid=D_ihWucW5SiJuqHWSvq68w&_nc_ss=7b2a8&oh=00_Af_2LPNYY9Mb_JE0lKQHpwNP8qFjZ7jhNJp3PwKiIEK3_g&oe=6A4F9181",
-    games: [
-      {
-        id: 29,
-        title: "Resident Evil 4 (Remake)",
-        image: "https://picsum.photos/200/150?random=29",
-        text: "Survival is just the beginning in this reimagined horror masterpiece.",
-        rating: 4.8,
-        price: 59.99,
-        genre: "Horror",
-        description:
-          "An intensive third-person overhaul matching survival biological anxiety with tight defensive ammunition micromanagement loop cycles.",
-        platforms: ["PC", "PS5", "Xbox Series X", "PS4"],
-      },
-      {
-        id: 30,
-        title: "Dead by Daylight",
-        image: "https://picsum.photos/200/150?random=30",
-        text: "Death is not an escape in this asymmetrical multiplayer horror game.",
-        rating: 4.1,
-        price: 19.99,
-        genre: "Horror",
-        description:
-          "An intense multi-perspective 4v1 escape contest matching vulnerable ground survivors against a single relentless specialized serial tracking monster.",
-        platforms: [
-          "PC",
-          "PS4",
-          "Xbox One",
-          "Nintendo Switch",
-          "PS5",
-          "Xbox Series X",
-        ],
-      },
-      {
-        id: 31,
-        title: "Phasmophobia",
-        image: "https://picsum.photos/200/150?random=31",
-        text: "Use paranormal investigation equipment to gather evidence of ghost activity.",
-        rating: 4.5,
-        price: 13.99,
-        genre: "Horror",
-        description:
-          "A cooperative audio-spatial investigation puzzle testing precise hardware deployment loops against highly responsive, invisible dynamic entities.",
-        platforms: ["PC", "PS5", "Xbox Series X/S"],
-      },
-      {
-        id: 32,
-        title: "Outlast 2",
-        image: "https://picsum.photos/200/150?random=32",
-        text: "A twisted journey into the depths of the human mind and its dark secrets.",
-        rating: 4.0,
-        price: 29.99,
-        discount: 80,
-        genre: "Horror",
-        description:
-          "A helpless first-person descent removing combat capacity entirely, forcing immediate flight dynamics using limited camera battery illumination frameworks.",
-        platforms: ["PC", "PS4", "Xbox One", "Nintendo Switch"],
-      },
-    ],
   },
   {
-    id: "racing",
+    id: 8,
     name: "Racing",
-    description: "Burn rubber and master high-speed vehicle control",
-    color: "from-emerald-600 to-cyan-600",
     backgroundImage:
       "https://scontent.fpnq7-4.fna.fbcdn.net/v/t1.6435-9/47685442_1936166116679886_7110898479760670720_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1280&ctp=s2048x1280&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=CYk7wGTSKPkQ7kNvwHDlfr-&_nc_oc=AdqiJNbml8bmLEVelXEWblPV9XEw6iwp9on5u6vln_bksExs7RMV0IwPRtbmOXJq5Ux0BQZwTIxxbjqQsXEdOsOU&_nc_zt=23&_nc_ht=scontent.fpnq7-4.fna&_nc_gid=C3ORMdZLYIq3s4QKi2bAEw&_nc_ss=7b2a8&oh=00_Af_RUl-ykqjg4NdkmkGoJqeqdUT4YXQxS24uxWfhI-H0fg&oe=6A4FA7DC",
-    games: [
-      {
-        id: 33,
-        title: "Forza Horizon 5",
-        image: "https://picsum.photos/200/150?random=33",
-        text: "Your ultimate Horizon Adventure awaits! Explore vibrant open worlds.",
-        rating: 4.7,
-        price: 59.99,
-        genre: "Racing",
-        description:
-          "An exquisite open world automotive experience mapping highly meticulous physics across gorgeous, changing atmospheric terrains.",
-        platforms: ["PC", "Xbox Series X", "Xbox One"],
-      },
-      {
-        id: 34,
-        title: "Need for Speed Unbound",
-        image: "https://picsum.photos/200/150?random=34",
-        text: "Race against time, outsmart the cops, and take on weekly qualifiers.",
-        rating: 3.9,
-        price: 69.99,
-        discount: 40,
-        genre: "Racing",
-        description:
-          "An arcade racing thriller matching cell-shaded visual flourishes with technical illegal drift and high stakes metropolitan police evasion metrics.",
-        platforms: ["PC", "PS5", "Xbox Series X"],
-      },
-      {
-        id: 35,
-        title: "Gran Turismo 7",
-        image: "https://picsum.photos/200/150?random=35",
-        text: "The Real Driving Simulator. Find your line.",
-        rating: 4.5,
-        price: 69.99,
-        genre: "Racing",
-        description:
-          "The peak implementation of absolute track simulation precision covering historic vehicle conservation catalogs and hyper-authentic track tire traction dynamics.",
-        platforms: ["PS5", "PS4"],
-      },
-      {
-        id: 36,
-        title: "Assetto Corsa Competizione",
-        image: "https://picsum.photos/200/150?random=36",
-        text: "The official GT World Challenge videogame.",
-        rating: 4.4,
-        price: 39.99,
-        genre: "Racing",
-        description:
-          "An elite commercial motorsport engineering simulation providing pristine tire fidelity modeling, exact wheel inputs, and specialized GT circuit fidelity.",
-        platforms: ["PC", "PS5", "Xbox Series X", "PS4", "Xbox One"],
-      },
-    ],
   },
   {
-    id: "strategy",
+    id: 9,
     name: "Strategy",
-    description: "Outwit your opponents with tactical planning and execution",
-    color: "from-amber-700 to-yellow-600",
     backgroundImage:
       "https://scontent.fpnq7-6.fna.fbcdn.net/v/t1.6435-9/48363673_1936164836680014_8102460021561884672_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fFpUMFBdLGgQ7kNvwH0rGxr&_nc_oc=Adp8TwTivEmkfKobY5qeuhb4-d5LHO2WbkyKhHKb1jkB_FslvOSvoEKOzjKHLKZliaZptxRIiXkEB1mpmYiYAH_R&_nc_zt=23&_nc_ht=scontent.fpnq7-6.fna&_nc_gid=9MGjBkHbP4zh9oZmcZZB5A&_nc_ss=7b2a8&oh=00_Af-3Iw-I0yolGLe-zHL_ukz_kkm_rYaOB-OOxik6yR-0cw&oe=6A4F9A8E",
-    games: [
-      {
-        id: 25,
-        title: "Civilization VI",
-        image: "https://picsum.photos/200/150?random=25",
-        text: "Build an empire to stand the test of time.",
-        rating: 4.4,
-        price: 59.99,
-        discount: 75,
-        genre: "Strategy",
-        description:
-          "A turn-based strategy game in which you attempt to build an empire to stand the test of time, expanding your empire across the map.",
-        platforms: ["PC", "PS4", "Xbox One", "Nintendo Switch", "iOS"],
-      },
-      {
-        id: 26,
-        title: "Age of Empires IV",
-        image: "https://picsum.photos/200/150?random=26",
-        text: "Epic historical battles await.",
-        rating: 4.3,
-        price: 39.99,
-        genre: "Strategy",
-        description:
-          "Puts you at the center of epic historical battles that shaped the modern world in a real-time strategy experience.",
-        platforms: ["PC", "Xbox Series X", "Xbox One"],
-      },
-      {
-        id: 27,
-        title: "StarCraft II",
-        image: "https://picsum.photos/200/150?random=27",
-        text: "Wage real-time sci-fi war.",
-        rating: 4.6,
-        price: 20,
-        genre: "Strategy",
-        description:
-          "Wage real-time sci-fi war across the galaxy using three uniquely powerful races.",
-        platforms: ["PC"],
-      },
-      {
-        id: 28,
-        title: "Total War: Warhammer III",
-        image: "https://picsum.photos/200/150?random=28",
-        text: "Rally your forces and step into the Realm of Chaos.",
-        rating: 4.1,
-        price: 59.99,
-        genre: "Strategy",
-        description:
-          "A brilliant mix of granular, turn-based kingdom management combined with intense real-time strategic sandbox combat controls.",
-        platforms: ["PC", "macOS", "Linux"],
-      },
-    ],
   },
 ];
 
-export const allGames: GameDetail[] = [
+export const allGames = [
   {
     id: 1,
     title: "Cyberpunk 2077",
@@ -1148,7 +597,7 @@ export const allGames: GameDetail[] = [
   },
 ];
 
-export const GOTYList: GOTYGameDetail[] = [
+export const GOTYList = [
   {
     id: 2025,
     title: "Clair Obscur: Expedition 33",

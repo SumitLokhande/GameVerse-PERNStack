@@ -34,7 +34,7 @@ export const useAxios = makeUseAxios({
 axiosInstance.interceptors.request.use(
   (config: AxiosRequestConfig): InternalAxiosRequestConfig => {
     const customConfig = config as InternalAxiosRequestConfig;
-    const accessToken = "asdfjkanl"; // Replace with a function to fetch a real token in production
+    const accessToken = sessionStorage.getItem("token");
 
     if (!customConfig?.headers?.Authorization) {
       customConfig.headers.Authorization = `Bearer ${accessToken}`;

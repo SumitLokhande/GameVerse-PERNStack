@@ -3,6 +3,7 @@ import React from "react";
 import type { GameDetail } from "../types/authTypes";
 import { useAppDispatch } from "../redux/hooks";
 import { addToCart } from "../redux/Slices/cartSlice";
+import { useNavigate } from "react-router";
 
 interface GameCardProps {
   game: GameDetail;
@@ -10,8 +11,10 @@ interface GameCardProps {
 
 const GameCard: React.FC<GameCardProps> = ({ game }) => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const handleGameClick = (game: GameDetail) => {
+    navigate(`/game-details/${game.title}`);
     console.log(game, "game Card clicked ");
   };
 

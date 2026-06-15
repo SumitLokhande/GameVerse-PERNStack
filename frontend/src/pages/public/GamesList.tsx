@@ -1,7 +1,8 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import GameCard from "../../generic/GameCard";
-import { allGames } from "../../dummyData";
 import { useLocation } from "react-router";
+import { getAllGamesList } from "../../redux/Slices/gamesSlice";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 const GamesList = () => {
   const location = useLocation();
@@ -10,6 +11,8 @@ const GamesList = () => {
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const userData = location.state;
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const dispatch = useAppDispatch();
+  const allGames = useAppSelector((state) => state.games.allGames);
 
   useEffect(() => {
     console.log(userData, "hit userData");
@@ -20,6 +23,10 @@ const GamesList = () => {
       setSelectedGenre(userData.category);
     }
   }, [userData]);
+
+  useEffect(() => {
+    dispatch(getAllGamesList());
+  }, [dispatch]);
 
   const genres = useMemo(() => {
     const uniqueGenres = [...new Set(allGames.map((game) => game.genre))];

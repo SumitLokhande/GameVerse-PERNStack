@@ -5,6 +5,7 @@ import cors from "cors";
 
 //Import routes
 import authRoutes from "./routes/authRoute.js";
+import gamesRoutes from "./routes/gamesRoutes.js";
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 
 // API routes
 app.use("/api/auth", authRoutes);
+app.use("/api/games", gamesRoutes);
 
 const PORT = process.env.PORT || 5000;
 
