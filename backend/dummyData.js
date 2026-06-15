@@ -228,42 +228,13 @@ export const allGames = [
     description:
       "An open-world, action-adventure story set in Night City, a megalopolis obsessed with power, glamour, and body modification.",
     platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
-    id: 2,
-    title: "The Witcher 3",
-    image: "https://wallpapercave.com/wp/wp1854635.jpg",
-    text: "Become a professional monster hunter and embark on an epic journey.",
-    rating: 4.8,
-    price: 1799,
-    genre: "RPG",
-    description:
-      "A story-driven, next-generation open-world role-playing game set in a visually stunning fantasy universe.",
-    platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
-  },
-  {
-    id: 3,
-    title: "Dragon Age: Inquisition",
-    image: "https://wallpapercave.com/wp/wp2179404.jpg",
-    text: "Lead the Inquisition against the forces of chaos.",
-    rating: 4.5,
-    price: 2499,
-    genre: "RPG",
-    description:
-      "Become the Inquisitor and lead a team of legendary heroes to save a fractured world from the brink of destruction.",
-    platforms: ["PC", "PS4", "Xbox One"],
-  },
-  {
-    id: 4,
-    title: "The Elder Scrolls V",
-    image: "https://wallpapercave.com/wp/wp72199.jpg",
-    text: "Epic fantasy reborn in a vast open world.",
-    rating: 4.7,
-    price: 1799,
-    genre: "RPG",
-    description:
-      "Epic fantasy reimagined, allowing you to play any type of character you can imagine and explore a vast open world.",
-    platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
+    images: [
+      "https://wallpapercave.com/wp/wp6823992.jpg",
+      "https://wallpapercave.com/wp/wp6072778.png",
+      "https://wallpapercave.com/wp/wp6823990.jpg",
+      "https://wallpapercave.com/wp/wp6736053.jpg",
+      "https://wallpapercave.com/wp/wp6824012.jpg",
+    ],
   },
   {
     id: 13,
@@ -276,30 +247,13 @@ export const allGames = [
     description:
       "Explore infinite worlds and build everything from the simplest of homes to the grandest of castles.",
     platforms: ["PC", "PS4", "Xbox One", "Nintendo Switch", "iOS", "Android"],
-  },
-  {
-    id: 15,
-    title: "Terraria",
-    image: "https://wallpapercave.com/wp/wp2610586.jpg",
-    text: "Dig, fight, explore, and build in a vast 2D world.",
-    rating: 4.3,
-    price: 479,
-    genre: "Sandbox",
-    description:
-      "Dig, fight, explore, and build in an action-packed sandbox adventure where the world is your canvas.",
-    platforms: ["PC", "PS4", "Xbox One", "Nintendo Switch", "iOS", "Android"],
-  },
-  {
-    id: 16,
-    title: "No Man's Sky",
-    image: "https://wallpapercave.com/wp/wp1851426.jpg",
-    text: "A sci-fi game of exploration and survival in an infinite universe.",
-    rating: 3.7,
-    price: 2400,
-    genre: "Sandbox",
-    description:
-      "A sci-fi exploration game set in an infinite procedurally generated universe full of unique planets and lifeforms.",
-    platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
+    images: [
+      "https://wallpapercave.com/wp/wp2777682.jpg",
+      "https://wallpapercave.com/wp/wp2896230.png",
+      "https://wallpapercave.com/wp/wp2477626.jpg",
+      "https://wallpapercave.com/wp/wp2896241.jpg",
+      "https://wallpapercave.com/wp/wp2652288.jpg",
+    ],
   },
   {
     id: 9,
@@ -313,42 +267,13 @@ export const allGames = [
     description:
       "Experience the world's game with unparalleled realism, featuring the biggest tournaments, leagues, and players.",
     platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
-  },
-  {
-    id: 10,
-    title: "NBA 2K24",
-    image: "https://wallpapercave.com/wp/wp12585965.jpg",
-    text: "Grab your squad and experience the past, present, and future of hoops.",
-    rating: 4.2,
-    price: 3299,
-    genre: "Sports",
-    description:
-      "Grab your squad and experience the past, present, and future of hoops culture with pure, authentic basketball action.",
-    platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
-  },
-  {
-    id: 11,
-    title: "Madden NFL 24",
-    image: "https://wallpapercave.com/wp/wp12699956.jpg",
-    text: "Lead your team to gridiron glory in Madden.",
-    rating: 3.8,
-    price: 3499,
-    genre: "Sports",
-    description:
-      "Lead your team to a Super Bowl victory with enhanced control, realistic collisions, and deeper gameplay systems.",
-    platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
-    id: 12,
-    title: "F1 2023",
-    image: "https://wallpapercave.com/wp/wp9896704.jpg",
-    text: "Be the last to brake in the official Formula One game.",
-    rating: 4.1,
-    price: 2999,
-    genre: "Sports",
-    description:
-      "The official videogame of the FIA Formula One World Championship, featuring high-speed racing drama and tactics.",
-    platforms: ["PC", "PS5", "Xbox Series X"],
+    images: [
+      "https://wallpapercave.com/wp/wp12593837.jpg",
+      "https://wallpapercave.com/wp/wp11884019.jpg",
+      "https://wallpapercave.com/wp/wp12562477.jpg",
+      "https://wallpapercave.com/wp/wp12562484.jpg",
+      "https://wallpapercave.com/wp/wp12562492.jpg",
+    ],
   },
   {
     id: 5,
@@ -361,6 +286,13 @@ export const allGames = [
     description:
       "Adapt or die in a fight against the ultimate threat, featuring iconic multiplayer maps and a cinematic campaign.",
     platforms: ["PC", "PS5", "Xbox Series X"],
+    images: [
+      "https://wallpapercave.com/wp/wp13002741.jpg",
+      "https://wallpapercave.com/wp/wp13127006.jpg",
+      "https://wallpapercave.com/wp/wp13127035.jpg",
+      "https://wallpapercave.com/wp/wp12995280.jpg",
+      "https://wallpapercave.com/wp/wp13132293.jpg",
+    ],
   },
   {
     id: 21,
@@ -373,44 +305,13 @@ export const allGames = [
     description:
       "Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring in a massive dark fantasy world.",
     platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
-    id: 22,
-    title: "God of War Ragnarök",
-    image: "https://wallpapercave.com/wp/wp11690916.jpg",
-    text: "Embark on an epic and heartfelt journey as Kratos and Atreus struggle with holding on.",
-    rating: 4.8,
-    price: 3999,
-    discount: 10,
-    genre: "Action-Adventure",
-    description:
-      "Join Kratos and Atreus on a mythic journey for answers and allies before Ragnarök arrives.",
-    platforms: ["PC", "PS4", "PS5"],
-  },
-  {
-    id: 23,
-    title: "Red Dead Redemption 2",
-    image: "https://wallpapercave.com/wp/wp3770429.png",
-    text: "An epic tale of life in America's unforgiving heartland.",
-    rating: 4.9,
-    price: 3199,
-    discount: 60,
-    genre: "Action-Adventure",
-    description:
-      "An epic tale of life in America’s unforgiving heartland at the dawn of the modern age.",
-    platforms: ["PC", "PS4", "Xbox One"],
-  },
-  {
-    id: 24,
-    title: "Grand Theft Auto V",
-    image: "https://wallpapercave.com/wp/wp1809630.jpg",
-    text: "Explore the vast world of Los Santos and Blaine County.",
-    rating: 4.7,
-    price: 2321,
-    genre: "Action-Adventure",
-    description:
-      "When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled, they must pull off heists to survive.",
-    platforms: ["PC", "PS5", "Xbox Series X"],
+    images: [
+      "https://wallpapercave.com/wp/wp14808661.webp",
+      "https://wallpapercave.com/wp/wp13489035.jpg",
+      "https://wallpapercave.com/wp/wp14808666.webp",
+      "https://wallpapercave.com/wp/wp14035067.webp",
+      "https://wallpapercave.com/wp/wp14808672.webp",
+    ],
   },
   {
     id: 37,
@@ -423,42 +324,13 @@ export const allGames = [
     description:
       "Powered by a proprietary engine, experience a new era of fighting games with evolved mechanics and vibrant visuals.",
     platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
-    id: 38,
-    title: "Mortal Kombat 1",
-    image: "https://wallpapercave.com/wp/wp13016862.png",
-    text: "Discover a reborn Mortal Kombat Universe created by the Fire God Liu Kang.",
-    rating: 4.2,
-    price: 4499,
-    genre: "Fighting",
-    description:
-      "Discover a reborn Mortal Kombat Universe created by the Fire God Liu Kang, featuring gory fatalities and new fight styles.",
-    platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
-  },
-  {
-    id: 39,
-    title: "Tekken 8",
-    image: "https://wallpapercave.com/wp/wp12826870.jpg",
-    text: "Fist Meets Fate in the ultimate next-generation fighting tournament.",
-    rating: 4.7,
-    price: 4399,
-    genre: "Fighting",
-    description:
-      "Fist Meets Fate in this next-generation installment of the historic fighting franchise, powered by highly aggressive gameplay mechanics.",
-    platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
-    id: 40,
-    title: "Super Smash Bros. Ultimate",
-    image: "https://wallpapercave.com/wp/wp3755804.jpg",
-    text: "Legendary game worlds and characters collide in the ultimate showdown.",
-    rating: 4.8,
-    price: 4999,
-    genre: "Fighting",
-    description:
-      "Legendary game worlds and fighters collide in the ultimate showdown, where the goal is to launch rivals off the stage.",
-    platforms: ["Nintendo Switch"],
+    images: [
+      "https://wallpapercave.com/wp/wp12751223.jpg",
+      "https://wallpapercave.com/wp/wp12500330.jpg",
+      "https://wallpapercave.com/wp/wp13707850.jpg",
+      "https://wallpapercave.com/wp/wp13707882.png",
+      "https://wallpapercave.com/wp/wp12931429.jpg",
+    ],
   },
   {
     id: 29,
@@ -471,43 +343,13 @@ export const allGames = [
     description:
       "Survival is just the beginning in this fully reimagined survival-horror masterpiece featuring updated modern combat.",
     platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
-    id: 30,
-    title: "Dead by Daylight",
-    image: "https://wallpapercave.com/wp/wp2222211.jpg",
-    text: "Death is not an escape in this asymmetrical multiplayer horror game.",
-    rating: 4.1,
-    price: 999,
-    genre: "Horror",
-    description:
-      "A multiplayer 4v1 horror game where one player takes on the role of the savage Killer, and the other four play as Survivors.",
-    platforms: ["PC", "PS5", "Xbox Series X", "Nintendo Switch"],
-  },
-  {
-    id: 31,
-    title: "Phasmophobia",
-    image: "https://wallpapercave.com/wp/wp7775365.jpg",
-    text: "Use paranormal investigation equipment to gather evidence of ghost activity.",
-    rating: 4.5,
-    price: 690,
-    genre: "Horror",
-    description:
-      "A 4-player online co-op psychological horror where you and your team of paranormal investigators enter haunted locations.",
-    platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
-    id: 32,
-    title: "Outlast 2",
-    image: "https://wallpapercave.com/wp/wp2329691.jpg",
-    text: "A twisted journey into the depths of the human mind and its dark secrets.",
-    rating: 4.0,
-    price: 1300,
-    discount: 80,
-    genre: "Horror",
-    description:
-      "Navigate a twisted, terrifying journey through a secretive desert cult community armed only with a video camera.",
-    platforms: ["PC", "PS4", "Xbox One", "Nintendo Switch"],
+    images: [
+      "https://wallpapercave.com/wp/wp12116688.jpg",
+      "https://wallpapercave.com/wp/wp12116675.png",
+      "https://wallpapercave.com/wp/wp11811996.jpg",
+      "https://wallpapercave.com/wp/wp12116718.jpg",
+      "https://wallpapercave.com/wp/wp11812016.jpg",
+    ],
   },
   {
     id: 33,
@@ -520,43 +362,13 @@ export const allGames = [
     description:
       "Lead breathtaking expeditions across the vibrant and ever-evolving open world landscapes of Mexico in hundreds of world-class cars.",
     platforms: ["PC", "Xbox Series X", "Xbox One"],
-  },
-  {
-    id: 34,
-    title: "Need for Speed Unbound",
-    image: "https://wallpapercave.com/wp/wp11595581.png",
-    text: "Race against time, outsmart the cops, and take on weekly qualifiers.",
-    rating: 3.9,
-    price: 3499,
-    discount: 40,
-    genre: "Racing",
-    description:
-      "Race against time, outsmart the cops, and take on weekly qualifiers to reach The Grand, Lakeshore's ultimate street racing challenge.",
-    platforms: ["PC", "PS5", "Xbox Series X"],
-  },
-  {
-    id: 35,
-    title: "Gran Turismo 7",
-    image: "https://wallpapercave.com/wp/wp7722224.jpg",
-    text: "The Real Driving Simulator. Find your line.",
-    rating: 4.5,
-    price: 4999,
-    genre: "Racing",
-    description:
-      "The ultimate driving simulator brings together the best features of the real-world racing franchise with deep customization.",
-    platforms: ["PS4", "PS5"],
-  },
-  {
-    id: 36,
-    title: "Assetto Corsa Competizione",
-    image: "https://wallpapercave.com/wp/wp13905088.jpg",
-    text: "The official GT World Challenge videogame.",
-    rating: 4.4,
-    price: 1999,
-    genre: "Racing",
-    description:
-      "The official GT World Challenge videogame allows you to experience the real atmosphere of the GT3 championship.",
-    platforms: ["PC", "PS5", "Xbox Series X"],
+    images: [
+      "https://wallpapercave.com/wp/wp12405465.jpg",
+      "https://wallpapercave.com/wp/wp12405298.jpg",
+      "https://wallpapercave.com/wp/wp12405347.jpg",
+      "https://wallpapercave.com/wp/wp11439202.jpg",
+      "https://wallpapercave.com/wp/wp12405389.jpg",
+    ],
   },
   {
     id: 25,
@@ -570,30 +382,13 @@ export const allGames = [
     description:
       "A turn-based strategy game in which you attempt to build an empire to stand the test of time, expanding your empire across the map.",
     platforms: ["PC", "PS4", "Xbox One", "Nintendo Switch", "iOS"],
-  },
-  {
-    id: 26,
-    title: "Age of Empires IV",
-    image: "https://wallpapercave.com/wp/wp9682100.jpg",
-    text: "Epic historical battles await.",
-    rating: 4.3,
-    price: 2399,
-    genre: "Strategy",
-    description:
-      "Puts you at the center of epic historical battles that shaped the modern world in a real-time strategy experience.",
-    platforms: ["PC", "Xbox Series X", "Xbox One"],
-  },
-  {
-    id: 28,
-    title: "Total War: Warhammer III",
-    image: "https://wallpapercave.com/wp/wp8532667.jpg",
-    text: "Rally your forces and step into the Realm of Chaos.",
-    rating: 4.1,
-    price: 3399,
-    genre: "Strategy",
-    description:
-      "Rally your forces and step into the Realm of Chaos, a dimension of mind-bending horror where the world's fate is decided.",
-    platforms: ["PC"],
+    images: [
+      "https://wallpapercave.com/wp/wp3805937.jpg",
+      "https://wallpapercave.com/wp/wp2114487.jpg",
+      "https://wallpapercave.com/wp/wp3805951.jpg",
+      "https://wallpapercave.com/wp/wp2114461.jpg",
+      "https://wallpapercave.com/wp/wp3805966.jpg",
+    ],
   },
 ];
 

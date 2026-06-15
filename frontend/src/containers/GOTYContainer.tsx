@@ -52,6 +52,7 @@ function GOTYContainer() {
       title: game.title,
       text: "game.text",
       image: game.images[0],
+      images: game.images,
       platforms: game.platforms,
       rating: game.rating,
       price: game.price,

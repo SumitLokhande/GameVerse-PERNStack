@@ -18,6 +18,7 @@ export interface GameDetail {
   title: string;
   text: string;
   image: string;
+  images: string[];
   platforms: string[];
   rating: number;
   price: number;
@@ -29,9 +30,6 @@ export interface GameDetail {
 export interface Category {
   id: string;
   name: string;
-  description: string;
-  games: GameDetail[];
-  color: string;
   backgroundImage: string;
 }
 

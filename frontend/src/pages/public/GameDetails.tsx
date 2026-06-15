@@ -1,333 +1,182 @@
-// import { StarIcon } from '@heroicons/react/20/solid'
-
+import { useState } from "react";
 import { useParams } from "react-router";
-import { useAppSelector } from "../../redux/hooks";
-
-const product = {
-  name: "Basic Tee 6-Pack",
-  price: "$192",
-  href: "#",
-  breadcrumbs: [
-    { id: 1, name: "Men", href: "#" },
-    { id: 2, name: "Clothing", href: "#" },
-  ],
-  images: [
-    {
-      src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
-      alt: "Two each of gray, white, and black shirts laying flat.",
-    },
-    {
-      src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg",
-      alt: "Model wearing plain black basic tee.",
-    },
-    {
-      src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg",
-      alt: "Model wearing plain gray basic tee.",
-    },
-    {
-      src: "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-02-featured-product-shot.jpg",
-      alt: "Model wearing plain white basic tee.",
-    },
-  ],
-  colors: [
-    {
-      id: "white",
-      name: "White",
-      classes: "bg-white checked:outline-gray-400",
-    },
-    {
-      id: "gray",
-      name: "Gray",
-      classes: "bg-gray-200 checked:outline-gray-400",
-    },
-    {
-      id: "black",
-      name: "Black",
-      classes: "bg-gray-900 checked:outline-gray-900",
-    },
-  ],
-  sizes: [
-    { name: "XXS", inStock: false },
-    { name: "XS", inStock: true },
-    { name: "S", inStock: true },
-    { name: "M", inStock: true },
-    { name: "L", inStock: true },
-    { name: "XL", inStock: true },
-    { name: "2XL", inStock: true },
-    { name: "3XL", inStock: true },
-  ],
-  description:
-    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-  highlights: [
-    "Hand cut and sewn locally",
-    "Dyed with our proprietary colors",
-    "Pre-washed & pre-shrunk",
-    "Ultra-soft 100% cotton",
-  ],
-  details:
-    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-};
-const reviews = { href: "#", average: 4, totalCount: 117 };
-
-// function classNames(...classes) {
-//   return classes.filter(Boolean).join(' ')
-// }
-
-const wallpaperPool = [
-  "https://wallpapercave.com/wp/0f1Lulf.jpg",
-  "https://wallpapercave.com/wp/wp3163465.jpg",
-  "https://wallpapercave.com/wp/wp1926246.jpg",
-  "https://wallpapercave.com/wp/wp4257692.jpg",
-  "https://wallpapercave.com/wp/wp2637598.jpg",
-  "https://wallpapercave.com/wp/wp3163450.png",
-  "https://wallpapercave.com/wp/wc1801024.jpg",
-  "https://wallpapercave.com/wp/wp4257695.jpg",
-  "https://wallpapercave.com/wp/wp3163457.jpg",
-  "https://wallpapercave.com/wp/wp4257697.jpg",
-  "https://wallpapercave.com/wp/wp4257698.jpg",
-  "https://wallpapercave.com/wp/wp4257699.jpg",
-  "https://wallpapercave.com/wp/wp2917947.jpg",
-  "https://wallpapercave.com/wp/wp4257706.jpg",
-  "https://wallpapercave.com/wp/wp4257707.jpg",
-  "https://wallpapercave.com/wp/wp4257708.jpg",
-  "https://wallpapercave.com/wp/wp4257713.jpg",
-  "https://wallpapercave.com/wp/wp3274973.png",
-  "https://wallpapercave.com/wp/wp4257720.jpg",
-  "https://wallpapercave.com/wp/wp4257729.jpg",
-  "https://wallpapercave.com/wp/wp4257732.jpg",
-  "https://wallpapercave.com/wp/wp4257738.jpg",
-  "https://wallpapercave.com/wp/wp4257739.jpg",
-  "https://wallpapercave.com/wp/wp4257740.png",
-  "https://wallpapercave.com/wp/wp4257741.jpg",
-  "https://wallpapercave.com/wp/wp4257747.jpg",
-];
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { addToCart } from "../../redux/Slices/cartSlice";
+import type { GameDetail } from "../../types/authTypes";
 
 const GameDetails = () => {
   const { name } = useParams();
+  const dispatch = useAppDispatch();
   const allGames = useAppSelector((state) => state.games.allGames);
-  console.log(name, "hit name");
-  const allGamesWithImages = allGames.map((game, index) => ({
-    ...game,
-    images: [
-      wallpaperPool[(index * 5) % wallpaperPool.length],
-      wallpaperPool[(index * 5 + 1) % wallpaperPool.length],
-      wallpaperPool[(index * 5 + 2) % wallpaperPool.length],
-      wallpaperPool[(index * 5 + 3) % wallpaperPool.length],
-      wallpaperPool[(index * 5 + 4) % wallpaperPool.length],
-    ],
-  }));
-  const currentGame = allGamesWithImages.find((game) => game.title === name);
 
-  const galleryClasses = [
-    "row-span-2 aspect-3/4 size-full rounded-lg object-cover max-lg:hidden",
-    "col-start-2 aspect-3/2 size-full rounded-lg object-cover max-lg:hidden",
-    "col-start-2 row-start-2 aspect-3/2 size-full rounded-lg object-cover max-lg:hidden",
-    "row-span-2 aspect-4/5 size-full object-cover sm:rounded-lg lg:aspect-3/4",
-  ];
+  const currentGame = allGames.find((game) => game.title === name);
+
+  const [activeImage, setActiveImage] = useState(
+    currentGame?.images?.[0] || "",
+  );
+
+  const addGameToCart = (game: GameDetail) => {
+    const payload = {
+      id: game.id,
+      title: game.title,
+      text: "game.text",
+      image: game.image,
+      images: game.images,
+      platforms: game.platforms,
+      rating: game.rating,
+      price: game.price,
+      discount: game.discount,
+      description: game.description,
+      genre: game.genre,
+      quantity: 1,
+    };
+    dispatch(addToCart(payload));
+  };
+
+  const renderStars = (rating = 4) => {
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <svg
+          key={i}
+          className={`w-5 h-5 ${
+            i <= rating ? "text-yellow-400" : "text-gray-600"
+          } fill-current`}
+          viewBox="0 0 20 20"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>,
+      );
+    }
+
+    return stars;
+  };
+
+  if (!currentGame) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center text-white text-2xl">
+        Game not found
+      </div>
+    );
+  }
 
   return (
-    <div className="bg-gray-600">
-      <div className="pt-6">
-        <nav aria-label="Breadcrumb">
-          <ol
-            role="list"
-            className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
-          >
-            {product.breadcrumbs.map((breadcrumb) => (
-              <li key={breadcrumb.id}>
-                <div className="flex items-center">
-                  <a
-                    href={breadcrumb.href}
-                    className="mr-2 text-sm font-medium text-gray-900"
-                  >
-                    {breadcrumb.name}
-                  </a>
-                  <svg
-                    fill="currentColor"
-                    width={16}
-                    height={20}
-                    viewBox="0 0 16 20"
-                    aria-hidden="true"
-                    className="h-5 w-4 text-gray-300"
-                  >
-                    <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
-                  </svg>
-                </div>
-              </li>
-            ))}
-            <li className="text-sm">
-              <a
-                href={product.href}
-                aria-current="page"
-                className="font-medium text-gray-500 hover:text-gray-600"
-              >
-                {currentGame?.title}
-              </a>
-            </li>
-          </ol>
-        </nav>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <div className="mx-auto max-w-7xl p-4">
+        {/* Hero */}
 
-        {/* Image gallery */}
-        <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
-          {currentGame?.images?.slice(0, 4).map((src, index) => (
-            <img
-              key={index}
-              alt={`${currentGame.title} image ${index + 1}`}
-              src={src}
-              className={
-                galleryClasses[index] ?? "size-full rounded-lg object-cover"
-              }
-            />
-          ))}
-        </div>
-
-        {/* Product info */}
-        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
-          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-              {currentGame?.title}
-            </h1>
-          </div>
-
-          {/* Options */}
-          <div className="mt-4 lg:row-span-3 lg:mt-0">
-            <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-gray-900">
-              {currentGame?.price}
-            </p>
-
-            {/* Reviews */}
-            <div className="mt-6">
-              <h3 className="sr-only">Reviews</h3>
-              <div className="flex items-center">
-                {/* <div className="flex items-center">
-                  {[0, 1, 2, 3, 4].map((rating) => (
-                    <StarIcon
-                      key={rating}
-                      aria-hidden="true"
-                      className={classNames(
-                        reviews.average > rating ? 'text-gray-900' : 'text-gray-200',
-                        'size-5 shrink-0',
-                      )}
-                    />
-                  ))}
-                </div> */}
-                <p className="sr-only">{reviews.average} out of 5 stars</p>
-                <a
-                  href={reviews.href}
-                  className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                  {reviews.totalCount} reviews
-                </a>
-              </div>
+        {/* Main Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Left Section */}
+          <div className="lg:col-span-2">
+            {/* Main Image */}
+            <div className="overflow-hidden rounded-xl bg-gray-800 shadow-2xl">
+              <img
+                src={activeImage}
+                alt={currentGame.title}
+                className="w-full h-[500px] object-cover"
+              />
             </div>
 
-            <form className="mt-10">
-              {/* Colors */}
-              <div>
-                <h3 className="text-sm font-medium text-gray-900">Color</h3>
+            {/* Thumbnails */}
+            <div className="mt-4 grid grid-cols-5 gap-3">
+              {currentGame.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`${currentGame.title}-${index}`}
+                  onClick={() => setActiveImage(image)}
+                  className={`h-24 w-full cursor-pointer rounded-lg object-cover transition-all duration-300 ${
+                    activeImage === image
+                      ? "border-4 border-yellow-400"
+                      : "opacity-70 hover:opacity-100"
+                  }`}
+                />
+              ))}
+            </div>
 
-                <fieldset aria-label="Choose a color" className="mt-4">
-                  <div className="flex items-center gap-x-3">
-                    {product.colors.map((color) => (
-                      <div
-                        key={color.id}
-                        className="flex rounded-full outline -outline-offset-1 outline-black/10"
+            {/* Description */}
+            <div className="mt-8 rounded-xl bg-gray-800 p-6 shadow-xl text-start">
+              <h2 className="font-bold">{currentGame.title}</h2>
+
+              <p className="text-gray-300 leading-relaxed text-lg">
+                {currentGame.description}
+              </p>
+            </div>
+
+            {/* Features */}
+            <div className="mt-8 rounded-xl bg-gray-800 p-6 shadow-xl text-start">
+              <h2 className="mb-4 text-2xl font-bold text-yellow-400">
+                Highlights
+              </h2>
+
+              <ul className="space-y-3 text-gray-300">
+                <li>🎮 Immersive Gameplay Experience</li>
+                <li>🌍 Stunning Open World Environments</li>
+                <li>⚔️ Action-Packed Combat System</li>
+                <li>🎵 Cinematic Sound Design</li>
+                <li>🏆 Award Winning Storytelling</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Right Section */}
+          <div>
+            <div className="sticky top-6 rounded-xl bg-gray-800 p-6 shadow-2xl">
+              {/* Extra Info */}
+              <div className="my-4 space-y-4 border-b border-gray-700 p-6">
+                <div>
+                  <p className="text-sm text-gray-400">Platform</p>
+                  <div>
+                    {currentGame.platforms.map((platform) => (
+                      <span
+                        key={platform}
+                        className="inline-flex items-center rounded-md bg-black/50 m-1 px-2 py-1 text-sm font-medium"
                       >
-                        {/* <input
-                          defaultValue={color.id}
-                          defaultChecked={color === product.colors[0]}
-                          name="color"
-                          type="radio"
-                          aria-label={color.name}
-                          className={classNames(
-                            color.classes,
-                            'size-8 appearance-none rounded-full forced-color-adjust-none checked:outline-2 checked:outline-offset-2 focus-visible:outline-3 focus-visible:outline-offset-3',
-                          )}
-                        /> */}
-                      </div>
+                        {platform}
+                      </span>
                     ))}
                   </div>
-                </fieldset>
-              </div>
-
-              {/* Sizes */}
-              <div className="mt-10">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
-                  >
-                    Size guide
-                  </a>
                 </div>
 
-                <fieldset aria-label="Choose a size" className="mt-4">
-                  <div className="grid grid-cols-4 gap-3">
-                    {/* {product.sizes.map((size) => (
-                      <label
-                        key={size.id}
-                        aria-label={size.name}
-                        className="group relative flex items-center justify-center rounded-md border border-gray-300 bg-white p-3 has-checked:border-indigo-600 has-checked:bg-indigo-600 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-indigo-600 has-disabled:border-gray-400 has-disabled:bg-gray-200 has-disabled:opacity-25"
-                      >
-                        <input
-                          defaultValue={size.id}
-                          defaultChecked={size === product.sizes[2]}
-                          name="size"
-                          type="radio"
-                          disabled={!size.inStock}
-                          className="absolute inset-0 appearance-none focus:outline-none disabled:cursor-not-allowed"
-                        />
-                        <span className="text-sm font-medium text-gray-900 uppercase group-has-checked:text-white">
-                          {size.name}
-                        </span>
-                      </label>
-                    ))} */}
+                <div>
+                  <p className="text-sm text-gray-400">Genre</p>
+                  <p className="font-medium"> {currentGame.genre}</p>
+                </div>
+
+                <div>
+                  <p className="text-sm text-gray-400">Availability</p>
+                  <p className="font-medium text-green-400">In Stock</p>
+                </div>
+              </div>
+
+              <div>
+                {/* Rating */}
+                <div className="mt-6 flex justify-between">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {renderStars(currentGame.rating)}
+                    </div>
+                    <span className="font-semibold text-white">
+                      {currentGame.rating}
+                    </span>
                   </div>
-                </fieldset>
-              </div>
+                  <div className=" flex flex-wrap gap-2">
+                    <span className="rounded-full bg-white/10 px-3 py-2 text-sm">
+                      {" "}
+                      ₹ {currentGame.price}
+                    </span>
+                  </div>
+                </div>
 
-              <button
-                type="submit"
-                className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-hidden"
-              >
-                Add to bag
-              </button>
-            </form>
-          </div>
-
-          <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pr-8 lg:pb-16">
-            {/* Description and details */}
-            <div>
-              <h3 className="sr-only">Description</h3>
-
-              <div className="space-y-6">
-                <p className="text-base text-gray-900">
-                  {currentGame?.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
-
-              <div className="mt-4">
-                <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
-                  {product.highlights.map((highlight) => (
-                    <li key={highlight} className="text-gray-400">
-                      <span className="text-gray-600">{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-10">
-              <h2 className="text-sm font-medium text-gray-900">Details</h2>
-
-              <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">{product.details}</p>
+                {/* Purchase Button */}
+                <button
+                  onClick={() => addGameToCart(currentGame)}
+                  className="mt-8 w-full rounded-lg bg-green-700 py-3 text-lg font-semibold text-white transition-all hover:bg-green-600 cursor-pointer"
+                >
+                  Add To Cart
+                </button>
               </div>
             </div>
           </div>

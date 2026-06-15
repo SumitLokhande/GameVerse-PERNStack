@@ -24,6 +24,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
       title: game.title,
       text: game.text,
       image: game.image,
+      images: game.images,
       platforms: game.platforms,
       rating: game.rating,
       price: game.price,
