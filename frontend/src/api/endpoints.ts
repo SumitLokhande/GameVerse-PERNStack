@@ -29,3 +29,13 @@ export const getGamesCategories = async () => {
   const res = await apiGet("/games/categories");
   return res.data.data;
 };
+
+export const getGamesReviews = async () => {
+  const res = await apiGet("/games/gamesReviews");
+  return res.data.data;
+};
+
+export const getGamesRecommendation = async (payload: object) => {
+  const res = await apiPost("/games/gamesRecommendation", payload);
+  return res.data.data;
+};

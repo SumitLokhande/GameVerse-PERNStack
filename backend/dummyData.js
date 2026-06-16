@@ -571,3 +571,72 @@ export const GOTYList = [
     },
   },
 ];
+
+export const gamesReviews = [
+  {
+    id: 1,
+    userName: "GamerPro2024",
+    userAvatar: "https://picsum.photos/40/40?random=1",
+    rating: 5,
+    comment:
+      "Absolutely incredible game! The graphics are stunning and the storyline keeps you hooked from start to finish. The combat system is intuitive yet deep, offering hours of engaging gameplay.",
+    date: "2024-01-15",
+    helpful: 24,
+    gameTitle: "Cyberpunk 2077",
+  },
+  {
+    id: 2,
+    userName: "RetroGamer",
+    userAvatar: "https://picsum.photos/40/40?random=2",
+    rating: 4,
+    comment:
+      "Great RPG with amazing world-building. Some bugs here and there, but the overall experience is fantastic. The character development system is one of the best I've seen.",
+    date: "2024-01-10",
+    helpful: 18,
+    gameTitle: "The Witcher 3",
+  },
+  {
+    id: 3,
+    userName: "CasualPlayer",
+    userAvatar: "https://picsum.photos/40/40?random=3",
+    rating: 3,
+    comment:
+      "Decent game, but not for everyone. The learning curve is steep and some mechanics feel outdated. Still, if you enjoy sports games, it's worth a try.",
+    date: "2024-01-08",
+    helpful: 7,
+    gameTitle: "FIFA 24",
+  },
+  {
+    id: 4,
+    userName: "FPSFanatic",
+    userAvatar: "https://picsum.photos/40/40?random=4",
+    rating: 5,
+    comment:
+      "Best CoD game in years! The multiplayer is addictive and the campaign is intense. Graphics are top-notch and the sound design is incredible.",
+    date: "2024-01-05",
+    helpful: 31,
+    gameTitle: "Call of Duty: Modern Warfare III",
+  },
+  {
+    id: 5,
+    userName: "SandboxLover",
+    userAvatar: "https://picsum.photos/40/40?random=5",
+    rating: 4,
+    comment:
+      "Minecraft never gets old! The creativity it inspires is unmatched. Perfect for all ages and great for educational purposes too.",
+    date: "2024-01-03",
+    helpful: 15,
+    gameTitle: "Minecraft",
+  },
+  {
+    id: 6,
+    userName: "OpenWorldEnthusiast",
+    userAvatar: "https://picsum.photos/40/40?random=6",
+    rating: 5,
+    comment:
+      "Rockstar has done it again! GTA V is a masterpiece of open-world gaming. The story, characters, and freedom are unparalleled.",
+    date: "2024-01-01",
+    helpful: 42,
+    gameTitle: "Grand Theft Auto V",
+  },
+];

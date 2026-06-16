@@ -1,88 +1,86 @@
-import React, { useState } from "react";
-import ReviewCard from "../generic/ReviewCard";
+import React, { useEffect, useState } from "react";
+import ReviewCard from "../../generic/ReviewCard";
+import type { Review } from "../../types/authTypes";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { getGamesReviewsList } from "../../redux/Slices/gamesSlice";
 
-interface Review {
-  id: number;
-  userName: string;
-  userAvatar: string;
-  rating: number;
-  comment: string;
-  date: string;
-  helpful: number;
-  gameTitle: string;
-}
-
-const mockReviews: Review[] = [
-  {
-    id: 1,
-    userName: "GamerPro2024",
-    userAvatar: "https://picsum.photos/40/40?random=1",
-    rating: 5,
-    comment:
-      "Absolutely incredible game! The graphics are stunning and the storyline keeps you hooked from start to finish. The combat system is intuitive yet deep, offering hours of engaging gameplay.",
-    date: "2024-01-15",
-    helpful: 24,
-    gameTitle: "Cyberpunk 2077",
-  },
-  {
-    id: 2,
-    userName: "RetroGamer",
-    userAvatar: "https://picsum.photos/40/40?random=2",
-    rating: 4,
-    comment:
-      "Great RPG with amazing world-building. Some bugs here and there, but the overall experience is fantastic. The character development system is one of the best I've seen.",
-    date: "2024-01-10",
-    helpful: 18,
-    gameTitle: "The Witcher 3",
-  },
-  {
-    id: 3,
-    userName: "CasualPlayer",
-    userAvatar: "https://picsum.photos/40/40?random=3",
-    rating: 3,
-    comment:
-      "Decent game, but not for everyone. The learning curve is steep and some mechanics feel outdated. Still, if you enjoy sports games, it's worth a try.",
-    date: "2024-01-08",
-    helpful: 7,
-    gameTitle: "FIFA 24",
-  },
-  {
-    id: 4,
-    userName: "FPSFanatic",
-    userAvatar: "https://picsum.photos/40/40?random=4",
-    rating: 5,
-    comment:
-      "Best CoD game in years! The multiplayer is addictive and the campaign is intense. Graphics are top-notch and the sound design is incredible.",
-    date: "2024-01-05",
-    helpful: 31,
-    gameTitle: "Call of Duty: Modern Warfare III",
-  },
-  {
-    id: 5,
-    userName: "SandboxLover",
-    userAvatar: "https://picsum.photos/40/40?random=5",
-    rating: 4,
-    comment:
-      "Minecraft never gets old! The creativity it inspires is unmatched. Perfect for all ages and great for educational purposes too.",
-    date: "2024-01-03",
-    helpful: 15,
-    gameTitle: "Minecraft",
-  },
-  {
-    id: 6,
-    userName: "OpenWorldEnthusiast",
-    userAvatar: "https://picsum.photos/40/40?random=6",
-    rating: 5,
-    comment:
-      "Rockstar has done it again! GTA V is a masterpiece of open-world gaming. The story, characters, and freedom are unparalleled.",
-    date: "2024-01-01",
-    helpful: 42,
-    gameTitle: "Grand Theft Auto V",
-  },
-];
+// export const gamesReviews = [
+//   {
+//     id: 1,
+//     userName: "GamerPro2024",
+//     userAvatar: "https://picsum.photos/40/40?random=1",
+//     rating: 5,
+//     comment:
+//       "Absolutely incredible game! The graphics are stunning and the storyline keeps you hooked from start to finish. The combat system is intuitive yet deep, offering hours of engaging gameplay.",
+//     date: "2024-01-15",
+//     helpful: 24,
+//     gameTitle: "Cyberpunk 2077",
+//   },
+//   {
+//     id: 2,
+//     userName: "RetroGamer",
+//     userAvatar: "https://picsum.photos/40/40?random=2",
+//     rating: 4,
+//     comment:
+//       "Great RPG with amazing world-building. Some bugs here and there, but the overall experience is fantastic. The character development system is one of the best I've seen.",
+//     date: "2024-01-10",
+//     helpful: 18,
+//     gameTitle: "The Witcher 3",
+//   },
+//   {
+//     id: 3,
+//     userName: "CasualPlayer",
+//     userAvatar: "https://picsum.photos/40/40?random=3",
+//     rating: 3,
+//     comment:
+//       "Decent game, but not for everyone. The learning curve is steep and some mechanics feel outdated. Still, if you enjoy sports games, it's worth a try.",
+//     date: "2024-01-08",
+//     helpful: 7,
+//     gameTitle: "FIFA 24",
+//   },
+//   {
+//     id: 4,
+//     userName: "FPSFanatic",
+//     userAvatar: "https://picsum.photos/40/40?random=4",
+//     rating: 5,
+//     comment:
+//       "Best CoD game in years! The multiplayer is addictive and the campaign is intense. Graphics are top-notch and the sound design is incredible.",
+//     date: "2024-01-05",
+//     helpful: 31,
+//     gameTitle: "Call of Duty: Modern Warfare III",
+//   },
+//   {
+//     id: 5,
+//     userName: "SandboxLover",
+//     userAvatar: "https://picsum.photos/40/40?random=5",
+//     rating: 4,
+//     comment:
+//       "Minecraft never gets old! The creativity it inspires is unmatched. Perfect for all ages and great for educational purposes too.",
+//     date: "2024-01-03",
+//     helpful: 15,
+//     gameTitle: "Minecraft",
+//   },
+//   {
+//     id: 6,
+//     userName: "OpenWorldEnthusiast",
+//     userAvatar: "https://picsum.photos/40/40?random=6",
+//     rating: 5,
+//     comment:
+//       "Rockstar has done it again! GTA V is a masterpiece of open-world gaming. The story, characters, and freedom are unparalleled.",
+//     date: "2024-01-01",
+//     helpful: 42,
+//     gameTitle: "Grand Theft Auto V",
+//   },
+// ];
 
 const GameReviews: React.FC = () => {
   const [selectedReview, setSelectedReview] = useState<Review | null>(null);
+  const dispatch = useAppDispatch();
+  const gamesReviews = useAppSelector((state) => state.games.gamesReviews);
+
+  useEffect(() => {
+    dispatch(getGamesReviewsList());
+  }, [dispatch]);
 
   const renderStars = (rating: number, size: "sm" | "md" = "sm") => {
     const stars = [];
@@ -102,12 +100,6 @@ const GameReviews: React.FC = () => {
     return stars;
   };
 
-  const sortedReviews = React.useMemo(() => {
-    return mockReviews.sort((a, b) => {
-      return new Date(b.date).getTime() - new Date(a.date).getTime();
-    });
-  }, []);
-
   const handleViewFullReview = (review: Review) => {
     setSelectedReview(review);
   };
@@ -124,7 +116,7 @@ const GameReviews: React.FC = () => {
 
       {/* Reviews Grid */}
       <div className="grid grid-cols-2 gap-6">
-        {sortedReviews.map((review) => (
+        {gamesReviews.map((review) => (
           <ReviewCard
             key={review.id}
             review={review}
@@ -133,7 +125,7 @@ const GameReviews: React.FC = () => {
         ))}
       </div>
 
-      {sortedReviews.length === 0 && (
+      {gamesReviews.length === 0 && (
         <div className="text-center py-12">
           <p className="text-gray-400 text-lg">
             No reviews found matching your criteria.

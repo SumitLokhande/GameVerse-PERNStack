@@ -2,11 +2,15 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {
   type Category,
   type GameDetail,
+  type GameRecommendation,
   type GOTYGameDetail,
+  type Review,
 } from "../../types/authTypes";
 import {
   getAllGames,
   getGamesCategories,
+  getGamesRecommendation,
+  getGamesReviews,
   getGOTYGames,
   getLatestGames,
 } from "../../api/endpoints";
@@ -43,11 +47,29 @@ export const getGamesCategoriesList = createAsyncThunk(
   },
 );
 
+export const getGamesReviewsList = createAsyncThunk(
+  "games/getGamesReviewsList",
+  async () => {
+    const data = await getGamesReviews();
+    return data;
+  },
+);
+
+export const getRecommendation = createAsyncThunk(
+  "games/getRecommendation",
+  async (payload: object) => {
+    const data = await getGamesRecommendation(payload);
+    return data;
+  },
+);
+
 interface GamesItem {
   allGames: GameDetail[];
   latestGames: GameDetail[];
   allGOTYList: GOTYGameDetail[];
   gamesCategories: Category[];
+  gamesReviews: Review[];
+  gameRecommendation: GameRecommendation | null;
 }
 
 const initialState: GamesItem = {
@@ -55,6 +77,8 @@ const initialState: GamesItem = {
   latestGames: [],
   allGOTYList: [],
   gamesCategories: [],
+  gamesReviews: [],
+  gameRecommendation: null,
 };
 
 const gamesSlice = createSlice({
@@ -74,6 +98,13 @@ const gamesSlice = createSlice({
       })
       .addCase(getGamesCategoriesList.fulfilled, (state, action) => {
         state.gamesCategories = action.payload;
+      })
+      .addCase(getGamesReviewsList.fulfilled, (state, action) => {
+        state.gamesReviews = action.payload;
+      })
+      .addCase(getRecommendation.fulfilled, (state, action) => {
+        console.log(action.payload, "hit action.payload");
+        state.gameRecommendation = action.payload;
       });
   },
 });

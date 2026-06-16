@@ -29,16 +29,13 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
-      // const existingItem = state.cartItems.find(
-      //   (item) => item.id === action.payload.id,
-      // );
-      // if (existingItem) {
-      //   existingItem.quantity += action.payload.quantity;
-      // }
-      console.log(action, "state in addToCart");
-      state.cartItems.push(action.payload);
-      Object.assign(state, calculateTotals(state.cartItems));
-      toast.success("Game added to cart");
+      if (state.cartItems.some((item) => item.id === action.payload.id)) {
+        toast.error("Game is already added in cart");
+      } else {
+        state.cartItems.push(action.payload);
+        Object.assign(state, calculateTotals(state.cartItems));
+        toast.success("Game added to cart");
+      }
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
       state.cartItems = state.cartItems.filter(
@@ -46,19 +43,6 @@ const cartSlice = createSlice({
       );
       Object.assign(state, calculateTotals(state.cartItems));
       toast.info("Game removed from cart");
-    },
-    updateQuantity: (
-      state,
-      action: PayloadAction<{ id: number; quantity: number }>,
-    ) => {
-      const existingItem = state.cartItems.find(
-        (item) => item.id === action.payload.id,
-      );
-      if (existingItem) {
-        existingItem.quantity = action.payload.quantity;
-      }
-      Object.assign(state, calculateTotals(state.cartItems));
-      toast.success("Cart updated");
     },
     clearCart: (state) => {
       state.cartItems = [];
@@ -68,6 +52,5 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, updateQuantity, clearCart } =
-  cartSlice.actions;
+export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

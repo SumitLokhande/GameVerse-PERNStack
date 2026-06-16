@@ -1,7 +1,6 @@
 import Banner from "../../components/Banner";
 import GamesCategory from "../../containers/GamesCategory";
 import GOTYContainer from "../../containers/GOTYContainer";
-import GameReviews from "../../containers/GameReviews";
 
 const Dashboard = () => {
   return (
@@ -9,7 +8,6 @@ const Dashboard = () => {
       <Banner />
       <GamesCategory />
       <GOTYContainer />
-      <GameReviews />
     </div>
   );
 };

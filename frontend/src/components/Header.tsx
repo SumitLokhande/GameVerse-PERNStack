@@ -30,30 +30,34 @@ const Header = () => {
               Games
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/reviews"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                  : "text-white hover:text-gray-300 transition-colors duration-200"
-              }
-            >
-              Reviews
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/goty"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                  : "text-white hover:text-gray-300 transition-colors duration-200"
-              }
-            >
-              GOTY
-            </NavLink>
-          </li>
+          {isAuthenticated && (
+            <>
+              <li>
+                <NavLink
+                  to="/reviews"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
+                      : "text-white hover:text-gray-300 transition-colors duration-200"
+                  }
+                >
+                  Reviews
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/recommendations"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
+                      : "text-white hover:text-gray-300 transition-colors duration-200"
+                  }
+                >
+                  Recommendations
+                </NavLink>
+              </li>
+            </>
+          )}
           <li>
             <NavLink
               to="/cart"

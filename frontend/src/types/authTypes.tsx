@@ -64,3 +64,31 @@ export interface GOTYGameDetail {
   price: number;
   recommendedSystemRequirements: SystemRequirements;
 }
+
+export interface Review {
+  id: number;
+  userName: string;
+  userAvatar: string;
+  rating: number;
+  comment: string;
+  date: string;
+  helpful: number;
+  gameTitle: string;
+}
+
+export type GameRecommendation = {
+  name: string;
+  description: string;
+  genreType: string;
+  platforms: string[];
+  difficulty: "easy" | "medium" | "hard";
+  players: number;
+  estimatedPlaytime: string;
+  releaseYear: number;
+  developer: string;
+  gameTags: string[];
+  whyRecommended: string[];
+  pros: string[];
+  cons: string[];
+  similarGames: string[];
+};
