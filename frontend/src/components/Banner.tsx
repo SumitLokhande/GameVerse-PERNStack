@@ -22,9 +22,10 @@ const Banner = () => {
   }, [latestGamesList, selectedNav]);
 
   const currentItem: GameDetail | null =
-    latestGamesList.find((item) => item.id === selectedNav) ||
-    latestGamesList[0] ||
-    null;
+    latestGamesList.length > 0
+      ? latestGamesList.find((item) => item.id === selectedNav) ||
+        latestGamesList[0]
+      : null;
 
   const timerRef = useRef<number | null>(null);
 
@@ -33,8 +34,16 @@ const Banner = () => {
       clearInterval(timerRef.current);
     }
 
+    if (latestGamesList.length === 0) {
+      return;
+    }
+
     timerRef.current = window.setInterval(() => {
       setSelectedNav((prevId) => {
+        if (latestGamesList.length === 0) {
+          return prevId;
+        }
+
         const currentIndex = latestGamesList.findIndex(
           (game) => game.id === prevId,
         );
@@ -48,6 +57,10 @@ const Banner = () => {
   };
 
   useEffect(() => {
+    if (latestGamesList.length === 0 || selectedNav === null) {
+      return;
+    }
+
     startAutoSlide();
 
     return () => {
@@ -55,7 +68,7 @@ const Banner = () => {
         clearInterval(timerRef.current);
       }
     };
-  }, []);
+  }, [latestGamesList, selectedNav]);
 
   const handleGameSelect = (id: number) => {
     setSelectedNav(id);
@@ -94,48 +107,56 @@ const Banner = () => {
       </div>
 
       <div className="w-3/4 relative overflow-hidden rounded-xl shadow-2xl">
-        <img
-          src={currentItem.image}
-          alt={currentItem.title}
-          className="w-full h-full object-cover transition-all duration-500"
-        />
+        {currentItem ? (
+          <>
+            <img
+              src={currentItem.image}
+              alt={currentItem.title}
+              className="w-full h-full object-cover transition-all duration-500"
+            />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-end">
-          <div className="text-start text-white bg-transparent/10 backdrop-blur-xl p-4 shadow-2xl w-full">
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="text-4xl font-bold mb-8 drop-shadow-lg px-2">
-                  {currentItem.text}
-                </h2>
+            <div className="absolute inset-0 flex flex-col items-center justify-end">
+              <div className="text-start text-white bg-transparent/10 backdrop-blur-xl p-4 shadow-2xl w-full">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="text-4xl font-bold mb-8 drop-shadow-lg px-2">
+                      {currentItem.text}
+                    </h2>
 
-                <div>
-                  {currentItem.platforms.map((platform) => (
-                    <span
-                      key={platform}
-                      className="inline-flex items-center rounded-md bg-black/50 mx-1 px-2 py-1 text-sm font-medium"
+                    <div>
+                      {currentItem.platforms.map((platform) => (
+                        <span
+                          key={platform}
+                          className="inline-flex items-center rounded-md bg-black/50 mx-1 px-2 py-1 text-sm font-medium"
+                        >
+                          {platform}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="my-1">
+                      <span className="font-bold">Price:</span>
+                      {` ₹ ${currentItem.price}`}
+                    </div>
+
+                    <Button
+                      onClick={() => buyGame()}
+                      className="inline-flex items-center gap-2 rounded-md cursor-pointer bg-green-700 px-4 mx-1 py-1.5 text-sm font-semibold text-white"
                     >
-                      {platform}
-                    </span>
-                  ))}
+                      Add To Cart
+                    </Button>
+                  </div>
                 </div>
-              </div>
-
-              <div>
-                <div className="my-1">
-                  <span className="font-bold">Price:</span>
-                  {` ₹ ${currentItem.price}`}
-                </div>
-
-                <Button
-                  onClick={() => buyGame()}
-                  className="inline-flex items-center gap-2 rounded-md cursor-pointer bg-green-700 px-4 mx-1 py-1.5 text-sm font-semibold text-white"
-                >
-                  Add To Cart
-                </Button>
               </div>
             </div>
+          </>
+        ) : (
+          <div className="flex h-full items-center justify-center bg-gray-900 text-white">
+            Loading featured game...
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
