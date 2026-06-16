@@ -21,11 +21,11 @@ const Banner = () => {
     }
   }, [latestGamesList, selectedNav]);
 
-  const currentItem: GameDetail | null =
+  const currentItem: GameDetail =
     latestGamesList.length > 0
       ? latestGamesList.find((item) => item.id === selectedNav) ||
         latestGamesList[0]
-      : null;
+      : latestGamesList[0];
 
   const timerRef = useRef<number | null>(null);
 
