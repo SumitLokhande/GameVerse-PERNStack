@@ -14,7 +14,7 @@ export type User = {
 };
 
 export interface GameDetail {
-  id: number; // change to number if you're using numeric ids
+  id: number;
   title: string;
   text: string;
   image: string;

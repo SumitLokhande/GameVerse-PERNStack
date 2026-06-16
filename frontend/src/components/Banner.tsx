@@ -8,16 +8,23 @@ import { getLatestGamesList } from "../redux/Slices/gamesSlice";
 const Banner = () => {
   const dispatch = useAppDispatch();
   const latestGamesList = useAppSelector((state) => state.games.latestGames);
-  const [selectedNav, setSelectedNav] = useState(latestGamesList[0].id);
+  const [selectedNav, setSelectedNav] = useState<number | null>(null);
   const SLIDE_DURATION = 5000;
 
   useEffect(() => {
     dispatch(getLatestGamesList());
   }, [dispatch]);
 
-  const currentItem: GameDetail =
+  useEffect(() => {
+    if (latestGamesList.length > 0 && selectedNav === null) {
+      setSelectedNav(latestGamesList[0].id);
+    }
+  }, [latestGamesList, selectedNav]);
+
+  const currentItem: GameDetail | null =
     latestGamesList.find((item) => item.id === selectedNav) ||
-    latestGamesList[0];
+    latestGamesList[0] ||
+    null;
 
   const timerRef = useRef<number | null>(null);
 
