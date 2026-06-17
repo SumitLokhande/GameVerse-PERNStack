@@ -7,10 +7,37 @@ export type AuthContextType = {
   isAuthenticated: boolean;
 };
 
+export type Difficulty = "easy" | "medium" | "hard";
+
 export type User = {
-  email: string;
   id: string;
   name: string;
+  email: string;
+
+  // Profile
+  avatar?: string;
+  bio?: string;
+
+  // Account
+  role?: "user" | "admin";
+  createdAt?: string;
+  updatedAt?: string;
+
+  // Gaming Preferences
+  preferredPlatforms?: string[];
+  favoriteGenres?: string[];
+  preferredDifficulty?: "easy" | "medium" | "hard";
+  multiplayerPreference?: boolean;
+
+  // Stats
+  reviewCount?: number;
+  favoritesCount?: number;
+  recommendationCount?: number;
+
+  // Future Profile Features
+  steamId?: string;
+  xboxGamertag?: string;
+  playstationId?: string;
 };
 
 export interface GameDetail {

@@ -110,6 +110,8 @@ const Banner = () => {
         {currentItem ? (
           <>
             <img
+              loading="lazy"
+              decoding="async"
               src={currentItem.image}
               alt={currentItem.title}
               className="w-full h-full object-cover transition-all duration-500"

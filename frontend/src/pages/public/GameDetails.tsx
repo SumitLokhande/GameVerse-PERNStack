@@ -73,6 +73,8 @@ const GameDetails = () => {
             {/* Main Image */}
             <div className="overflow-hidden rounded-xl bg-gray-800 shadow-2xl">
               <img
+                loading="lazy"
+                decoding="async"
                 src={activeImage}
                 alt={currentGame.title}
                 className="w-full h-[500px] object-cover"
@@ -83,6 +85,8 @@ const GameDetails = () => {
             <div className="mt-4 grid grid-cols-5 gap-3">
               {currentGame.images.map((image, index) => (
                 <img
+                  loading="lazy"
+                  decoding="async"
                   key={index}
                   src={image}
                   alt={`${currentGame.title}-${index}`}

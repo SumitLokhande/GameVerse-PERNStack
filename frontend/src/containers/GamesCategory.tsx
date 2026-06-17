@@ -105,6 +105,8 @@ const GamesCategory: React.FC = () => {
             onClick={() => handleNavigation(category)}
           >
             <img
+              loading="lazy"
+              decoding="async"
               src={category.backgroundImage}
               alt={category.name}
               className="w-full h-full object-cover"

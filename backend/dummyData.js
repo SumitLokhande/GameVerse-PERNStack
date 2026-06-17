@@ -2,8 +2,7 @@ export const latestGamesList = [
   {
     id: 101,
     title: "Crysis",
-    image:
-      "https://scontent.fpnq7-8.fna.fbcdn.net/v/t39.30808-6/496943855_4284837781747712_1834308046476137887_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=100&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=6Z6Z-cs1Il4Q7kNvwEo1gUU&_nc_oc=AdqbLNL2N4buwJlnf69n31-eYlRBBNPY2rLE4QFn7gfNGg5cuxbsWGeonH88ONr496L63N3f-qjiHn584RLcS4Fn&_nc_zt=23&_nc_ht=scontent.fpnq7-8.fna&_nc_gid=3ipZJuvr6vMtANkFC82Piw&_nc_ss=7b2a8&oh=00_Af_w1dheo6x9kgKkcei5RNg0pFAS1ONMkPvrH5Ah42YmHA&oe=6A2B4066",
+    image: "https://wallpapercave.com/wp/wp10904883.jpg",
     text: "Experience the ultimate sci-fi shooter with Crysis.",
     genre: "First-Person Shooter",
     rating: 4.5,
@@ -22,8 +21,7 @@ export const latestGamesList = [
   {
     id: 102,
     title: "Halo",
-    image:
-      "https://scontent.fpnq7-4.fna.fbcdn.net/v/t39.30808-6/495817640_4284816535083170_5491099831647143716_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=105&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=CDBt5tmzzfsQ7kNvwE_TH4O&_nc_oc=AdrCThBlRKSQQZUSU8b1hKYciAjUk-wk_xr7BaAzGRoFyjHpVesvwsb9Jt7rGhI6FlQCzwbz71mxqR-D9kymr765&_nc_zt=23&_nc_ht=scontent.fpnq7-4.fna&_nc_gid=jjjjMYhG2mL3sSQvnlQq5Q&_nc_ss=7b2a8&oh=00_Af9QB-VB9dKvqQc4V6pVuSMkPRIMLFcXKg1Cihtj6Kc5lw&oe=6A2B27EB",
+    image: "https://wallpapercave.com/wp/wp12028543.jpg",
     text: "Step into the armor of the Master Chief in the legendary Halo universe.",
     genre: "First-Person Shooter",
     rating: 4.7,
@@ -35,8 +33,7 @@ export const latestGamesList = [
   {
     id: 103,
     title: "Tomb Raider",
-    image:
-      "https://scontent.fpnq7-8.fna.fbcdn.net/v/t39.30808-6/495810894_4284663508431806_3207286339331359209_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=100&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=C2SEuy5qNvoQ7kNvwHzn50p&_nc_oc=Ado_4gz69noev_fQQzdV8IPXw_rtBqLGY727NSwD6mHdaUMtBf0kNPc_Qy-0iN-cv2TCJN8_8gWIWnxSXZiZSTbq&_nc_zt=23&_nc_ht=scontent.fpnq7-8.fna&_nc_gid=DIWewWm17JjufPxdvRXZLA&_nc_ss=7b2a8&oh=00_Af-SZmuF08puSBCVbEeWGm-Vdfto_sgo2nItq1QgTTimow&oe=6A2B35F4",
+    image: "https://wallpapercave.com/wp/wc1692298.jpg",
     text: "Join Lara Croft on her cinematic survival expeditions in Tomb Raider.",
     genre: "Action-Adventure",
     rating: 4.4,
@@ -75,8 +72,7 @@ export const latestGamesList = [
   {
     id: 105,
     title: "Ninja Gaiden",
-    image:
-      "https://scontent.fpnq7-6.fna.fbcdn.net/v/t39.30808-6/495020140_4275651165999707_6564449505237608161_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=104&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=WIiwT-7hrdgQ7kNvwFrjjcL&_nc_oc=Adq_dRRacBhiMscm7mR6Li8P5LlaU4MpiTQDQjilNzx7U2bMd5b5lbzMvHWosCTY6b253Vxv9cQUcur5WludUU01&_nc_zt=23&_nc_ht=scontent.fpnq7-6.fna&_nc_gid=ZppGSy_DGrwP1dWbUHVe9A&_nc_ss=7b2a8&oh=00_Af9idtSYEOKFXPub18ZIh-bgUO464PCISu-NFzO6rRTLzQ&oe=6A2B46E6",
+    image: "https://wallpapercave.com/wp/wp2472220.jpg",
     text: "Master the way of the ninja with Ryu Hayabusa in Ninja Gaiden.",
     genre: "Hack and Slash",
     rating: 4.3,
@@ -96,8 +92,7 @@ export const latestGamesList = [
   {
     id: 106,
     title: "God Of War",
-    image:
-      "https://scontent.fpnq7-9.fna.fbcdn.net/v/t39.30808-6/495225098_4275442676020556_2126645081395022291_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=108&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=jBwmOjpTVpMQ7kNvwEbgzeT&_nc_oc=AdpnuHmrzSPuy7-e3DpLF4Mv9gx3aKCowGvCY9A8knR4LJvXKJh7km-qOKtlojfg6MLX-BGIxuk4sYcZn10__v5Q&_nc_zt=23&_nc_ht=scontent.fpnq7-9.fna&_nc_gid=I9JRW1qXTTkNrvYqBVLLHA&_nc_ss=7b2a8&oh=00_Af9XFk5P0cW1L6bpljVKXgyxSAFxNTJ-Aoz_kfOKaOiWrw&oe=6A2B40D3",
+    image: "https://wallpapercave.com/wp/3b6ChfH.jpg",
     text: "Embrace the fury of Sparta alongside Kratos in God Of War.",
     genre: "Hack and Slash",
     rating: 4.9,
@@ -115,8 +110,7 @@ export const latestGamesList = [
   {
     id: 107,
     title: "Assasins Creed",
-    image:
-      "https://scontent.fpnq7-9.fna.fbcdn.net/v/t39.30808-6/494479116_4275803769317780_8901609621433918953_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=102&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=khDyyaYFCP4Q7kNvwFKRQ0F&_nc_oc=Adqt194g0cIC2G7RRAAB7QIJXux1fkEcOgaJd1KQY-iQ6UorjsTdHyJ4ld4I1oxbkPD-1xyMSCPUH1aW23SokG77&_nc_zt=23&_nc_ht=scontent.fpnq7-9.fna&_nc_gid=75lfSGF3HCiWicOlAKpSSQ&_nc_ss=782a8&oh=00_Af-d7WM-EfuMEuLqxrt7k7g7JQsfM-XpDgQ6J4kb-U_riw&oe=6A2B6024",
+    image: "https://wallpapercave.com/wp/waX62fC.jpg",
     text: "Explore rich, historical open worlds in the Assassins Creed franchise.",
     genre: "Stealth",
     rating: 4.5,
@@ -136,8 +130,7 @@ export const latestGamesList = [
   {
     id: 108,
     title: "Need For Speed: Hot Pursuit",
-    image:
-      "https://scontent.fpnq7-8.fna.fbcdn.net/v/t39.30808-6/496209495_4285176568380500_5868179528072850704_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=100&ccb=1-7&_nc_sid=0b6b33&_nc_ohc=mbG_yjXdEq0Q7kNvwENf7X0&_nc_oc=AdqhYZlIf26cDbKtJHmaqG4f_Ik6B4s51kgdgI3Ju1o0QQc5iW1UDHr1alZPZJCO5fg5bO2UadBzZnkFEEmP_idS&_nc_zt=23&_nc_ht=scontent.fpnq7-8.fna&_nc_gid=OlECbM17L8Vr6AK8VLuODA&_nc_ss=7b2a8&oh=00_Af8o-VzUDDwgLNotHXK1pzCXlX7RIn7Tkt0wBzUanqZJNQ&oe=6A2DE836",
+    image: "https://wallpapercave.com/wp/wp10553422.jpg",
     text: "Unleash a savage sense of speed both as an outlaw and a cop.",
     genre: "Racing",
     rating: 4.2,
@@ -162,56 +155,47 @@ export const gamesCategories = [
   {
     id: 1,
     name: "RPG",
-    backgroundImage:
-      "https://scontent.fpnq7-7.fna.fbcdn.net/v/t39.30808-6/541678251_804297732250685_4928180402584960456_n.jpg?stp=dst-jpg_tt6&cstp=mx736x414&ctp=s736x414&_nc_cat=106&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=SId72a1p9JcQ7kNvwF6kfNe&_nc_oc=Adqai2VrR9QyqkC9GQLoActtlMP61PtXjB8eNMIctlTQfi5tuSMwbn_NvI_E63ZvPnILj7WpkymxCqFBGJDFUD81&_nc_zt=23&_nc_ht=scontent.fpnq7-7.fna&_nc_gid=1vZ82kzbMp_k7zZjumLsyw&_nc_ss=7b2a8&oh=00_Af_h5BR_eWB6W0OJ76-6Fy_XcrQZ8LcmQF-mjYwaoa7-kQ&oe=6A2DDF1F",
+    backgroundImage: "https://wallpapercave.com/wp/wp6823992.jpg",
   },
   {
     id: 2,
     name: "Sandbox",
-    backgroundImage:
-      "https://scontent.fpnq7-7.fna.fbcdn.net/v/t1.6435-9/49102300_1947651862197978_2336654773882716160_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=pFZLGWKAkk8Q7kNvwG3aDml&_nc_oc=AdomgKPBD2beNRzF8zZA90j4OVKkg6NT-yPpCb5eHFXldm5WOhe3LuO2WB1bJ_Qu4o0tzzm3mu_eah3cj-4t8QEo&_nc_zt=23&_nc_ht=scontent.fpnq7-7.fna&_nc_gid=SImJClaJkUAoMumOuDJK3A&_nc_ss=7b2a8&oh=00_Af_L6R2fXyZfC0aMVHdFku1Yp3TzQ3DDeA3FIJN_7wVy_A&oe=6A4FABB3",
+    backgroundImage: "https://wallpapercave.com/wp/wp2777682.jpg",
   },
   {
     id: 3,
     name: "Sports",
-    backgroundImage:
-      "https://scontent.fpnq7-4.fna.fbcdn.net/v/t1.6435-9/122060849_2395305047432655_6301721277857317084_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=GUgiVMnjX0YQ7kNvwEcKQvs&_nc_oc=AdqkibYEgQ-oDmdhe8tf1VoEUumK-R5CkSQhtWWT2qTTuyzllDJHznij_VoWpluttO2xvYYzS0WKqXTTugUUEJLl&_nc_zt=23&_nc_ht=scontent.fpnq7-4.fna&_nc_gid=VqnyV6W2hbs-_63nQ9SEAg&_nc_ss=7b2a8&oh=00_Af-QJ_Ipt70LKHJBp0JGKOitjq5ptL7T3YxmG0a31NUwXg&oe=6A4F88C8",
+    backgroundImage: "https://wallpapercave.com/wp/wp12593837.jpg",
   },
   {
     id: 4,
     name: "FPS",
-    backgroundImage:
-      "https://scontent.fpnq7-10.fna.fbcdn.net/v/t39.30808-6/306163056_395896469359663_7079360747547170045_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=hiK-M0_B7zkQ7kNvwFMc8vU&_nc_oc=AdomJxW3UxBN3VZHVzvHV716itzOvDfpWPIFUTnUumzc4Wpitu8x-677_Q5LHO3dBs9M-qTbkFbvPyvdZK_ueIbL&_nc_zt=23&_nc_ht=scontent.fpnq7-10.fna&_nc_gid=FhUjmVSvzZm3rPKT_fsXYQ&_nc_ss=7b2a8&oh=00_Af_lCQr7GX6GZE2I07rSnR_V1tFSEU8qVJoMkl9qB21hCw&oe=6A2E0853",
+    backgroundImage: "https://wallpapercave.com/wp/wp7716299.jpg",
   },
   {
     id: 5,
     name: "Action-Adventure",
-    backgroundImage:
-      "https://scontent.fpnq7-1.fna.fbcdn.net/v/t1.6435-9/48249833_1935754300054401_116974108616425472_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1280&ctp=s2048x1280&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=YuBgyKTJ1eQQ7kNvwF3dQZb&_nc_oc=Adq2MeWkmA_2VclCn60z-WXnthH4IqM39nYVV6meDCw7jGFv_0jk2Vpcymisp3uQ9Rd-MEsWBROfzFv_rNFQmDZx&_nc_zt=23&_nc_ht=scontent.fpnq7-1.fna&_nc_gid=21WLLZWG63MgVt9KAmEfgQ&_nc_ss=7b2a8&oh=00_Af_jDh8y-bmxAseRUxNPgQVV-7NGscvHONa00bGNLlupLQ&oe=6A4FA1A6",
+    backgroundImage: "https://wallpapercave.com/wp/wp14035067.webp",
   },
   {
     id: 6,
     name: "Fighting",
-    backgroundImage:
-      "https://scontent.fpnq7-9.fna.fbcdn.net/v/t39.30808-6/495740684_3008250769352391_3077427185784118430_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=102&ccb=1-7&_nc_sid=536f4a&_nc_ohc=VXylwiBK4Q0Q7kNvwGjpQBo&_nc_oc=AdqZfn_hN3Hk6LuDL9WYZ67gZvG-CYESDAuZEyy5aMu9vWg8LOaUdF-16T-P47YZofaTY0kvibP4-9i03ocihldS&_nc_zt=23&_nc_ht=scontent.fpnq7-9.fna&_nc_gid=ApDjYHSiqLLVj5jw2odGPg&_nc_ss=7b2a8&oh=00_Af-pGEcbTke-JuAg1pUVGWMB8lzF9poVe9BImiVQeCgpgw&oe=6A2E01DD",
+    backgroundImage: "https://wallpapercave.com/wp/wp13707882.png",
   },
   {
     id: 7,
     name: "Horror",
-    backgroundImage:
-      "https://scontent.fpnq7-4.fna.fbcdn.net/v/t1.6435-9/51795563_1971043259858838_6754995215913713664_n.jpg?stp=dst-jpg_tt6&cstp=mx1920x1080&ctp=s1920x1080&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kGhfw1W-5gYQ7kNvwHViCnu&_nc_oc=AdqctT03sIzmxua3uMa1sJgGTmmddV17KsSRfrGDBLHkmjflMohFzdWKxBGelwqR8aBGtw-JbyUP5FjXUEdwQa1Z&_nc_zt=23&_nc_ht=scontent.fpnq7-4.fna&_nc_gid=D_ihWucW5SiJuqHWSvq68w&_nc_ss=7b2a8&oh=00_Af_2LPNYY9Mb_JE0lKQHpwNP8qFjZ7jhNJp3PwKiIEK3_g&oe=6A4F9181",
+    backgroundImage: "https://wallpapercave.com/wp/wp12116718.jpg",
   },
   {
     id: 8,
     name: "Racing",
-    backgroundImage:
-      "https://scontent.fpnq7-4.fna.fbcdn.net/v/t1.6435-9/47685442_1936166116679886_7110898479760670720_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1280&ctp=s2048x1280&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=CYk7wGTSKPkQ7kNvwHDlfr-&_nc_oc=AdqiJNbml8bmLEVelXEWblPV9XEw6iwp9on5u6vln_bksExs7RMV0IwPRtbmOXJq5Ux0BQZwTIxxbjqQsXEdOsOU&_nc_zt=23&_nc_ht=scontent.fpnq7-4.fna&_nc_gid=C3ORMdZLYIq3s4QKi2bAEw&_nc_ss=7b2a8&oh=00_Af_RUl-ykqjg4NdkmkGoJqeqdUT4YXQxS24uxWfhI-H0fg&oe=6A4FA7DC",
+    backgroundImage: "https://wallpapercave.com/wp/wp12405347.jpg",
   },
   {
     id: 9,
     name: "Strategy",
-    backgroundImage:
-      "https://scontent.fpnq7-6.fna.fbcdn.net/v/t1.6435-9/48363673_1936164836680014_8102460021561884672_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1152&ctp=s2048x1152&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fFpUMFBdLGgQ7kNvwH0rGxr&_nc_oc=Adp8TwTivEmkfKobY5qeuhb4-d5LHO2WbkyKhHKb1jkB_FslvOSvoEKOzjKHLKZliaZptxRIiXkEB1mpmYiYAH_R&_nc_zt=23&_nc_ht=scontent.fpnq7-6.fna&_nc_gid=9MGjBkHbP4zh9oZmcZZB5A&_nc_ss=7b2a8&oh=00_Af-3Iw-I0yolGLe-zHL_ukz_kkm_rYaOB-OOxik6yR-0cw&oe=6A4F9A8E",
+    backgroundImage: "https://wallpapercave.com/wp/wp3805966.jpg",
   },
 ];
 

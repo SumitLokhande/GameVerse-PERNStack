@@ -167,6 +167,8 @@ function GOTYContainer() {
               <div>
                 <div className="w-full p-2">
                   <img
+                    loading="lazy"
+                    decoding="async"
                     src={activeImage}
                     alt={game.title}
                     className="w-full h-90 object-fit rounded-lg shadow-lg"
@@ -175,6 +177,8 @@ function GOTYContainer() {
                 <div className=" flex items-center justify-around gap-2 p-1 w-2xl">
                   {game.images.map((image) => (
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={image}
                       alt={game.title}
                       className={`w-full h-18 object-cover rounded-lg shadow-lg cursor-pointer ${activeImage === image && "border-green-700 border-b-3 shadow-2xl"}`}

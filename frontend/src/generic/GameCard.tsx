@@ -43,6 +43,8 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
       {/* Game Image */}
       <div className="relative p-2 " onClick={() => handleGameClick(game)}>
         <img
+          loading="lazy"
+          decoding="async"
           src={game.image}
           alt={game.title}
           className="object-cover rounded-lg h-45 w-full"

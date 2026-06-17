@@ -69,7 +69,6 @@ const RecommendationGenerator = () => {
   const [generatedRecommendation, setGeneratedRecommendation] =
     useState<GameRecommendation | null>(null);
   const [genreType, setGenreType] = useState("Any");
-  const [saving, setSaving] = useState(false);
   // const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const dispatch = useAppDispatch();
   const gameRecommendation = useAppSelector(
@@ -130,7 +129,6 @@ const RecommendationGenerator = () => {
   };
 
   const handleGenerate = async () => {
-    setSaving(true);
     setGenerating(true);
     setGeneratedRecommendation(null);
 
@@ -141,8 +139,6 @@ const RecommendationGenerator = () => {
         players: players,
         difficulty: difficulty,
       };
-
-      console.log(payload, "hit payload");
 
       const resultAction = await dispatch(getRecommendation(payload));
 
@@ -158,8 +154,6 @@ const RecommendationGenerator = () => {
       setGenerating(false);
     }
   };
-
-  const handleSaveRecommendation = async () => {};
 
   return (
     <div className="min-h-screen">
@@ -180,9 +174,9 @@ const RecommendationGenerator = () => {
             {generatedRecommendation ? (
               <div className="bg-white rounded-xl border border-gray-200 p-6 space-y-6">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  <div className="text-2xl font-bold text-blue-900 mb-2">
                     {generatedRecommendation.name}
-                  </h2>
+                  </div>
                   <p className="text-gray-600">
                     {generatedRecommendation.description}
                   </p>
@@ -247,7 +241,7 @@ const RecommendationGenerator = () => {
                   <h3 className="font-semibold text-gray-900 mb-3">
                     Why recommended
                   </h3>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-gray-700 text-start">
                     {generatedRecommendation.whyRecommended?.map(
                       (reason, index) => (
                         <li key={index} className="flex gap-2">
@@ -262,7 +256,7 @@ const RecommendationGenerator = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="rounded-xl bg-gray-50 p-4">
                     <h3 className="font-semibold text-gray-900 mb-3">Pros</h3>
-                    <ul className="space-y-2 text-gray-700">
+                    <ul className="space-y-2 text-gray-700 text-start">
                       {generatedRecommendation.pros?.map((pro, index) => (
                         <li key={index} className="flex gap-2">
                           <span className="text-emerald-500">•</span>
@@ -274,7 +268,7 @@ const RecommendationGenerator = () => {
 
                   <div className="rounded-xl bg-gray-50 p-4">
                     <h3 className="font-semibold text-gray-900 mb-3">Cons</h3>
-                    <ul className="space-y-2 text-gray-700">
+                    <ul className="space-y-2 text-gray-700 text-start">
                       {generatedRecommendation.cons?.map((con, index) => (
                         <li key={index} className="flex gap-2">
                           <span className="text-red-500">•</span>
@@ -289,29 +283,15 @@ const RecommendationGenerator = () => {
                   <h3 className="font-semibold text-gray-900 mb-3">
                     Similar games
                   </h3>
-                  <ul className="list-disc list-inside space-y-2 text-gray-700">
+                  <div className="list-disc list-inside space-y-2 text-gray-700 ">
                     {generatedRecommendation.similarGames?.map(
                       (game, index) => (
-                        <li key={index}>{game}</li>
+                        <span className="mx-1" key={index}>
+                          {game},
+                        </span>
                       ),
                     )}
-                  </ul>
-                </div>
-
-                <div className="flex gap-3 pt-4 border-t border-gray-200">
-                  <button
-                    onClick={handleSaveRecommendation}
-                    disabled={saving}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors disabled:opacity-50"
-                  >
-                    {saving ? "Saving..." : "Save Recommendation"}
-                  </button>
-                  <button
-                    onClick={() => setGeneratedRecommendation(null)}
-                    className="px-6 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium transition-colors"
-                  >
-                    New Recommendation
-                  </button>
+                  </div>
                 </div>
               </div>
             ) : (

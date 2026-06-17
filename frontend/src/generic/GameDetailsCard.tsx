@@ -86,6 +86,8 @@ const GameDetailsCard: React.FC<GameDetailsCardProps> = ({ game }) => {
         {/* Game Image */}
         <div className="md:w-1/3">
           <img
+            loading="lazy"
+            decoding="async"
             src={game.image}
             alt={game.title}
             className="w-full h-64 object-cover rounded-lg shadow-lg"
