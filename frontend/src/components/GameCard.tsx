@@ -37,58 +37,39 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
   };
 
   return (
-    <div
-      className={`bg-gray-800 h-80 w-45 rounded-lg shadow-lg cursor-pointer transition-all duration-300 hover:shadow-xl hover:scale-105`}
-    >
-      {/* Game Image */}
-      <div className="relative p-2 " onClick={() => handleGameClick(game)}>
+    <div className="h-auto w-full max-w-[220px] cursor-pointer rounded-lg bg-gray-800 shadow-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl sm:max-w-[230px]">
+      <div className="relative p-2" onClick={() => handleGameClick(game)}>
         <img
           loading="lazy"
           decoding="async"
           src={game.image}
           alt={game.title}
-          className="object-cover rounded-lg h-45 w-full"
+          className="h-44 w-full rounded-lg object-cover sm:h-48"
         />
       </div>
 
-      {/* Game Info */}
-      <div className="px-2 flex flex-col h-auto">
-        <h3 className="text-sm text-left font-semibold text-white overflow-hidden text-wrap w-auto h-10 ">
+      <div className="flex h-auto flex-col px-2 pb-3">
+        <h3 className="h-10 overflow-hidden text-left text-sm font-semibold text-white">
           {game.title}
         </h3>
 
-        <div className="flex items-center justify-between">
-          <span className="text-sm text-gray-400 py-1">{game.genre}</span>
+        <div className="flex items-center justify-between gap-2">
+          <span className="py-1 text-sm text-gray-400">{game.genre}</span>
           <div className="flex items-center">
-            <span className="text-md text-yellow-300 font-bold">
+            <span className="text-md font-bold text-yellow-300">
               {game.rating}
             </span>
-            <span className="font-semibold text-sm">/5</span>
+            <span className="text-sm font-semibold">/5</span>
           </div>
         </div>
 
-        {/* <div className="flex flex-wrap gap-1 mb-3">
-          {game.platform.slice(0, 3).map((platform) => (
-            <span
-              key={platform}
-              className="bg-blue-600 text-white text-xs px-2 py-1 rounded"
-            >
-              {platform}
-            </span>
-          ))}
-          {game.platform.length > 3 && (
-            <span className="text-xs text-gray-400">
-              +{game.platform.length - 3} more
-            </span>
-          )}
-        </div> */}
-        <div className="flex justify-between gap-1 my-1 pt-2">
-          <div className="items-start rounded-md cursor-pointer py-1.5 text-sm font-semibold text-white">
+        <div className="my-1 flex items-center justify-between gap-2 pt-2">
+          <div className="cursor-pointer rounded-md py-1.5 text-sm font-semibold text-white">
             ₹ {game.price}
           </div>
 
           <Button
-            className="items-center rounded-md cursor-pointer bg-green-700 w-2/4 text-xs font-semibold text-white"
+            className="w-2/4 rounded-md bg-green-700 px-2 py-2 text-[11px] font-semibold text-white sm:text-xs"
             onClick={() => addGameToCart(game)}
           >
             Add to Cart

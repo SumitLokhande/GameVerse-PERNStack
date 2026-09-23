@@ -1,25 +1,23 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 flex">
-        {/* Left Side - Page Links in Columns (70%) */}
-        <div className="w-7/10 pr-8">
-          <div className="grid grid-cols-3 gap-8">
-            {/* Column 1 */}
+    <footer className="bg-gray-900 py-12 text-white">
+      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 md:flex-row md:items-start">
+        <div className="w-full md:w-7/10 md:pr-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-blue-400">
+              <h3 className="mb-4 text-lg font-semibold text-blue-400">
                 Explore
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="hover:text-blue-300 transition-colors">
+                  <a href="/" className="transition-colors hover:text-blue-300">
                     Home
                   </a>
                 </li>
                 <li>
                   <a
                     href="/store"
-                    className="hover:text-blue-300 transition-colors"
+                    className="transition-colors hover:text-blue-300"
                   >
                     Store
                   </a>
@@ -27,7 +25,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/reviews"
-                    className="hover:text-blue-300 transition-colors"
+                    className="transition-colors hover:text-blue-300"
                   >
                     Reviews
                   </a>
@@ -35,16 +33,15 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 2 */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-blue-400">
+              <h3 className="mb-4 text-lg font-semibold text-blue-400">
                 Community
               </h3>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="/news"
-                    className="hover:text-blue-300 transition-colors"
+                    className="transition-colors hover:text-blue-300"
                   >
                     News
                   </a>
@@ -52,7 +49,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/about"
-                    className="hover:text-blue-300 transition-colors"
+                    className="transition-colors hover:text-blue-300"
                   >
                     About
                   </a>
@@ -60,7 +57,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/forums"
-                    className="hover:text-blue-300 transition-colors"
+                    className="transition-colors hover:text-blue-300"
                   >
                     Forums
                   </a>
@@ -68,16 +65,15 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Column 3 */}
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-blue-400">
+              <h3 className="mb-4 text-lg font-semibold text-blue-400">
                 Support
               </h3>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="/help"
-                    className="hover:text-blue-300 transition-colors"
+                    className="transition-colors hover:text-blue-300"
                   >
                     Help Center
                   </a>
@@ -85,7 +81,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/contact"
-                    className="hover:text-blue-300 transition-colors"
+                    className="transition-colors hover:text-blue-300"
                   >
                     Contact Us
                   </a>
@@ -93,7 +89,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/faq"
-                    className="hover:text-blue-300 transition-colors"
+                    className="transition-colors hover:text-blue-300"
                   >
                     FAQ
                   </a>
@@ -103,15 +99,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Right Side - Contact (30%) */}
-        <div className="w-3/10">
-          <h3 className="text-lg font-semibold mb-4 text-blue-400">
+        <div className="w-full md:w-3/10">
+          <h3 className="mb-4 text-lg font-semibold text-blue-400">
             Contact Us
           </h3>
-          <div className="space-y-3">
+          <div className="space-y-3 text-sm sm:text-base">
             <div className="flex items-center">
               <svg
-                className="w-5 h-5 mr-3 text-blue-400"
+                className="mr-3 h-5 w-5 text-blue-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -122,7 +117,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center">
               <svg
-                className="w-5 h-5 mr-3 text-blue-400"
+                className="mr-3 h-5 w-5 text-blue-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -132,7 +127,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center">
               <svg
-                className="w-5 h-5 mr-3 text-blue-400"
+                className="mr-3 h-5 w-5 text-blue-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -146,18 +141,17 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Social Links */}
           <div className="mt-6">
-            <h4 className="text-sm font-semibold mb-3 text-gray-400">
+            <h4 className="mb-3 text-sm font-semibold text-gray-400">
               Follow Us
             </h4>
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 transition-colors hover:text-blue-400"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -166,10 +160,10 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 transition-colors hover:text-blue-400"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -178,10 +172,10 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-blue-400 transition-colors"
+                className="text-gray-400 transition-colors hover:text-blue-400"
               >
                 <svg
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -193,8 +187,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Copyright */}
-      <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+      <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
         <p>
           &copy; 2026 GamerVerse. All rights reserved. Powered by passion for
           gaming.

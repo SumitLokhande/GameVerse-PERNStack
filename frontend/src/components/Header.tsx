@@ -10,24 +10,36 @@ const Header = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-transparent/30 backdrop-blur-xs z-50 shadow-xl">
-      <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 p-3 sm:flex-row sm:items-center sm:justify-between sm:p-4">
         <div
-          className="text-white font-bold text-xl cursor-pointer"
+          className="cursor-pointer text-xl font-bold text-white"
           onClick={() => navigate("/")}
         >
           GamerVerse
         </div>
-        <ul className="flex space-x-8">
+        <ul className="flex flex-wrap items-center justify-start gap-x-4 gap-y-2 text-sm sm:justify-end sm:gap-x-6 sm:text-base">
           <li>
             <NavLink
               to="/games"
               className={({ isActive }) =>
                 isActive
-                  ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                  : "text-white hover:text-gray-300 transition-colors duration-200"
+                  ? "border-b-2 border-blue-400 pb-1 font-semibold text-blue-400"
+                  : "text-white transition-colors duration-200 hover:text-gray-300"
               }
             >
               Games
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/card-generator"
+              className={({ isActive }) =>
+                isActive
+                  ? "border-b-2 border-blue-400 pb-1 font-semibold text-blue-400"
+                  : "text-white transition-colors duration-200 hover:text-gray-300"
+              }
+            >
+              Card Generator
             </NavLink>
           </li>
           {isAuthenticated && (
@@ -37,8 +49,8 @@ const Header = () => {
                   to="/reviews"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                      : "text-white hover:text-gray-300 transition-colors duration-200"
+                      ? "border-b-2 border-blue-400 pb-1 font-semibold text-blue-400"
+                      : "text-white transition-colors duration-200 hover:text-gray-300"
                   }
                 >
                   Reviews
@@ -49,8 +61,8 @@ const Header = () => {
                   to="/recommendations"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                      : "text-white hover:text-gray-300 transition-colors duration-200"
+                      ? "border-b-2 border-blue-400 pb-1 font-semibold text-blue-400"
+                      : "text-white transition-colors duration-200 hover:text-gray-300"
                   }
                 >
                   Recommendations
@@ -63,16 +75,16 @@ const Header = () => {
               to="/cart"
               className={({ isActive }) =>
                 isActive
-                  ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                  : "text-white hover:text-gray-300 transition-colors duration-200"
+                  ? "border-b-2 border-blue-400 pb-1 font-semibold text-blue-400"
+                  : "text-white transition-colors duration-200 hover:text-gray-300"
               }
             >
               <button
-                className="relative text-gray-600 hover:text-blue-600 transition-colors focus:outline-none"
+                className="relative inline-flex items-center justify-center text-gray-300 transition-colors hover:text-blue-400 focus:outline-none"
                 aria-label="Cart"
               >
                 <svg
-                  xmlns="http://w3.org"
+                  xmlns="http://www.w3.org"
                   className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -86,7 +98,7 @@ const Header = () => {
                   />
                 </svg>
 
-                <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white bg-red-500 rounded-full transform translate-x-1/2 -translate-y-1/2">
+                <span className="absolute top-0 right-0 inline-flex -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-red-500 px-1.5 py-0.5 text-[10px] font-bold leading-none text-white">
                   {totalItems}
                 </span>
               </button>
@@ -95,12 +107,11 @@ const Header = () => {
           {isAuthenticated ? (
             <>
               <li>
-                {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+                <Menu as="div" className="relative ml-0 sm:ml-3">
                   <MenuButton className="relative flex rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">Open user menu</span>
-                    <div className="size-8 rounded-full bg-gray-800 outline -outline-offset-1 outline-white/10 py-1">
+                    <div className="flex size-8 items-center justify-center rounded-full bg-gray-800 py-1 text-sm font-semibold text-white outline -outline-offset-1 outline-white/10">
                       {user?.name.charAt(0).toUpperCase()}
                     </div>
                   </MenuButton>
@@ -145,8 +156,8 @@ const Header = () => {
                   to="/login"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                      : "text-white hover:text-gray-300 transition-colors duration-200"
+                      ? "border-b-2 border-blue-400 pb-1 font-semibold text-blue-400"
+                      : "text-white transition-colors duration-200 hover:text-gray-300"
                   }
                 >
                   Sign In
@@ -157,8 +168,8 @@ const Header = () => {
                   to="/register"
                   className={({ isActive }) =>
                     isActive
-                      ? "text-blue-400 font-semibold border-b-2 border-blue-400 pb-1"
-                      : "text-white hover:text-gray-300 transition-colors duration-200"
+                      ? "border-b-2 border-blue-400 pb-1 font-semibold text-blue-400"
+                      : "text-white transition-colors duration-200 hover:text-gray-300"
                   }
                 >
                   Sign Up

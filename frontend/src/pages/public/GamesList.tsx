@@ -1,28 +1,32 @@
 import { useState, useMemo, useEffect, useRef } from "react";
-import GameCard from "../../generic/GameCard";
+import GameCard from "../../components/GameCard";
 import { useLocation } from "react-router";
 import { getAllGamesList } from "../../redux/Slices/gamesSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useDebounce } from "../../hooks/customHooks";
 
 const GamesList = () => {
   const location = useLocation();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedGenre, setSelectedGenre] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [selectedGenre, setSelectedGenre] = useState(
+    location.state?.category ?? "",
+  );
   const [selectedPlatform, setSelectedPlatform] = useState("");
-  const userData = location.state;
   const containerRef = useRef<HTMLDivElement | null>(null);
   const dispatch = useAppDispatch();
   const allGames = useAppSelector((state) => state.games.allGames);
+  const debouncedValue = useDebounce(
+    searchInput,
+    searchInput.length > 0 ? 2000 : 0,
+  );
+  const searchTerm = debouncedValue;
+  const isLoading = Boolean(searchInput && searchInput !== debouncedValue);
 
   useEffect(() => {
-    console.log(userData, "hit userData");
     if (containerRef.current) {
       containerRef.current.scrollIntoView({ behavior: "smooth" });
     }
-    if (userData) {
-      setSelectedGenre(userData.category);
-    }
-  }, [userData]);
+  }, []);
 
   useEffect(() => {
     dispatch(getAllGamesList());
@@ -31,13 +35,13 @@ const GamesList = () => {
   const genres = useMemo(() => {
     const uniqueGenres = [...new Set(allGames.map((game) => game.genre))];
     return uniqueGenres;
-  }, []);
+  }, [allGames]);
 
   const platforms = useMemo(() => {
     const allPlatforms = allGames.flatMap((game) => game.platforms);
     const uniquePlatforms = [...new Set(allPlatforms)];
     return uniquePlatforms;
-  }, []);
+  }, [allGames]);
 
   const filteredGames = useMemo(() => {
     return allGames.filter((game) => {
@@ -50,18 +54,19 @@ const GamesList = () => {
 
       return matchesSearch && matchesGenre && matchesPlatform;
     });
-  }, [searchTerm, selectedGenre, selectedPlatform]);
+  }, [allGames, searchTerm, selectedGenre, selectedPlatform]);
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-gray-900 text-white p-6">
-      {/* Header Section */}
-      <div className="flex items-center justify-between mb-8">
-        {/* Filters on Left */}
-        <div className="flex space-x-4">
+    <div
+      ref={containerRef}
+      className="min-h-screen bg-gray-900 p-4 text-white sm:p-6"
+    >
+      <div className="mb-8 flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <select
             value={selectedGenre}
             onChange={(e) => setSelectedGenre(e.target.value)}
-            className="bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="rounded-lg border border-gray-600 bg-gray-800 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="">All Genres</option>
             {genres.map((genre) => (
@@ -74,7 +79,7 @@ const GamesList = () => {
           <select
             value={selectedPlatform}
             onChange={(e) => setSelectedPlatform(e.target.value)}
-            className="bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="rounded-lg border border-gray-600 bg-gray-800 px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="">All Platforms</option>
             {platforms.map((platform) => (
@@ -85,43 +90,44 @@ const GamesList = () => {
           </select>
         </div>
 
-        {/* Page Title in Center */}
-        <h1 className="text-3xl font-bold text-blue-400 flex-1 text-center">
+        <h1 className="text-center text-2xl font-bold text-blue-400 sm:text-3xl xl:flex-1">
           Games Library
         </h1>
 
-        {/* Search on Right */}
-        <div className="w-64">
+        <div className="w-full xl:w-64">
           <input
             type="text"
             placeholder="Search games..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+            className="w-full rounded-lg border border-gray-600 bg-gray-800 px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
       </div>
 
-      {/* Games Grid */}
-      <div className="flex flex-wrap items-center justify-center gap-4">
-        {filteredGames.map((game) => (
-          <div key={game.id}>
-            <GameCard game={game} />
-            {/* {selectedGameId === game.id && (
-              <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
-                <GameDetailsCard game={game} />
-              </div>
-            )} */}
-          </div>
-        ))}
-      </div>
-
-      {filteredGames.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-gray-400 text-lg">
-            No games found matching your criteria.
-          </p>
+      {isLoading && searchInput ? (
+        <div className="text-center py-4">
+          <p className="text-blue-400 text-sm">Searching...</p>
         </div>
+      ) : (
+        <>
+          {/* Games Grid */}
+          <div className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {filteredGames.map((game) => (
+              <div key={game.id} className="w-full max-w-[220px] sm:max-w-none">
+                <GameCard game={game} />
+              </div>
+            ))}
+          </div>
+
+          {filteredGames.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-400 text-lg">
+                No games found matching your criteria.
+              </p>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

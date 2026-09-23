@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ReviewCard from "../../generic/ReviewCard";
+import ReviewCard from "../../components/ReviewCard";
 import type { Review } from "../../types/authTypes";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { getGamesReviewsList } from "../../redux/Slices/gamesSlice";

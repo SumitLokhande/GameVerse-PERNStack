@@ -85,9 +85,9 @@ const GamesCategory: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-900 text-white p-6 my-2">
+    <div className="my-2 bg-gray-900 p-4 text-white sm:p-6">
       <div className="mb-8 text-start">
-        <h2 className="text-3xl font-bold text-blue-400 mb-4">
+        <h2 className="mb-4 text-2xl font-bold text-blue-400 sm:text-3xl">
           Games by Category
         </h2>
         <p className="text-gray-300">
@@ -95,11 +95,11 @@ const GamesCategory: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-4 auto-rows-[150px] gap-5">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[150px]">
         {gamesCategories.map((category, i) => (
           <div
             key={i}
-            className={`relative overflow-hidden cursor-pointer rounded-xl shadow-lg hover:scale-105 transition-all duration-300 ${
+            className={`relative h-52 cursor-pointer overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.01] sm:h-60 lg:h-full ${
               spanClasses[i % spanClasses.length]
             }`}
             onClick={() => handleNavigation(category)}
@@ -109,12 +109,12 @@ const GamesCategory: React.FC = () => {
               decoding="async"
               src={category.backgroundImage}
               alt={category.name}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
 
             <div className="absolute inset-0 flex items-end">
-              <div className="w-full bg-black/30 py-2 px-4 text-start">
-                <h2 className="text-white text-2xl font-bold">
+              <div className="w-full bg-black/30 px-4 py-2 text-start">
+                <h2 className="text-xl font-bold text-white sm:text-2xl">
                   {category.name}
                 </h2>
               </div>
